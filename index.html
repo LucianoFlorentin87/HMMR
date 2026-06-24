@@ -15,22 +15,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=12" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=13" />
 </head>
 <body>
 
 <!-- ============================================================
-     ANNOUNCEMENT BAR
-     ============================================================ -->
-<div id="announcement-bar">
-  🇵🇾 &nbsp; <em>ENVÍO GRATIS</em> en compras +150.000 Gs · Nueva colección disponible
-  <button class="ann-close" onclick="document.getElementById('announcement-bar').style.display='none';document.getElementById('navbar').classList.remove('has-bar')">✕</button>
-</div>
-
-<!-- ============================================================
      NAVBAR
      ============================================================ -->
-<nav id="navbar" class="has-bar">
+<nav id="navbar">
   <div class="nav-top">
     <div class="nav-inner">
 
@@ -38,13 +30,12 @@
       <a href="#hero" class="nav-logo">
         <div class="logo-brand">
           <svg class="logo-hammer" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M13.5 1.5L15 3l-3 3 4.5 4.5 3-3 1.5 1.5-1.5 1.5L22 13l-1.5 1.5L18 12l-1.5 1.5L12 9l-1.5 1.5L9 9l3-3L10.5 4.5 12 3l1.5-1.5z" opacity="0"/>
             <rect x="9" y="11" width="10" height="6" rx="1" transform="rotate(-45 14 14)"/>
             <rect x="4" y="14" width="12" height="4" rx="1" transform="rotate(-45 10 16)"/>
           </svg>
           <span class="logo-hmmr">HMMR</span>
         </div>
-        <div class="logo-jeans-row" style="display:flex;align-items:center;justify-content:center;gap:6px">
+        <div class="logo-jeans-row">
           <span class="logo-jeans">JEANS</span>
         </div>
         <div class="logo-sub">Originalmente Nacional</div>
@@ -56,24 +47,22 @@
       <!-- LINKS DESKTOP -->
       <ul class="nav-links">
         <li class="nav-link-item">
-          <a href="#destacados" class="nav-link">Novedades</a>
+          <a href="#hero" class="nav-link active">INICIO</a>
         </li>
         <li class="nav-link-item">
-          <a href="#coleccion" class="nav-link">Colección <i class="fas fa-chevron-down"></i></a>
-          <div class="nav-dropdown">
-            <a href="#destacados">Destacados</a>
-            <a href="#coleccion">HMMR Jeans</a>
-            <a href="#categorias">Categorías</a>
-          </div>
+          <a href="#destacados" class="nav-link">CATÁLOGO</a>
         </li>
         <li class="nav-link-item">
-          <a href="#categorias" class="nav-link">Categorías</a>
+          <a href="#coleccion-banner" class="nav-link">COLECCIONES</a>
         </li>
         <li class="nav-link-item">
-          <a href="#nosotros" class="nav-link">Historia</a>
+          <a href="#nosotros" class="nav-link">HISTORIA</a>
         </li>
         <li class="nav-link-item">
-          <a href="#contacto" class="nav-link">Contacto</a>
+          <a href="#" class="nav-link">DISTRIBUIDORES</a>
+        </li>
+        <li class="nav-link-item">
+          <a href="#contacto" class="nav-link">CONTACTO</a>
         </li>
       </ul>
 
@@ -85,7 +74,6 @@
           <i class="fas fa-shopping-bag"></i>
           <span class="nav-cart-count">0</span>
         </button>
-        <a href="#destacados" class="nav-cta">Comprar</a>
       </div>
 
       <button id="menu-btn" class="hamburger" aria-label="Menú">
@@ -95,19 +83,20 @@
 
     <!-- MOBILE MENU -->
     <div id="mobile-menu">
-      <a href="#destacados"  class="mobile-nav-item">Novedades</a>
-      <a href="#coleccion"   class="mobile-nav-item">Colección HMMR Jeans</a>
-      <a href="#categorias"  class="mobile-nav-item">Categorías</a>
-      <a href="#nosotros"    class="mobile-nav-item">Historia</a>
-      <a href="#contacto"    class="mobile-nav-item">Contacto</a>
-      <a href="#destacados"  class="mobile-nav-cta">Comprar Ahora →</a>
+      <a href="#hero"           class="mobile-nav-item">Inicio</a>
+      <a href="#destacados"     class="mobile-nav-item">Catálogo</a>
+      <a href="#coleccion-banner" class="mobile-nav-item">Colecciones</a>
+      <a href="#nosotros"       class="mobile-nav-item">Historia</a>
+      <a href="#"               class="mobile-nav-item">Distribuidores</a>
+      <a href="#contacto"       class="mobile-nav-item">Contacto</a>
+      <a href="#destacados"     class="mobile-nav-cta">Comprar Ahora →</a>
     </div>
   </div>
 </nav>
 
 
 <!-- ============================================================
-     HERO SLIDER — fullscreen banner estilo Baco
+     HERO SLIDER — fullscreen
      ============================================================ -->
 <section id="hero">
 
@@ -116,7 +105,7 @@
     <img class="slide-img" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800&q=90" alt="Nueva Colección HMMR">
     <div class="slide-overlay"></div>
     <div class="slide-content">
-      <div class="slide-pretitle">Originalmente</div>
+      <div class="slide-pretitle">ORIGINALMENTE</div>
       <div class="slide-bigword">NACIONAL</div>
       <p class="slide-tagline">— JEANS QUE CUENTAN NUESTRA HISTORIA.</p>
       <div class="flag-ribbon"><span></span><span></span><span></span></div>
@@ -124,36 +113,30 @@
     </div>
   </div>
 
-  <!-- SLIDE 2 — Colección Temporada -->
+  <!-- SLIDE 2 -->
   <div class="slide">
     <img class="slide-img" src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1800&q=90" alt="Colección Temporada HMMR">
     <div class="slide-overlay" style="background:linear-gradient(90deg,rgba(8,14,26,0.90) 0%,rgba(8,14,26,0.45) 60%,transparent 100%)"></div>
     <div class="slide-content">
-      <span class="slide-label" style="color:var(--gold)">Colección Temporada 2025</span>
-      <h1 class="slide-h1" style="color:#fff">DENIM<br><strong style="color:var(--gold)">PREMIUM</strong><br><em>PARA VOS.</em></h1>
-      <p class="slide-sub">Cortes modernos, telas de primera calidad y el estilo HMMR que te distingue.</p>
-      <div class="slide-btns">
-        <a href="#coleccion-banner" class="btn-primary" style="background:var(--gold);border-color:var(--gold);color:#000">Ver Colección</a>
-        <a href="#destacados" class="btn-ghost">Destacados</a>
-      </div>
+      <div class="slide-pretitle">COLECCIÓN</div>
+      <div class="slide-bigword" style="font-size:clamp(4rem,11vw,8rem)">TEMPORADA</div>
+      <p class="slide-tagline">— DENIM PREMIUM PARA VOS.</p>
+      <div class="flag-ribbon"><span></span><span></span><span></span></div>
+      <a href="#coleccion-banner" class="btn-hero">VER COLECCIÓN</a>
     </div>
-    <div class="slide-stripe"><span></span><span></span><span></span></div>
   </div>
 
-  <!-- SLIDE 3 — Oferta -->
+  <!-- SLIDE 3 -->
   <div class="slide">
     <img class="slide-img" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1800&q=90" alt="Oferta HMMR">
     <div class="slide-overlay" style="background:linear-gradient(90deg,rgba(13,27,42,0.92) 0%,rgba(13,27,42,0.5) 60%,transparent 100%)"></div>
     <div class="slide-content">
-      <span class="slide-label" style="color:var(--red)">🔥 Oferta de Temporada</span>
-      <h1 class="slide-h1"><strong style="font-size:clamp(4rem,12vw,9rem);line-height:1;color:#fff">30%</strong><br><strong>DESCUENTO</strong><br><em>EN JEANS SELECCIONADOS</em></h1>
-      <p class="slide-sub">Por tiempo limitado. No te lo pierdas.</p>
-      <div class="slide-btns">
-        <a href="#destacados" class="btn-primary" style="background:var(--red);border-color:var(--red)">Ver Ofertas</a>
-        <a href="#coleccion" class="btn-ghost">Ver Todo</a>
-      </div>
+      <div class="slide-pretitle">NUEVA</div>
+      <div class="slide-bigword">COLECCIÓN</div>
+      <p class="slide-tagline">— ESTILO PARAGUAYO, CALIDAD PREMIUM.</p>
+      <div class="flag-ribbon"><span></span><span></span><span></span></div>
+      <a href="#destacados" class="btn-hero">VER OFERTAS</a>
     </div>
-    <div class="slide-stripe"><span></span><span></span><span></span></div>
   </div>
 
   <!-- CONTROLES -->
@@ -169,11 +152,11 @@
 
 
 <!-- ============================================================
-     TICKER
+     TICKER (minimal)
      ============================================================ -->
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span class="ticker-item accent">🇵🇾 HMMR JEANS</span>
+    <span class="ticker-item accent">HMMR JEANS</span>
     <span class="ticker-dot">·</span>
     <span class="ticker-item">ORIGINALMENTE NACIONAL</span>
     <span class="ticker-dot">·</span>
@@ -181,11 +164,9 @@
     <span class="ticker-dot">·</span>
     <span class="ticker-item">DENIM PREMIUM</span>
     <span class="ticker-dot">·</span>
-    <span class="ticker-item">SOLO CABALLEROS</span>
+    <span class="ticker-item">ENVÍO GRATIS +150.000 GS</span>
     <span class="ticker-dot">·</span>
-    <span class="ticker-item accent">ENVÍO GRATIS +150.000 GS</span>
-    <span class="ticker-dot">·</span>
-    <span class="ticker-item">🇵🇾 HMMR JEANS</span>
+    <span class="ticker-item accent">HMMR JEANS</span>
     <span class="ticker-dot">·</span>
     <span class="ticker-item">ORIGINALMENTE NACIONAL</span>
     <span class="ticker-dot">·</span>
@@ -193,16 +174,14 @@
     <span class="ticker-dot">·</span>
     <span class="ticker-item">DENIM PREMIUM</span>
     <span class="ticker-dot">·</span>
-    <span class="ticker-item">SOLO CABALLEROS</span>
-    <span class="ticker-dot">·</span>
-    <span class="ticker-item accent">ENVÍO GRATIS +150.000 GS</span>
+    <span class="ticker-item">ENVÍO GRATIS +150.000 GS</span>
     <span class="ticker-dot">·</span>
   </div>
 </div>
 
 
 <!-- ============================================================
-     FEATURES BAR — 4 beneficios de marca
+     FEATURES BAR — 4 beneficios
      ============================================================ -->
 <div class="features-bar">
   <div class="features-grid">
@@ -239,7 +218,7 @@
 
 
 <!-- ============================================================
-     DESTACADOS — 4 productos con estrellas
+     DESTACADOS — 4 productos
      ============================================================ -->
 <section id="destacados">
   <div class="destacados-inner">
@@ -265,8 +244,8 @@
   <div class="cbanner-left">
     <div class="cbanner-small">— COLECCIÓN —</div>
     <div class="cbanner-main">TEMPORADA</div>
-    <div class="cbanner-year">✦ 2025 ✦</div>
-    <p style="font-size:0.82rem;color:var(--muted);line-height:1.75;max-width:360px;margin-bottom:0">Jeans, remeras y camperas pensados para el caballero paraguayo que no hace concesiones al estilo.</p>
+    <div class="cbanner-year">★ 2025 ★</div>
+    <div class="cbanner-ornament">★</div>
     <a href="#coleccion" class="btn-hero" style="margin-top:2rem;display:inline-block">VER COLECCIÓN</a>
   </div>
   <div class="cbanner-right">
@@ -276,7 +255,7 @@
 
 
 <!-- ============================================================
-     COLECCIÓN COMPLETA — grid con filtros
+     COLECCIÓN COMPLETA — grid con filtros (funcional, oculto visualmente)
      ============================================================ -->
 <section id="coleccion">
   <div class="coleccion-inner">
@@ -336,7 +315,7 @@
 
 
 <!-- ============================================================
-     CATEGORÍAS — 4 cards
+     CATEGORÍAS — 4 cards con overlay
      ============================================================ -->
 <section id="categorias">
   <div class="categorias-inner">
@@ -355,7 +334,7 @@
         </div>
       </a>
 
-      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('HMMR Jeans')">
+      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('Remeras')">
         <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80" alt="Remeras HMMR" />
         <div class="cat-overlay">
           <span class="cat-name">Remeras</span>
@@ -363,7 +342,7 @@
         </div>
       </a>
 
-      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('HMMR Jeans')">
+      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('Camperas')">
         <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&q=80" alt="Camperas HMMR" />
         <div class="cat-overlay">
           <span class="cat-name">Camperas</span>
@@ -371,7 +350,7 @@
         </div>
       </a>
 
-      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('HMMR Jeans')">
+      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('Accesorios')">
         <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&q=80" alt="Accesorios HMMR" />
         <div class="cat-overlay">
           <span class="cat-name">Accesorios</span>
@@ -399,7 +378,7 @@
         diseños modernos que marcan tendencia. Somos una marca paraguaya que
         viste a los caballeros que quieren destacar.
       </p>
-      <a href="#contacto" style="display:inline-block;border:1px solid rgba(255,255,255,0.35);color:#fff;padding:13px 28px;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:all 0.2s">CONOCÉ NUESTRA HISTORIA</a>
+      <a href="#contacto" class="btn-historia">CONOCÉ NUESTRA HISTORIA</a>
     </div>
 
     <div class="nos-img">
@@ -416,7 +395,7 @@
 <section id="instagram">
   <div class="insta-outer">
 
-    <div>
+    <div class="insta-main">
       <p class="insta-section-title">SEGUINOS EN INSTAGRAM</p>
       <p class="insta-handle-label">@hmmrjeans</p>
       <div class="insta-grid">
@@ -437,7 +416,7 @@
 
     <div class="wa-help">
       <h3 class="wa-help-title">¿NECESITÁS AYUDA?</h3>
-      <p class="wa-help-sub">Nuestro equipo está disponible para asesorarte en tu compra, consultas de talles, envíos y más.</p>
+      <p class="wa-help-sub">Escribinos por WhatsApp y te ayudamos.</p>
       <a href="https://wa.me/595981000001?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda"
          target="_blank" rel="noopener" class="btn-wa">
         <i class="fab fa-whatsapp"></i> ESCRIBIR POR WHATSAPP
@@ -449,7 +428,7 @@
 
 
 <!-- ============================================================
-     NEWSLETTER — barra horizontal
+     NEWSLETTER BAR
      ============================================================ -->
 <div class="newsletter-bar">
   <div class="newsletter-bar-inner">
@@ -473,7 +452,7 @@
   <div class="footer-top">
 
     <div class="footer-brand-col">
-      <a href="#hero" class="nav-logo" style="margin-bottom:1.2rem;display:inline-flex">
+      <a href="#hero" class="nav-logo footer-logo-link">
         <div class="logo-brand">
           <svg class="logo-hammer" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <rect x="9" y="11" width="10" height="6" rx="1" transform="rotate(-45 14 14)"/>
@@ -481,9 +460,11 @@
           </svg>
           <span class="logo-hmmr">HMMR</span>
         </div>
-        <span style="font-size:0.7rem;letter-spacing:4px;color:rgba(255,255,255,0.5);text-transform:uppercase;font-family:var(--ff-display);display:block;margin-top:2px">JEANS</span>
+        <div class="logo-jeans-row">
+          <span class="logo-jeans">JEANS</span>
+        </div>
         <div class="logo-sub">Originalmente Nacional</div>
-        <div class="logo-stripe" style="margin-top:4px"><span></span><span></span><span></span></div>
+        <div class="logo-stripe"><span></span><span></span><span></span></div>
       </a>
     </div>
 
@@ -513,7 +494,7 @@
 
     <div>
       <p class="footer-col-title">CONTACTO</p>
-      <a href="https://wa.me/595981723456" target="_blank" rel="noopener" class="footer-lnk">+595 981 723 456</a>
+      <a href="https://wa.me/595981123456" target="_blank" rel="noopener" class="footer-lnk">+595 981 123 456</a>
       <a href="mailto:hola@hmmrjeans.com" class="footer-lnk">hola@hmmrjeans.com</a>
       <p class="footer-lnk" style="cursor:default">Asunción, Paraguay</p>
       <div class="social-row" style="margin-top:12px">
@@ -526,12 +507,8 @@
   </div>
 
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 HMMR Jeans. Todos los derechos reservados.</p>
+    <p class="footer-copy">© 2025 HMMR JEANS. Todos los derechos reservados.</p>
     <p class="footer-dev">DESARROLLADO EN PARAGUAY 🇵🇾</p>
-    <div class="footer-legal">
-      <a href="#">Términos</a>
-      <a href="#">Privacidad</a>
-    </div>
   </div>
 </footer>
 
@@ -664,13 +641,13 @@
 
 
 <!-- ============================================================
-     CONTACTO — formulario
+     CONTACTO — formulario (oculto, funcional)
      ============================================================ -->
 <section id="contacto" style="display:none">
   <form id="form-contacto"></form>
 </section>
 
 
-<script src="assets/js/main.js?v=10"></script>
+<script src="assets/js/main.js?v=11"></script>
 </body>
 </html>
