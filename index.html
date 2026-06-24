@@ -3,350 +3,355 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HMMR Jeans — Moda que Habla por Sí Sola</title>
-  <meta name="description" content="HMMR Jeans: la mejor ropa denim de calidad premium. Colecciones para hombre y mujer." />
+  <title>HMMR Jeans — Denim que Define</title>
+  <meta name="description" content="HMMR Jeans: denim premium para hombre y mujer. Calidad, corte y estilo sin compromisos." />
 
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            'marino':  '#0A1F44',
-            'dorado':  '#C79A3B',
-            'rojo':    '#C8102E',
-            'marron':  '#8B5A2B',
-          },
-          fontFamily: {
-            'playfair': ['"Playfair Display"', 'serif'],
-          }
-        }
-      }
-    }
-  </script>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
-
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
-  <!-- Estilos personalizados HMMR -->
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-
 <body>
 
-<!-- =============================================
+<!-- ============================================================
      NAVBAR
-     ============================================= -->
+     ============================================================ -->
 <nav id="navbar">
-  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
-    <!-- Logo -->
+  <div class="nav-inner">
     <a href="#hero" class="nav-logo">HM<span>M</span>R</a>
 
-    <!-- Links desktop -->
-    <div class="hidden md:flex items-center gap-8">
+    <div class="nav-links">
       <a href="#categorias" class="nav-link">Categorías</a>
       <a href="#coleccion"  class="nav-link">Colección</a>
-      <a href="#promo"      class="nav-link">Promociones</a>
+      <a href="#promo"      class="nav-link">Ofertas</a>
       <a href="#nosotros"   class="nav-link">Nosotros</a>
       <a href="#contacto"   class="nav-link">Contacto</a>
     </div>
 
-    <!-- Acciones -->
-    <div class="hidden md:flex items-center gap-4">
-      <button class="text-white/60 hover:text-white transition" title="Buscar"><i class="fas fa-search"></i></button>
-      <button class="text-white/60 hover:text-dorado transition text-lg" title="Carrito"><i class="fas fa-shopping-bag"></i></button>
-      <a href="#coleccion" class="btn-primary-hmmr text-sm py-2 px-5">Ver Colección</a>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" title="Buscar"><i class="fas fa-search"></i></button>
+      <button class="nav-icon-btn" title="Carrito"><i class="fas fa-shopping-bag"></i></button>
+      <a href="#coleccion" class="nav-cta">Ver Colección</a>
     </div>
 
-    <!-- Hamburguesa móvil -->
-    <button id="menu-btn" class="md:hidden text-white text-xl">
+    <button id="menu-btn" class="hamburger" aria-label="Menú">
       <i class="fas fa-bars"></i>
     </button>
   </div>
 
-  <!-- Menú móvil -->
-  <div id="mobile-menu" class="hidden md:hidden bg-marino/98 mt-2 px-6 pb-6 pt-2 flex flex-col gap-4 border-t border-white/10">
-    <a href="#categorias" class="nav-link">Categorías</a>
-    <a href="#coleccion"  class="nav-link">Colección</a>
-    <a href="#promo"      class="nav-link">Promociones</a>
-    <a href="#nosotros"   class="nav-link">Nosotros</a>
-    <a href="#contacto"   class="nav-link">Contacto</a>
-    <a href="#coleccion" class="btn-primary-hmmr text-center mt-2">Ver Colección</a>
+  <div id="mobile-menu">
+    <a href="#categorias" class="mobile-link">Categorías</a>
+    <a href="#coleccion"  class="mobile-link">Colección</a>
+    <a href="#promo"      class="mobile-link">Ofertas</a>
+    <a href="#nosotros"   class="mobile-link">Nosotros</a>
+    <a href="#contacto"   class="mobile-link">Contacto</a>
+    <a href="#coleccion"  class="mobile-cta">Ver Colección →</a>
   </div>
 </nav>
 
 
-<!-- =============================================
+<!-- ============================================================
      HERO
-     ============================================= -->
+     ============================================================ -->
 <section id="hero">
-  <div class="hero-bg-pattern"></div>
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center pt-36 pb-28 md:py-0 relative z-10">
 
-    <!-- Texto -->
-    <div>
-      <span class="hero-badge">Nueva Colección 2025</span>
-      <h1 class="hero-title">
-        El Denim<br/>que Te<br/><span class="accent">Define.</span>
-      </h1>
-      <p class="hero-subtitle">
-        Cada prenda HMMR es crafteada con telas premium, cortes precisos y un estilo que habla por sí solo.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#coleccion" class="btn-primary-hmmr">
-          <i class="fas fa-shopping-bag mr-2"></i> Comprar Ahora
-        </a>
-        <a href="#nosotros" class="btn-outline-hmmr">
-          Nuestra Historia
-        </a>
-      </div>
+  <!-- Contenido izquierdo -->
+  <div class="hero-content-side">
+    <span class="hero-eyebrow">Nueva Colección 2025</span>
 
-      <!-- Stats -->
-      <div class="hero-stats grid grid-cols-3 gap-6">
-        <div>
-          <div class="stat-number">8K+</div>
-          <div class="stat-label">Clientes</div>
-        </div>
-        <div>
-          <div class="stat-number">120+</div>
-          <div class="stat-label">Modelos</div>
-        </div>
-        <div>
-          <div class="stat-number">5★</div>
-          <div class="stat-label">Valoración</div>
-        </div>
-      </div>
+    <h1 class="hero-h1">
+      El<br/>
+      Denim<br/>
+      que Te<br/>
+      <em>Define.</em>
+    </h1>
+
+    <p class="hero-desc">
+      Cada prenda HMMR es construida con telas premium, cortes precisos
+      y un estilo que habla por sí solo.
+    </p>
+
+    <div class="hero-btns">
+      <a href="#coleccion" class="btn-primary">
+        <i class="fas fa-shopping-bag"></i> Comprar Ahora
+      </a>
+      <a href="#nosotros" class="btn-ghost">Nuestra Historia</a>
     </div>
 
-    <!-- Imagen hero -->
-    <div class="relative hidden md:block">
-      <div class="absolute -inset-4 rounded-full" style="background:radial-gradient(circle, rgba(199,154,59,0.12) 0%, transparent 70%)"></div>
-      <img
-        src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80"
-        alt="HMMR Jeans modelo principal"
-        class="w-full rounded-sm object-cover"
-        style="height:580px;object-position:top"
-      />
-      <!-- Flotante precio -->
-      <div class="absolute bottom-8 -left-6 bg-dorado text-marino px-5 py-3 rounded font-bold shadow-xl">
-        <span class="text-xs uppercase tracking-widest block">Desde</span>
-        <span class="text-2xl font-black" style="font-family:'Playfair Display',serif">$74.900</span>
+    <div class="hero-stats">
+      <div>
+        <span class="stat-num">8K+</span>
+        <span class="stat-lbl">Clientes</span>
       </div>
-      <!-- Flotante garantía -->
-      <div class="absolute top-8 -right-4 bg-marino border border-dorado/30 text-white px-4 py-3 rounded text-center shadow-xl">
-        <i class="fas fa-shield-alt text-dorado text-xl mb-1 block"></i>
-        <span class="text-xs uppercase tracking-widest">Garantía</span><br/>
-        <span class="text-xs text-dorado">30 días</span>
+      <div>
+        <span class="stat-num">120+</span>
+        <span class="stat-lbl">Modelos</span>
+      </div>
+      <div>
+        <span class="stat-num">5★</span>
+        <span class="stat-lbl">Valoración</span>
       </div>
     </div>
-
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="hero-scroll">
-    <i class="fas fa-chevron-down"></i>
-    <span>Scroll</span>
+  <!-- Imagen derecha -->
+  <div class="hero-img-side">
+    <img
+      src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85"
+      alt="HMMR Jeans — Denim Premium"
+    />
+    <div class="hero-img-overlay"></div>
+    <div class="hero-floating-badge">
+      <span class="price-from">Desde</span>
+      <span class="price-val">$74.900</span>
+    </div>
   </div>
+
 </section>
 
 
-<!-- =============================================
-     BANNER CARACTERÍSTICAS
-     ============================================= -->
-<div style="background:#0d2456;border-top:1px solid rgba(199,154,59,0.2);border-bottom:1px solid rgba(199,154,59,0.2)">
-  <div class="max-w-7xl mx-auto px-6 py-5 grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="flex items-center gap-3 text-sm">
-      <i class="fas fa-truck text-dorado text-lg"></i>
-      <div><span class="font-semibold text-white">Envío gratis</span><br/><span class="text-white/40 text-xs">+$50.000</span></div>
+<!-- ============================================================
+     TICKER
+     ============================================================ -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">HMMR Jeans</span>
+    <span class="ticker-item">Nueva Colección 2025</span>
+    <span class="ticker-item">Denim Premium</span>
+    <span class="ticker-item">Hecho para Durar</span>
+    <span class="ticker-item">Hombres & Mujeres</span>
+    <span class="ticker-item">Envío Gratis +$50.000</span>
+    <span class="ticker-item">HMMR Jeans</span>
+    <span class="ticker-item">Nueva Colección 2025</span>
+    <span class="ticker-item">Denim Premium</span>
+    <span class="ticker-item">Hecho para Durar</span>
+    <span class="ticker-item">Hombres & Mujeres</span>
+    <span class="ticker-item">Envío Gratis +$50.000</span>
+  </div>
+</div>
+
+
+<!-- ============================================================
+     FEATURES BAR
+     ============================================================ -->
+<div class="features-bar">
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon-wrap"><i class="fas fa-truck"></i></div>
+      <div>
+        <div class="feature-title">Envío gratis</div>
+        <div class="feature-sub">En compras +$50.000</div>
+      </div>
     </div>
-    <div class="flex items-center gap-3 text-sm">
-      <i class="fas fa-undo text-dorado text-lg"></i>
-      <div><span class="font-semibold text-white">30 días devolución</span><br/><span class="text-white/40 text-xs">Sin preguntas</span></div>
+    <div class="feature-item">
+      <div class="feature-icon-wrap"><i class="fas fa-undo"></i></div>
+      <div>
+        <div class="feature-title">30 días devolución</div>
+        <div class="feature-sub">Sin preguntas</div>
+      </div>
     </div>
-    <div class="flex items-center gap-3 text-sm">
-      <i class="fas fa-lock text-dorado text-lg"></i>
-      <div><span class="font-semibold text-white">Pago seguro</span><br/><span class="text-white/40 text-xs">SSL 256-bit</span></div>
+    <div class="feature-item">
+      <div class="feature-icon-wrap"><i class="fas fa-lock"></i></div>
+      <div>
+        <div class="feature-title">Pago seguro</div>
+        <div class="feature-sub">SSL 256-bit</div>
+      </div>
     </div>
-    <div class="flex items-center gap-3 text-sm">
-      <i class="fas fa-headset text-dorado text-lg"></i>
-      <div><span class="font-semibold text-white">Soporte 24/7</span><br/><span class="text-white/40 text-xs">WhatsApp directo</span></div>
+    <div class="feature-item">
+      <div class="feature-icon-wrap"><i class="fab fa-whatsapp"></i></div>
+      <div>
+        <div class="feature-title">Soporte 24/7</div>
+        <div class="feature-sub">WhatsApp directo</div>
+      </div>
     </div>
   </div>
 </div>
 
 
-<!-- =============================================
+<!-- ============================================================
      CATEGORÍAS
-     ============================================= -->
-<section id="categorias" class="py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <p class="section-label">Explorar</p>
-      <h2 class="section-title">Nuestras <span class="accent">Categorías</span></h2>
-      <div class="divider-gold mx-auto"></div>
+     ============================================================ -->
+<section id="categorias" style="padding: 5rem 0 0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 2rem 3rem">
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.5rem;flex-wrap:wrap;gap:1rem">
+      <div>
+        <p class="sec-label">Explorar</p>
+        <h2 class="sec-title" style="margin-top:0.5rem">Nuestras<br/>Categorías</h2>
+      </div>
+      <a href="#coleccion" class="btn-dark" style="align-self:flex-end">
+        Ver todo <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+
+  <div class="cat-grid">
+    <div class="cat-card" onclick="location.href='#coleccion'">
+      <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=700&q=80" alt="Jeans Hombre" />
+      <div class="cat-overlay">
+        <span class="cat-label-sm">Colección</span>
+        <h3 class="cat-name">Hombres</h3>
+        <span class="cat-arrow">Ver colección <i class="fas fa-arrow-right"></i></span>
+      </div>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <!-- Hombres -->
-      <div class="cat-card">
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" alt="Jeans Hombre" />
-        <div class="cat-overlay">
-          <p class="cat-label">Colección</p>
-          <h3 class="cat-name">Hombres</h3>
-          <p class="cat-count">24 productos →</p>
-        </div>
+    <div class="cat-card" onclick="location.href='#coleccion'">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=700&q=80" alt="Jeans Mujer" />
+      <div class="cat-overlay">
+        <span class="cat-label-sm">Colección</span>
+        <h3 class="cat-name">Mujeres</h3>
+        <span class="cat-arrow">Ver colección <i class="fas fa-arrow-right"></i></span>
       </div>
-      <!-- Mujeres -->
-      <div class="cat-card" style="margin-top:2rem">
-        <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=600&q=80" alt="Jeans Mujer" />
-        <div class="cat-overlay">
-          <p class="cat-label">Colección</p>
-          <h3 class="cat-name">Mujeres</h3>
-          <p class="cat-count">32 productos →</p>
-        </div>
-      </div>
-      <!-- Accesorios -->
-      <div class="cat-card">
-        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=600&q=80" alt="Accesorios" />
-        <div class="cat-overlay">
-          <p class="cat-label">Colección</p>
-          <h3 class="cat-name">Accesorios</h3>
-          <p class="cat-count">12 productos →</p>
-        </div>
+    </div>
+
+    <div class="cat-card" onclick="location.href='#coleccion'">
+      <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=700&q=80" alt="Accesorios" />
+      <div class="cat-overlay">
+        <span class="cat-label-sm">Colección</span>
+        <h3 class="cat-name">Accesorios</h3>
+        <span class="cat-arrow">Ver colección <i class="fas fa-arrow-right"></i></span>
       </div>
     </div>
   </div>
 </section>
 
 
-<!-- =============================================
+<!-- ============================================================
      COLECCIÓN / PRODUCTOS
-     ============================================= -->
-<section id="coleccion" class="py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+     ============================================================ -->
+<section id="coleccion" style="padding:5rem 0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 2rem">
+
+    <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem">
       <div>
-        <p class="section-label">Lo más vendido</p>
-        <h2 class="section-title">Nuestra <span class="accent">Colección</span></h2>
-        <div class="divider-gold"></div>
+        <p class="sec-label">Lo más vendido</p>
+        <h2 class="sec-title" style="margin-top:0.5rem">Colección<br/>2025</h2>
+        <div class="sec-divider"></div>
       </div>
-      <!-- Filtros -->
-      <div id="filtros" class="flex flex-wrap gap-2"></div>
+      <div id="filtros" class="filter-row"></div>
     </div>
 
-    <!-- Grid Productos (cargado por JS) -->
-    <div id="grid-productos" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5"></div>
+    <div id="grid-productos"></div>
     <div id="sin-resultados" class="sin-resultados">
-      <i class="fas fa-search text-dorado text-3xl mb-3 block"></i>
+      <i class="fas fa-search" style="font-size:2rem;margin-bottom:1rem;display:block;color:var(--stone)"></i>
       No hay productos en esta categoría.
     </div>
 
-    <div class="text-center mt-12">
-      <a href="#contacto" class="btn-outline-hmmr">
-        Ver toda la colección <i class="fas fa-arrow-right ml-2"></i>
+    <div style="text-align:center;margin-top:4rem">
+      <a href="#contacto" class="btn-dark">
+        Ver toda la colección <i class="fas fa-arrow-right"></i>
       </a>
     </div>
   </div>
 </section>
 
 
-<!-- =============================================
-     BANNER PROMOCIONES
-     ============================================= -->
-<section id="promo" class="py-20">
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-        <p class="section-label" style="color:rgba(255,255,255,0.7)">Oferta especial</p>
-        <h2 class="section-title text-white mb-4">Hasta <span style="color:var(--dorado)">40% OFF</span><br/>en toda la tienda</h2>
-        <p class="mb-8" style="color:rgba(255,255,255,0.7);font-size:0.95rem;line-height:1.7">
-          Aprovechá nuestra liquidación de temporada. Precios increíbles en los mejores jeans del mercado.
-          ¡Solo por tiempo limitado!
-        </p>
-        <div class="promo-countdown mb-8">
-          <div class="countdown-box"><span class="countdown-num" id="cd-dias">00</span><span class="countdown-label">Días</span></div>
-          <div class="countdown-box"><span class="countdown-num" id="cd-horas">00</span><span class="countdown-label">Horas</span></div>
-          <div class="countdown-box"><span class="countdown-num" id="cd-mins">00</span><span class="countdown-label">Min</span></div>
-          <div class="countdown-box"><span class="countdown-num" id="cd-segs">00</span><span class="countdown-label">Seg</span></div>
+<!-- ============================================================
+     PROMO BANNER
+     ============================================================ -->
+<section id="promo">
+  <div class="promo-giant-text">SALE</div>
+  <div class="promo-content">
+
+    <div>
+      <p class="sec-label" style="color:var(--copper)">Oferta especial · Tiempo limitado</p>
+      <span class="promo-off">40%<br/>OFF</span>
+      <p class="promo-subtitle">
+        Liquidación de temporada. Los mejores jeans del mercado
+        a precios que no vas a creer. Solo por tiempo limitado.
+      </p>
+
+      <div class="promo-countdown">
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-dias">00</span>
+          <span class="countdown-label">Días</span>
         </div>
-        <a href="#coleccion" class="btn-primary-hmmr" style="background:var(--blanco);color:var(--rojo)">
-          <i class="fas fa-bolt mr-2"></i> Aprovechar Oferta
-        </a>
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-horas">00</span>
+          <span class="countdown-label">Horas</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-mins">00</span>
+          <span class="countdown-label">Min</span>
+        </div>
+        <div class="countdown-box">
+          <span class="countdown-num" id="cd-segs">00</span>
+          <span class="countdown-label">Seg</span>
+        </div>
       </div>
-      <div class="hidden md:block">
-        <img
-          src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80"
-          alt="Promo HMMR"
-          class="rounded-sm w-full"
-          style="height:400px;object-fit:cover;box-shadow:0 20px 60px rgba(0,0,0,0.4)"
-        />
-      </div>
+
+      <a href="#coleccion" class="btn-primary">
+        <i class="fas fa-bolt"></i> Aprovechar Oferta
+      </a>
     </div>
+
+    <div class="promo-img-wrap">
+      <img
+        src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=700&q=80"
+        alt="Promo HMMR"
+      />
+      <div class="promo-img-tag">Hasta 40% OFF</div>
+    </div>
+
   </div>
 </section>
 
 
-<!-- =============================================
+<!-- ============================================================
      SOBRE NOSOTROS
-     ============================================= -->
-<section id="nosotros" class="py-24">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+     ============================================================ -->
+<section id="nosotros">
+  <div class="nosotros-grid">
 
-    <!-- Imagen -->
-    <div class="nosotros-img-wrap pb-8 pr-4">
+    <div class="nosotros-img-wrap">
       <img
-        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=600&q=80"
+        src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=80"
         alt="Taller HMMR"
       />
-      <div class="nosotros-badge-float">
+      <div class="nosotros-badge">
         <span class="num">10+</span>
         <span class="txt">Años de<br/>Experiencia</span>
       </div>
     </div>
 
-    <!-- Texto -->
     <div>
-      <p class="section-label">Quiénes Somos</p>
-      <h2 class="section-title mb-2">La Historia de <span class="accent">HMMR</span></h2>
-      <div class="divider-gold"></div>
-      <p class="mb-8" style="color:rgba(255,255,255,0.6);line-height:1.8;font-size:0.95rem">
-        HMMR Jeans nació de la pasión por la moda y el compromiso con la calidad. Desde nuestros inicios
-        trabajamos con los mejores proveedores de denim para ofrecerte prendas que duran, que sientan bien
-        y que te hacen sentir auténtico.
+      <p class="sec-label">Quiénes Somos</p>
+      <h2 class="sec-title" style="margin-top:0.5rem">La Historia<br/>de <em style="color:var(--copper);font-style:italic">HMMR</em></h2>
+      <div class="sec-divider"></div>
+      <p style="font-size:0.9rem;color:var(--stone);line-height:1.8;margin-top:1.75rem;margin-bottom:2.5rem;max-width:460px">
+        HMMR Jeans nació de la pasión por la moda y el compromiso con la calidad.
+        Desde nuestros inicios trabajamos con los mejores proveedores de denim para
+        ofrecerte prendas que duran, que sientan bien y que te hacen sentir auténtico.
       </p>
 
-      <div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-gem"></i></div>
+      <div class="nosotros-features">
+        <div class="nos-feature">
+          <div class="nos-icon"><i class="fas fa-gem"></i></div>
           <div>
-            <p class="feature-title">Calidad Premium</p>
-            <p class="feature-text">Usamos telas importadas con certificación de durabilidad y confort máximo.</p>
+            <p class="nos-title">Calidad Premium</p>
+            <p class="nos-text">Telas importadas con certificación de durabilidad y confort máximo.</p>
           </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-cut"></i></div>
+        <div class="nos-feature">
+          <div class="nos-icon"><i class="fas fa-cut"></i></div>
           <div>
-            <p class="feature-title">Diseño Exclusivo</p>
-            <p class="feature-text">Cada modelo es diseñado para adaptarse a tu cuerpo y estilo de vida.</p>
+            <p class="nos-title">Diseño Exclusivo</p>
+            <p class="nos-text">Cada modelo diseñado para adaptarse a tu cuerpo y estilo de vida.</p>
           </div>
         </div>
-        <div class="feature-item">
-          <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+        <div class="nos-feature">
+          <div class="nos-icon"><i class="fas fa-leaf"></i></div>
           <div>
-            <p class="feature-title">Producción Responsable</p>
-            <p class="feature-text">Procesos sustentables y comercio justo en toda nuestra cadena de producción.</p>
+            <p class="nos-title">Producción Responsable</p>
+            <p class="nos-text">Procesos sustentables y comercio justo en toda la cadena de producción.</p>
           </div>
         </div>
       </div>
 
-      <a href="#contacto" class="btn-primary-hmmr mt-2">
-        Conocé más <i class="fas fa-arrow-right ml-2"></i>
+      <a href="#contacto" class="btn-dark" style="margin-top:1rem">
+        Conocé más <i class="fas fa-arrow-right"></i>
       </a>
     </div>
 
@@ -354,218 +359,194 @@
 </section>
 
 
-<!-- =============================================
+<!-- ============================================================
      TESTIMONIOS
-     ============================================= -->
-<section id="testimonios" class="py-20">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-12">
-      <p class="section-label">Lo que dicen</p>
-      <h2 class="section-title">Nuestros <span class="accent">Clientes</span></h2>
-      <div class="divider-gold mx-auto"></div>
+     ============================================================ -->
+<section id="testimonios" style="padding:5rem 0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 2rem">
+    <div style="text-align:center;margin-bottom:3.5rem">
+      <p class="sec-label">Lo que dicen</p>
+      <h2 class="sec-title" style="margin-top:0.5rem">Nuestros Clientes</h2>
+      <div class="sec-divider" style="margin:1.25rem auto 0"></div>
     </div>
-    <div id="grid-testimonios" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-4"></div>
+    <div id="grid-testimonios" class="testi-grid"></div>
   </div>
 </section>
 
 
-<!-- =============================================
+<!-- ============================================================
      MAPA
-     ============================================= -->
-<div style="background:var(--azul-suave);border-top:1px solid rgba(199,154,59,0.15)">
+     ============================================================ -->
+<div class="mapa-wrap">
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d209715.0638025959!2d-58.70429!3d-34.61315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b09000001%3A0x6a06e2b4e0e77e8d!2sBuenos%20Aires%2C%20Argentina!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar"
-    width="100%" height="320" style="border:0;display:block;filter:invert(90%) hue-rotate(180deg)"
-    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    title="Ubicación HMMR Jeans">
   </iframe>
 </div>
 
 
-<!-- =============================================
+<!-- ============================================================
      CONTACTO
-     ============================================= -->
-<section id="contacto" class="py-24">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-14">
-      <p class="section-label">¿Hablamos?</p>
-      <h2 class="section-title">Ponete en <span class="accent">Contacto</span></h2>
-      <div class="divider-gold mx-auto"></div>
-      <p class="mt-4" style="color:rgba(255,255,255,0.5);font-size:0.9rem">
+     ============================================================ -->
+<section id="contacto">
+  <div class="contacto-inner">
+
+    <!-- Info -->
+    <div>
+      <p class="sec-label">¿Hablamos?</p>
+      <h2 class="sec-title light" style="margin-top:0.5rem">Ponete en<br/>Contacto</h2>
+      <div class="sec-divider"></div>
+      <p style="font-size:0.82rem;color:var(--stone);margin-top:1.5rem;line-height:1.8">
         Respondemos dentro de las 24 horas. ¡Estamos para ayudarte!
       </p>
-    </div>
 
-    <div class="grid md:grid-cols-2 gap-12">
-
-      <!-- Info de contacto -->
-      <div>
-        <div class="grid gap-4 mb-8">
-          <div class="contact-card">
-            <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-            <div>
-              <p class="contact-label">WhatsApp</p>
-              <p class="contact-value">+54 9 11 1234-5678</p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-            <div>
-              <p class="contact-label">Email</p>
-              <p class="contact-value">hola@hmmrjeans.com</p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-            <div>
-              <p class="contact-label">Ubicación</p>
-              <p class="contact-value">Buenos Aires, Argentina</p>
-            </div>
-          </div>
-          <div class="contact-card">
-            <div class="contact-icon"><i class="fas fa-clock"></i></div>
-            <div>
-              <p class="contact-label">Horario</p>
-              <p class="contact-value">Lun – Vie: 9:00 a 18:00</p>
-            </div>
+      <div class="contact-info-list">
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <p class="contact-lbl">WhatsApp</p>
+            <p class="contact-val">+54 9 11 1234-5678</p>
           </div>
         </div>
-
-        <!-- Redes sociales -->
-        <div>
-          <p class="section-label mb-3">Seguinos</p>
-          <div class="flex gap-3">
-            <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
-            <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <p class="contact-lbl">Email</p>
+            <p class="contact-val">hola@hmmrjeans.com</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <p class="contact-lbl">Ubicación</p>
+            <p class="contact-val">Buenos Aires, Argentina</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <p class="contact-lbl">Horario</p>
+            <p class="contact-val">Lun – Vie: 9:00 a 18:00</p>
           </div>
         </div>
       </div>
 
-      <!-- Formulario -->
-      <form id="form-contacto" novalidate>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label class="section-label block mb-2">Nombre</label>
-            <input type="text" class="form-control-hmmr" placeholder="Tu nombre" required />
-          </div>
-          <div>
-            <label class="section-label block mb-2">Email</label>
-            <input type="email" class="form-control-hmmr" placeholder="tu@email.com" required />
-          </div>
-        </div>
-        <div class="mb-4">
-          <label class="section-label block mb-2">Asunto</label>
-          <select class="form-control-hmmr" required>
-            <option value="">Seleccioná un motivo</option>
-            <option>Consulta sobre productos</option>
-            <option>Seguimiento de pedido</option>
-            <option>Cambio o devolución</option>
-            <option>Reventa / Mayorista</option>
-            <option>Otro</option>
-          </select>
-        </div>
-        <div class="mb-6">
-          <label class="section-label block mb-2">Mensaje</label>
-          <textarea class="form-control-hmmr" rows="5" placeholder="Contanos en qué podemos ayudarte..." required></textarea>
-        </div>
-        <button type="submit" class="btn-primary-hmmr w-full text-center">
-          <i class="fas fa-paper-plane mr-2"></i> Enviar Mensaje
-        </button>
-      </form>
-
+      <div class="social-row">
+        <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      </div>
     </div>
+
+    <!-- Formulario -->
+    <form id="form-contacto" class="form-hmmr" novalidate>
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-input" placeholder="Tu nombre" required />
+        </div>
+        <div class="form-field">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-input" placeholder="tu@email.com" required />
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Asunto</label>
+        <select class="form-input" required>
+          <option value="">Seleccioná un motivo</option>
+          <option>Consulta sobre productos</option>
+          <option>Seguimiento de pedido</option>
+          <option>Cambio o devolución</option>
+          <option>Reventa / Mayorista</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Mensaje</label>
+        <textarea class="form-input" rows="5" placeholder="¿En qué podemos ayudarte?" required style="resize:vertical"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">
+        <i class="fas fa-paper-plane"></i> Enviar Mensaje
+      </button>
+    </form>
+
   </div>
 </section>
 
 
-<!-- =============================================
+<!-- ============================================================
      FOOTER
-     ============================================= -->
-<footer class="pt-16 pb-8">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+     ============================================================ -->
+<footer>
+  <div class="footer-top">
 
-      <!-- Marca -->
-      <div class="md:col-span-1">
-        <div class="footer-logo mb-4">HM<span>M</span>R</div>
-        <p style="color:rgba(255,255,255,0.45);font-size:0.85rem;line-height:1.7">
-          Moda denim de calidad premium para quienes saben lo que quieren.
-        </p>
-        <div class="flex gap-3 mt-5">
-          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
-        </div>
+    <div>
+      <a href="#hero" class="footer-logo">HM<span>M</span>R</a>
+      <p class="footer-desc">
+        Moda denim de calidad premium para quienes saben lo que quieren.
+      </p>
+      <div class="social-row" style="margin-top:1.5rem">
+        <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-btn"><i class="fab fa-tiktok"></i></a>
       </div>
-
-      <!-- Tienda -->
-      <div>
-        <p class="section-label mb-4">Tienda</p>
-        <a href="#coleccion" class="footer-link">Colección Hombres</a>
-        <a href="#coleccion" class="footer-link">Colección Mujeres</a>
-        <a href="#promo"     class="footer-link">Ofertas</a>
-        <a href="#"          class="footer-link">Novedades</a>
-      </div>
-
-      <!-- Info -->
-      <div>
-        <p class="section-label mb-4">Información</p>
-        <a href="#nosotros"  class="footer-link">Sobre Nosotros</a>
-        <a href="#"          class="footer-link">Cómo Comprar</a>
-        <a href="#"          class="footer-link">Envíos y Devoluciones</a>
-        <a href="#"          class="footer-link">Preguntas Frecuentes</a>
-      </div>
-
-      <!-- Newsletter -->
-      <div>
-        <p class="section-label mb-4">Newsletter</p>
-        <p class="footer-link" style="cursor:default">Recibí novedades y ofertas exclusivas.</p>
-        <div class="flex mt-3">
-          <input type="email" placeholder="tu@email.com"
-            class="form-control-hmmr text-sm py-3 rounded-r-none"
-            style="border-radius:2px 0 0 2px;flex:1" />
-          <button class="btn-primary-hmmr py-3 px-4 rounded-l-none" style="border-radius:0 2px 2px 0">
-            <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-
     </div>
 
-    <!-- Footer bottom -->
-    <div class="footer-bottom pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p style="color:rgba(255,255,255,0.3);font-size:0.8rem">
-        © 2025 HMMR Jeans. Todos los derechos reservados.
-      </p>
-      <div class="flex gap-6">
-        <a href="#" class="footer-link text-xs" style="margin-bottom:0">Términos</a>
-        <a href="#" class="footer-link text-xs" style="margin-bottom:0">Privacidad</a>
-        <a href="#" class="footer-link text-xs" style="margin-bottom:0">Cookies</a>
+    <div>
+      <p class="footer-col-title">Tienda</p>
+      <a href="#coleccion" class="footer-link">Colección Hombres</a>
+      <a href="#coleccion" class="footer-link">Colección Mujeres</a>
+      <a href="#promo"     class="footer-link">Ofertas</a>
+      <a href="#"          class="footer-link">Novedades</a>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Información</p>
+      <a href="#nosotros" class="footer-link">Sobre Nosotros</a>
+      <a href="#"         class="footer-link">Cómo Comprar</a>
+      <a href="#"         class="footer-link">Envíos y Devoluciones</a>
+      <a href="#"         class="footer-link">Preguntas Frecuentes</a>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Newsletter</p>
+      <p class="footer-link" style="cursor:default;margin-bottom:1rem">Recibí novedades y ofertas exclusivas.</p>
+      <div class="newsletter-form">
+        <input type="email" class="newsletter-input" placeholder="tu@email.com" />
+        <button class="newsletter-btn"><i class="fas fa-arrow-right"></i></button>
       </div>
     </div>
 
   </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 HMMR Jeans. Todos los derechos reservados.</p>
+    <div class="footer-legal">
+      <a href="#">Términos</a>
+      <a href="#">Privacidad</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
 </footer>
 
 
-<!-- =============================================
-     NOTIFICACIÓN CARRITO
-     ============================================= -->
+<!-- ============================================================
+     CART NOTIFICATION
+     ============================================================ -->
 <div id="cart-notification">
-  <i class="fas fa-check-circle text-marino text-xl"></i>
+  <i class="fas fa-check" style="color:var(--copper)"></i>
   <div>
-    <span class="text-xs block" style="opacity:0.7">Agregado al carrito</span>
+    <span style="font-size:0.7rem;opacity:0.6;display:block;font-weight:400">Agregado al carrito</span>
     <strong id="cart-item-name"></strong>
   </div>
 </div>
 
 <!-- BACK TO TOP -->
-<button id="backToTop" title="Volver arriba">
-  <i class="fas fa-chevron-up"></i>
-</button>
+<button id="backToTop" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
 
-<!-- BOTÓN WHATSAPP FLOTANTE -->
+<!-- WHATSAPP FLOTANTE -->
 <a id="whatsapp-float"
    href="https://wa.me/5491112345678?text=Hola%20HMMR%20Jeans%2C%20me%20interesa%20conocer%20sus%20productos%20%F0%9F%91%96"
    target="_blank" rel="noopener" title="Escribinos por WhatsApp">
@@ -573,9 +554,7 @@
   <span class="wa-tooltip">¡Escribinos!</span>
 </a>
 
-<!-- =============================================
-     MODAL PRODUCTO
-     ============================================= -->
+<!-- MODAL PRODUCTO -->
 <div id="modal-producto">
   <div class="modal-content-hmmr">
     <button class="modal-close" onclick="cerrarModal()"><i class="fas fa-times"></i></button>
@@ -584,8 +563,6 @@
 </div>
 
 
-<!-- Script principal -->
 <script src="assets/js/main.js"></script>
-
 </body>
 </html>
