@@ -3,7 +3,8 @@
   --ink:    #0A0A0A;
   --chalk:  #FAFAF8;
   --sand:   #F0EAE0;
-  --copper: #C4622D;
+  --copper: #D52B1E;   /* rojo bandera Paraguay */
+  --blue:   #002D9C;   /* azul bandera Paraguay */
   --gold:   #C49A2A;
   --stone:  #6B6560;
   --denim:  #0F1F3D;
@@ -294,10 +295,11 @@ img { display: block; }
 
 /* ===== TICKER ===== */
 .ticker-wrap {
-  background: var(--copper);
+  background: var(--blue);
   overflow: hidden;
   padding: 12px 0;
   white-space: nowrap;
+  border-top: 4px solid var(--copper);
 }
 .ticker-track {
   display: inline-flex;

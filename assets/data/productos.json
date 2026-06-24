@@ -8,7 +8,11 @@
       "precioOriginal": 119900,
       "imagen": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80",
       "descripcion": "Jean de corte slim con tela premium de alta durabilidad. Perfecto para el día a día.",
-      "colores": ["azul", "negro", "gris"],
+      "colores": [
+        "azul",
+        "negro",
+        "gris"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "30% OFF"
@@ -16,12 +20,15 @@
     {
       "id": 2,
       "nombre": "Jean Skinny Push Up",
-      "categoria": "Mujeres",
+      "categoria": "Niños",
       "precio": 79900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80",
       "descripcion": "Jean skinny con efecto push up y tela elástica premium. Moldea y estiliza tu figura.",
-      "colores": ["azul", "negro"],
+      "colores": [
+        "azul",
+        "negro"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -29,12 +36,16 @@
     {
       "id": 3,
       "nombre": "Jean Wide Leg",
-      "categoria": "Mujeres",
+      "categoria": "Niños",
       "precio": 94900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
       "descripcion": "Tendencia wide leg con caída perfecta y tela suave. El estilo que domina la temporada.",
-      "colores": ["azul claro", "blanco", "negro"],
+      "colores": [
+        "azul claro",
+        "blanco",
+        "negro"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -47,7 +58,11 @@
       "precioOriginal": 139900,
       "imagen": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80",
       "descripcion": "Jean cargo con bolsillos funcionales y estilo urbano. Para el hombre que no para.",
-      "colores": ["negro", "khaki", "azul"],
+      "colores": [
+        "negro",
+        "khaki",
+        "azul"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "28% OFF"
@@ -55,12 +70,15 @@
     {
       "id": 5,
       "nombre": "Jean Mom Vintage",
-      "categoria": "Mujeres",
+      "categoria": "Niños",
       "precio": 84900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=400&q=80",
       "descripcion": "Estilo mom vintage con lavado desgastado auténtico. Comodidad y estilo en uno.",
-      "colores": ["azul claro", "blanco roto"],
+      "colores": [
+        "azul claro",
+        "blanco roto"
+      ],
       "nuevo": false,
       "oferta": false,
       "etiqueta": null
@@ -73,7 +91,11 @@
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80",
       "descripcion": "Corte recto atemporal, ideal para cualquier ocasión. El básico que nunca falla.",
-      "colores": ["azul", "gris", "negro"],
+      "colores": [
+        "azul",
+        "gris",
+        "negro"
+      ],
       "nuevo": false,
       "oferta": false,
       "etiqueta": null
@@ -86,7 +108,10 @@
       "precioOriginal": 109900,
       "imagen": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&q=80",
       "descripcion": "Corte skinny ajustado con tela stretch de alta calidad. Estilo y comodidad garantizados.",
-      "colores": ["azul", "negro"],
+      "colores": [
+        "azul",
+        "negro"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "25% OFF"
@@ -94,12 +119,16 @@
     {
       "id": 8,
       "nombre": "Jean Flare Retro",
-      "categoria": "Mujeres",
+      "categoria": "Niños",
       "precio": 97900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1617952236317-0bd127407984?w=400&q=80",
       "descripcion": "Corte flare inspirado en los 70s con tela premium y acabado impecable.",
-      "colores": ["azul claro", "negro", "blanco roto"],
+      "colores": [
+        "azul claro",
+        "negro",
+        "blanco roto"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -112,7 +141,11 @@
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&q=80",
       "descripcion": "Corte tapered moderno, ancho arriba y ajustado en el tobillo. Tendencia urbana.",
-      "colores": ["negro", "gris", "azul"],
+      "colores": [
+        "negro",
+        "gris",
+        "azul"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -120,12 +153,16 @@
     {
       "id": 10,
       "nombre": "Jean Boyfriend",
-      "categoria": "Mujeres",
+      "categoria": "Hombres",
       "precio": 88900,
       "precioOriginal": 119900,
       "imagen": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=400&q=80",
       "descripcion": "Jean boyfriend oversized con efecto desgastado. Comodidad máxima con mucho estilo.",
-      "colores": ["azul claro", "blanco roto", "gris"],
+      "colores": [
+        "azul claro",
+        "blanco roto",
+        "gris"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "26% OFF"
@@ -138,7 +175,11 @@
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=400&q=80",
       "descripcion": "Jogger en denim elástico con puño en el tobillo. La fusión perfecta entre comodidad y estilo.",
-      "colores": ["negro", "gris", "azul"],
+      "colores": [
+        "negro",
+        "gris",
+        "azul"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -146,53 +187,61 @@
     {
       "id": 12,
       "nombre": "Jean Cintura Alta",
-      "categoria": "Mujeres",
+      "categoria": "Hombres",
       "precio": 86900,
       "precioOriginal": 109900,
       "imagen": "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=400&q=80",
       "descripcion": "Jean de cintura alta que estiliza la silueta. Tela con lycra para mayor confort.",
-      "colores": ["azul", "negro", "blanco"],
+      "colores": [
+        "azul",
+        "negro",
+        "blanco"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "21% OFF"
     }
   ],
-  "categorias": ["Todos", "Hombres", "Mujeres"],
+  "categorias": [
+    "Todos",
+    "Hombres",
+    "Niños"
+  ],
   "testimonios": [
     {
-      "nombre": "María G.",
-      "ciudad": "Buenos Aires",
-      "texto": "La calidad de los jeans HMMR es increíble. Ya compré 3 pares y siempre superan mis expectativas.",
+      "nombre": "Carlos M.",
+      "ciudad": "Asunción",
+      "texto": "Los jeans HMMR son de una calidad increíble. Ya compré 3 pares y siempre superan mis expectativas.",
       "estrellas": 5
     },
     {
-      "nombre": "Carlos R.",
-      "ciudad": "Córdoba",
+      "nombre": "Diego R.",
+      "ciudad": "Ciudad del Este",
       "texto": "El jean slim es perfecto, cómodo y con un estilo único. Los recomiendo al 100%.",
       "estrellas": 5
     },
     {
-      "nombre": "Sofía L.",
-      "ciudad": "Rosario",
-      "texto": "Me encanta el wide leg, el corte es hermoso y la tela muy suave. ¡Volveré a comprar!",
+      "nombre": "Rodrigo A.",
+      "ciudad": "Encarnación",
+      "texto": "El cargo es exactamente lo que buscaba. Calidad brutal y llegó súper rápido.",
       "estrellas": 5
     },
     {
-      "nombre": "Diego M.",
-      "ciudad": "Mendoza",
-      "texto": "El jean cargo es exactamente lo que buscaba. Calidad brutal y llegó súper rápido.",
+      "nombre": "Fernando L.",
+      "ciudad": "Luque",
+      "texto": "Orgulloso de usar una marca paraguaya. El jean tapered fit es una pasada.",
       "estrellas": 5
     },
     {
-      "nombre": "Valentina P.",
-      "ciudad": "Tucumán",
-      "texto": "El boyfriend es comodísimo y súper trendy. Ya lo pedí en dos colores distintos.",
+      "nombre": "Sebastián P.",
+      "ciudad": "Capiatá",
+      "texto": "El jogger de mi hijo llegó perfecto. Tela muy resistente y buen precio.",
       "estrellas": 5
     },
     {
       "nombre": "Martín F.",
-      "ciudad": "La Plata",
-      "texto": "El tapered fit es una pasada. Me lo puse y mis amigos me preguntaron la marca al toque.",
+      "ciudad": "Lambaré",
+      "texto": "El jean recto clásico es una joya. Mis amigos me preguntaron la marca al toque.",
       "estrellas": 5
     }
   ]
