@@ -1,0 +1,103 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Jean Clásico Slim",
+      "categoria": "Hombres",
+      "precio": 89900,
+      "precioOriginal": 119900,
+      "imagen": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80",
+      "descripcion": "Jean de corte slim con tela premium de alta durabilidad.",
+      "colores": ["azul", "negro", "gris"],
+      "nuevo": false,
+      "oferta": true,
+      "etiqueta": "30% OFF"
+    },
+    {
+      "id": 2,
+      "nombre": "Jean Skinny Push Up",
+      "categoria": "Mujeres",
+      "precio": 79900,
+      "precioOriginal": null,
+      "imagen": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80",
+      "descripcion": "Jean skinny con efecto push up y tela elástica premium.",
+      "colores": ["azul", "negro"],
+      "nuevo": true,
+      "oferta": false,
+      "etiqueta": "NUEVO"
+    },
+    {
+      "id": 3,
+      "nombre": "Jean Wide Leg",
+      "categoria": "Mujeres",
+      "precio": 94900,
+      "precioOriginal": null,
+      "imagen": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
+      "descripcion": "Tendencia wide leg con caída perfecta y tela suave.",
+      "colores": ["azul claro", "blanco", "negro"],
+      "nuevo": true,
+      "oferta": false,
+      "etiqueta": "NUEVO"
+    },
+    {
+      "id": 4,
+      "nombre": "Jean Cargo Urbano",
+      "categoria": "Hombres",
+      "precio": 99900,
+      "precioOriginal": 139900,
+      "imagen": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80",
+      "descripcion": "Jean cargo con bolsillos funcionales y estilo urbano.",
+      "colores": ["negro", "khaki", "azul"],
+      "nuevo": false,
+      "oferta": true,
+      "etiqueta": "28% OFF"
+    },
+    {
+      "id": 5,
+      "nombre": "Jean Mom Vintage",
+      "categoria": "Mujeres",
+      "precio": 84900,
+      "precioOriginal": null,
+      "imagen": "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=400&q=80",
+      "descripcion": "Estilo mom vintage con lavado desgastado auténtico.",
+      "colores": ["azul claro", "blanco roto"],
+      "nuevo": false,
+      "oferta": false,
+      "etiqueta": null
+    },
+    {
+      "id": 6,
+      "nombre": "Jean Recto Clásico",
+      "categoria": "Hombres",
+      "precio": 74900,
+      "precioOriginal": null,
+      "imagen": "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80",
+      "descripcion": "Corte recto atemporal, ideal para cualquier ocasión.",
+      "colores": ["azul", "gris", "negro"],
+      "nuevo": false,
+      "oferta": false,
+      "etiqueta": null
+    }
+  ],
+  "categorias": ["Todos", "Hombres", "Mujeres"],
+  "testimonios": [
+    {
+      "nombre": "María G.",
+      "ciudad": "Buenos Aires",
+      "texto": "La calidad de los jeans HMMR es increíble. Ya compré 3 pares y siempre superan mis expectativas.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Carlos R.",
+      "ciudad": "Córdoba",
+      "texto": "El jean slim es perfecto, cómodo y con un estilo único. Los recomiendo al 100%.",
+      "estrellas": 5
+    },
+    {
+      "nombre": "Sofía L.",
+      "ciudad": "Rosario",
+      "texto": "Me encanta el wide leg, el corte es hermoso y la tela muy suave. ¡Volveré a comprar!",
+      "estrellas": 5
+    }
+  ]
+}
