@@ -172,16 +172,212 @@ function cargarTestimonios(lista) {
   `).join('');
 }
 
+// ---- SEARCH ----
+const searchOverlay = document.getElementById('search-overlay');
+const searchInput   = document.getElementById('search-input');
+
+document.getElementById('btn-search').addEventListener('click', () => {
+  searchOverlay.classList.add('open');
+  setTimeout(() => searchInput.focus(), 100);
+  document.body.style.overflow = 'hidden';
+});
+
+document.getElementById('search-close').addEventListener('click', cerrarSearch);
+searchOverlay.addEventListener('click', e => { if (e.target === searchOverlay) cerrarSearch(); });
+
+function cerrarSearch() {
+  searchOverlay.classList.remove('open');
+  document.body.style.overflow = '';
+  searchInput.value = '';
+  document.getElementById('search-results').innerHTML = '';
+}
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  const resultsEl = document.getElementById('search-results');
+  if (!q) { resultsEl.innerHTML = ''; return; }
+
+  const found = todosProductos.filter(p =>
+    p.nombre.toLowerCase().includes(q) ||
+    p.categoria.toLowerCase().includes(q) ||
+    (p.descripcion && p.descripcion.toLowerCase().includes(q)) ||
+    p.colores.some(c => c.toLowerCase().includes(q))
+  );
+
+  if (!found.length) {
+    resultsEl.innerHTML = '<p class="search-no-results">Sin resultados para "' + searchInput.value + '"</p>';
+    return;
+  }
+  resultsEl.innerHTML = found.slice(0, 6).map(p => `
+    <div class="search-result-card" onclick="cerrarSearch();abrirModal(${p.id})">
+      <img src="${p.imagen}" alt="${p.nombre}"
+        onerror="this.src='https://via.placeholder.com/400x530/142438/C9963A?text=HMMR'">
+      <div class="search-result-info">
+        <p>${p.categoria}</p>
+        <strong>${p.nombre}</strong>
+        <span style="font-size:0.72rem;color:var(--gold);font-weight:700">${formatPrecio(precioGs(p.precio))}</span>
+      </div>
+    </div>
+  `).join('');
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    cerrarSearch();
+    cerrarCartSidebar();
+    document.getElementById('user-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+
+
+// ---- CART SIDEBAR ----
+let carrito = [];
+
+document.getElementById('btn-cart').addEventListener('click', abrirCartSidebar);
+document.getElementById('cart-close').addEventListener('click', cerrarCartSidebar);
+document.getElementById('cart-overlay-bg').addEventListener('click', cerrarCartSidebar);
+document.getElementById('cart-clear').addEventListener('click', () => {
+  carrito = [];
+  actualizarCartUI();
+});
+document.getElementById('cart-go-shop').addEventListener('click', cerrarCartSidebar);
+
+function abrirCartSidebar() {
+  document.getElementById('cart-sidebar').classList.add('open');
+  document.getElementById('cart-overlay-bg').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarCartSidebar() {
+  document.getElementById('cart-sidebar').classList.remove('open');
+  document.getElementById('cart-overlay-bg').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function actualizarCartUI() {
+  const count = carrito.reduce((s, i) => s + i.qty, 0);
+  const total = carrito.reduce((s, i) => s + i.precio * i.qty, 0);
+  const counter = document.querySelector('.nav-cart-count');
+  if (counter) counter.textContent = count;
+  document.querySelector('.cart-header-count').textContent = '(' + count + ')';
+
+  const list = document.getElementById('cart-items-list');
+  const footer = document.getElementById('cart-footer');
+  document.getElementById('cart-total-price').textContent = formatPrecio(total);
+
+  if (!carrito.length) {
+    footer.style.display = 'none';
+    list.innerHTML = `
+      <div class="cart-empty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Tu carrito está vacío</p>
+        <a href="#coleccion" class="btn-primary" style="font-size:0.7rem;padding:12px 24px" id="cart-go-shop">Ver Colección</a>
+      </div>`;
+    document.getElementById('cart-go-shop').addEventListener('click', cerrarCartSidebar);
+    return;
+  }
+
+  footer.style.display = 'block';
+  list.innerHTML = carrito.map((item, idx) => `
+    <div class="cart-item">
+      <img src="${item.imagen}" alt="${item.nombre}"
+        onerror="this.src='https://via.placeholder.com/400x530/142438/C9963A?text=HMMR'">
+      <div class="cart-item-info">
+        <p>${item.categoria}</p>
+        <strong>${item.nombre}</strong>
+        <span class="cart-item-price">${formatPrecio(item.precio)}</span>
+        <div class="cart-item-qty">
+          <button onclick="cambiarQty(${idx},-1)">−</button>
+          <span>${item.qty}</span>
+          <button onclick="cambiarQty(${idx},1)">+</button>
+        </div>
+      </div>
+      <button class="cart-item-remove" onclick="eliminarDelCarrito(${idx})"><i class="fas fa-trash-alt"></i></button>
+    </div>
+  `).join('');
+
+  // Update WhatsApp checkout link with products
+  const items = carrito.map(i => `${i.qty}x ${i.nombre}`).join(', ');
+  document.querySelector('.cart-checkout-btn').href =
+    `https://wa.me/595981000001?text=Hola%20HMMR%2C%20quiero%20pedir%3A%20${encodeURIComponent(items)}`;
+}
+
+function cambiarQty(idx, delta) {
+  carrito[idx].qty += delta;
+  if (carrito[idx].qty <= 0) carrito.splice(idx, 1);
+  actualizarCartUI();
+}
+
+function eliminarDelCarrito(idx) {
+  carrito.splice(idx, 1);
+  actualizarCartUI();
+}
+
+
 // ---- CART NOTIFICATION ----
 function agregarCarrito(nombre) {
+  const prod = todosProductos.find(p => p.nombre === nombre);
+  if (prod) {
+    const existing = carrito.find(i => i.id === prod.id);
+    if (existing) {
+      existing.qty += 1;
+    } else {
+      carrito.push({
+        id: prod.id,
+        nombre: prod.nombre,
+        categoria: prod.categoria,
+        imagen: prod.imagen,
+        precio: precioGs(prod.precio),
+        qty: 1
+      });
+    }
+    actualizarCartUI();
+  }
+
   const notif = document.getElementById('cart-notification');
   document.getElementById('cart-item-name').textContent = nombre;
   notif.classList.add('show');
-  // Update counter
-  const counter = document.querySelector('.nav-cart-count');
-  if (counter) counter.textContent = (parseInt(counter.textContent) || 0) + 1;
   setTimeout(() => notif.classList.remove('show'), 3500);
 }
+
+// ---- USER MODAL ----
+document.getElementById('btn-user').addEventListener('click', () => {
+  document.getElementById('user-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('user-modal-close').addEventListener('click', () => {
+  document.getElementById('user-modal').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.getElementById('user-modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('user-modal')) {
+    document.getElementById('user-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+});
+document.querySelectorAll('.user-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.user-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    document.getElementById('tab-login').style.display = tab.dataset.tab === 'login' ? '' : 'none';
+    document.getElementById('tab-registro').style.display = tab.dataset.tab === 'registro' ? '' : 'none';
+  });
+});
+document.querySelectorAll('.user-submit-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const label = btn.textContent.trim();
+    btn.textContent = '✓ ¡Listo!';
+    btn.style.background = '#22c55e';
+    setTimeout(() => {
+      btn.textContent = label;
+      btn.style.background = '';
+      document.getElementById('user-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }, 2000);
+  });
+});
+
 
 // ---- FAVORITES ----
 function toggleFav(btn) {
