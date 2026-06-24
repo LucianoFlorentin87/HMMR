@@ -504,6 +504,43 @@ footer {
 .modal-close:hover { background: var(--rojo); }
 
 /* ===== RESPONSIVE ===== */
+/* ===== WHATSAPP FLOTANTE ===== */
+#whatsapp-float {
+  position: fixed;
+  bottom: 5rem;
+  right: 2rem;
+  z-index: 9999;
+  width: 56px; height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 1.6rem;
+  text-decoration: none;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+#whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+}
+.wa-tooltip {
+  position: absolute;
+  right: 68px;
+  background: #25D366;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+#whatsapp-float:hover .wa-tooltip { opacity: 1; }
+
 @media (max-width: 768px) {
   .nosotros-badge-float { bottom: -10px; left: 10px; }
   .promo-countdown { gap: 0.75rem; }
