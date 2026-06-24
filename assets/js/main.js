@@ -575,8 +575,15 @@ function initHeroSlider() {
 }
 
 // ---- INIT ----
-document.addEventListener('DOMContentLoaded', () => {
+// Script is deferred (end of body), DOM is already ready — run directly
+function init() {
   cargarProductos();
   initCountdown();
   initHeroSlider();
-});
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', init);
+} else {
+  init();
+}

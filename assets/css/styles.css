@@ -219,19 +219,28 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* --- HERO --- */
 #hero {
-  height: 100vh; min-height: 640px;
   position: relative; overflow: hidden;
-  display: flex; align-items: center;
   background: var(--navy-deep);
 }
-.hero-bg {
-  position: absolute; inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1617952236317-0bd127407984?w=1600&q=85');
-  background-size: cover; background-position: center top;
-  transform: scale(1.06);
-  animation: heroZoom 8s var(--ease) forwards;
+
+/* --- HERO SLIDER --- */
+.hero-slider { position: relative; width: 100%; }
+
+.hero-slide {
+  display: none;
+  position: relative;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center top;
+  background-image: var(--slide-bg);
+  align-items: center;
 }
-@keyframes heroZoom { to { transform: scale(1); } }
+.hero-slide.active {
+  display: flex;
+  animation: heroFadeIn 0.7s ease both;
+}
+@keyframes heroFadeIn { from { opacity:0; } to { opacity:1; } }
+
 .hero-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
@@ -243,7 +252,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 .hero-stripe {
   position: absolute; bottom: 0; left: 0; right: 0;
-  height: 4px; display: flex;
+  height: 4px; display: flex; z-index: 2;
 }
 .hero-stripe span:nth-child(1) { flex: 1; background: var(--red); }
 .hero-stripe span:nth-child(2) { flex: 1; background: var(--white); }
@@ -1204,28 +1213,6 @@ footer { background: #060c14; border-top: 1px solid rgba(255,255,255,0.05); }
   #cart-sidebar { width: 100%; max-width: 100%; right: -100%; }
 }
 
-
-/* ============================================================
-   HERO SLIDER
-   ============================================================ */
-#hero { position: relative; overflow: hidden; }
-
-.hero-slider { position: relative; width: 100%; }
-
-.hero-slide {
-  display: none;
-  position: relative;
-  min-height: 100vh;
-  background-image: var(--slide-bg);
-  background-size: cover;
-  background-position: center;
-}
-.hero-slide.active { display: block; }
-.hero-slide.slide-in  { animation: slideIn 0.6s ease forwards; }
-.hero-slide.slide-out { animation: slideOut 0.6s ease forwards; }
-
-@keyframes slideIn  { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
-@keyframes slideOut { from { opacity:1; transform:translateX(0); } to { opacity:0; transform:translateX(-60px); } }
 
 .hero-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
