@@ -65,7 +65,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   text-transform: uppercase;
   font-weight: var(--fw-semi);
   position: relative;
-  z-index: 1001;
+  z-index: 1002;
+  width: 100%;
 }
 #announcement-bar em { color: var(--gold); font-style: normal; }
 #announcement-bar .ann-close {
@@ -77,18 +78,18 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* --- NAVBAR --- */
 #navbar {
-  position: fixed; top: 0; width: 100%; z-index: 1000;
+  position: fixed; top: 0; width: 100%; z-index: 1001;
   transition: all var(--t-med) var(--ease);
   padding: 0;
 }
 #navbar.has-bar { top: 37px; }
 #navbar.scrolled { box-shadow: 0 2px 24px rgba(0,0,0,0.18); }
 .nav-top {
-  background: rgba(13,27,42,0.0);
+  background: rgba(13,27,42,0.85);
+  backdrop-filter: blur(12px);
   transition: background var(--t-med) var(--ease);
 }
-#navbar.scrolled .nav-top,
-#navbar.light-nav .nav-top { background: rgba(13,27,42,0.97); backdrop-filter: blur(20px); }
+#navbar.scrolled .nav-top { background: rgba(13,27,42,0.97); backdrop-filter: blur(20px); }
 .nav-inner {
   max-width: 1400px; margin: 0 auto;
   padding: 0 var(--sp-4);
