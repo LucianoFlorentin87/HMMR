@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Jean Clásico Slim",
-      "categoria": "Hombres",
+      "categoria": "HMMR Jeans",
       "precio": 89900,
       "precioOriginal": 119900,
       "imagen": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80",
@@ -20,7 +20,7 @@
     {
       "id": 2,
       "nombre": "Jean Skinny Push Up",
-      "categoria": "Niños",
+      "categoria": "HMMR Jeans",
       "precio": 79900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80",
@@ -36,7 +36,7 @@
     {
       "id": 3,
       "nombre": "Jean Wide Leg",
-      "categoria": "Niños",
+      "categoria": "HMMR Jeans",
       "precio": 94900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
@@ -53,7 +53,7 @@
     {
       "id": 4,
       "nombre": "Jean Cargo Urbano",
-      "categoria": "Hombres",
+      "categoria": "HMMR Jeans",
       "precio": 99900,
       "precioOriginal": 139900,
       "imagen": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80",
@@ -70,7 +70,7 @@
     {
       "id": 5,
       "nombre": "Jean Mom Vintage",
-      "categoria": "Niños",
+      "categoria": "HMMR Jeans",
       "precio": 84900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=400&q=80",
@@ -86,7 +86,7 @@
     {
       "id": 6,
       "nombre": "Jean Recto Clásico",
-      "categoria": "Hombres",
+      "categoria": "HMMR Jeans",
       "precio": 74900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80",
@@ -103,7 +103,7 @@
     {
       "id": 7,
       "nombre": "Jean Skinny Clásico",
-      "categoria": "Hombres",
+      "categoria": "HMMR Jeans",
       "precio": 82900,
       "precioOriginal": 109900,
       "imagen": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&q=80",
@@ -119,7 +119,7 @@
     {
       "id": 8,
       "nombre": "Jean Flare Retro",
-      "categoria": "Niños",
+      "categoria": "HMMR Jeans",
       "precio": 97900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1617952236317-0bd127407984?w=400&q=80",
@@ -136,7 +136,7 @@
     {
       "id": 9,
       "nombre": "Jean Tapered Fit",
-      "categoria": "Hombres",
+      "categoria": "HMMR Jeans",
       "precio": 91900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&q=80",
@@ -153,7 +153,7 @@
     {
       "id": 10,
       "nombre": "Jean Boyfriend",
-      "categoria": "Hombres",
+      "categoria": "Doom Free",
       "precio": 88900,
       "precioOriginal": 119900,
       "imagen": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=400&q=80",
@@ -170,7 +170,7 @@
     {
       "id": 11,
       "nombre": "Jean Jogger Denim",
-      "categoria": "Hombres",
+      "categoria": "Doom Free",
       "precio": 95900,
       "precioOriginal": null,
       "imagen": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=400&q=80",
@@ -187,7 +187,7 @@
     {
       "id": 12,
       "nombre": "Jean Cintura Alta",
-      "categoria": "Hombres",
+      "categoria": "Doom Free",
       "precio": 86900,
       "precioOriginal": 109900,
       "imagen": "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=400&q=80",
@@ -204,8 +204,8 @@
   ],
   "categorias": [
     "Todos",
-    "Hombres",
-    "Niños"
+    "HMMR Jeans",
+    "Doom Free"
   ],
   "testimonios": [
     {
