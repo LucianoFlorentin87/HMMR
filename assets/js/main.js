@@ -97,19 +97,21 @@ function renderProductos(lista, containerId = 'grid-productos') {
 
     return `
     <div class="prod-card" data-id="${p.id}">
-      <div class="prod-img">
-        ${badge}
-        <img src="${src}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
-        <div class="prod-actions">
-          <button class="prod-action-btn" onclick="abrirModal(${p.id})">
-            <i class="fas fa-eye"></i> Ver
-          </button>
-          <button class="prod-action-btn" onclick="abrirModal(${p.id})">
-            <i class="fas fa-shopping-bag"></i> Añadir
-          </button>
-          <button class="prod-action-btn fav" onclick="toggleFav(this)">
-            <i class="far fa-heart"></i>
-          </button>
+      <div class="prod-img-wrap">
+        <div class="prod-img">
+          ${badge}
+          <img src="${src}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
+          <div class="prod-actions">
+            <button class="prod-action-btn" onclick="abrirModal(${p.id})">
+              <i class="fas fa-eye"></i> Ver
+            </button>
+            <button class="prod-action-btn" onclick="abrirModal(${p.id})">
+              <i class="fas fa-shopping-bag"></i> Añadir
+            </button>
+            <button class="prod-action-btn fav" onclick="toggleFav(this)">
+              <i class="far fa-heart"></i>
+            </button>
+          </div>
         </div>
       </div>
       <div class="prod-info">
@@ -570,9 +572,11 @@ function initProductCarousel() {
       const fallback = prod.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
       return `
         <div class="prod-card" onclick="abrirModal(${prod.id})">
-          <div class="prod-img">
-            ${badge}
-            <img src="${src}" alt="${prod.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
+          <div class="prod-img-wrap">
+            <div class="prod-img">
+              ${badge}
+              <img src="${src}" alt="${prod.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
+            </div>
           </div>
           <div class="prod-info">
             <h3 class="prod-name">${prod.nombre}</h3>
