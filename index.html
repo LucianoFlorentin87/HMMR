@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=4" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=5" />
 </head>
 <body>
 
@@ -220,29 +220,25 @@
     <div class="feature-item">
       <div class="feat-icon"><i class="fas fa-truck"></i></div>
       <div>
-        <div class="feat-title">Envío Gratis</div>
-        <div class="feat-sub">+150.000 Gs en compras</div>
+        <div class="feat-title">Envío gratis a todo el País</div>
+        <div class="feat-sub">Por compra superior a Gs. 150.000 te enviamos gratis a donde estés</div>
+        <a href="#contacto" class="feat-link">Aprovechá &rsaquo;</a>
       </div>
     </div>
     <div class="feature-item">
-      <div class="feat-icon"><i class="fas fa-undo"></i></div>
+      <div class="feat-icon"><i class="fas fa-sync-alt"></i></div>
       <div>
-        <div class="feat-title">30 Días Garantía</div>
-        <div class="feat-sub">Cambio sin preguntas</div>
+        <div class="feat-title">Política de cambios</div>
+        <div class="feat-sub">Dentro de los 30 días podés cambiar el producto acercándote a tienda</div>
+        <a href="#distribuidores" class="feat-link">Ver sucursales &rsaquo;</a>
       </div>
     </div>
     <div class="feature-item">
-      <div class="feat-icon"><i class="fas fa-credit-card"></i></div>
+      <div class="feat-icon"><i class="fas fa-shield-alt"></i></div>
       <div>
-        <div class="feat-title">Pago Seguro</div>
-        <div class="feat-sub">Bancard · Tarjetas · QR</div>
-      </div>
-    </div>
-    <div class="feature-item">
-      <div class="feat-icon"><i class="fab fa-whatsapp"></i></div>
-      <div>
-        <div class="feat-title">Atención 24/7</div>
-        <div class="feat-sub">WhatsApp directo</div>
+        <div class="feat-title">Pago seguro</div>
+        <div class="feat-sub">Podés pagar con Bancard, tarjeta de crédito o en efectivo al recibir</div>
+        <a href="#contacto" class="feat-link">Confiá en HMMR &rsaquo;</a>
       </div>
     </div>
   </div>
@@ -687,6 +683,59 @@
 
 
 <!-- ============================================================
+     CARRUSEL DE PRODUCTOS — estilo Baco
+     ============================================================ -->
+<section id="carrusel-productos">
+  <div class="carousel-section-inner">
+    <div class="carousel-section-header">
+      <div>
+        <h2 class="carousel-section-title">Colección HMMR Jeans</h2>
+        <p class="carousel-section-sub">Denim premium para el hombre paraguayo que exige lo mejor.</p>
+      </div>
+      <a href="#coleccion" class="btn-ver-todo">Ver todo <i class="fas fa-arrow-right"></i></a>
+    </div>
+    <div class="prod-carousel-wrap">
+      <button class="carousel-arrow carousel-prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
+      <div class="prod-carousel" id="prodCarousel">
+        <!-- Cargado por JS -->
+      </div>
+      <button class="carousel-arrow carousel-next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
+    </div>
+    <div class="carousel-dots" id="carouselDots"></div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     NEWSLETTER — estilo Baco
+     ============================================================ -->
+<section id="newsletter-baco">
+  <div class="newsletter-baco-inner">
+    <div class="newsletter-baco-left">
+      <p class="newsletter-baco-pre">Unite a nuestra comunidad HMMR</p>
+      <h2 class="newsletter-baco-title">Recibí los descuentos</h2>
+      <p class="newsletter-baco-sub">Recibí descuentos reales, promociones anticipadas y beneficios pensados para vos.</p>
+    </div>
+    <div class="newsletter-baco-right">
+      <form class="newsletter-baco-form" onsubmit="return false">
+        <div class="newsletter-baco-input-wrap">
+          <i class="fas fa-envelope"></i>
+          <input type="email" placeholder="Correo electrónico" required>
+          <button type="submit"><i class="fas fa-arrow-right"></i></button>
+        </div>
+        <p class="newsletter-baco-legal">Podés ver los <a href="#">términos y condiciones</a></p>
+      </form>
+      <div class="newsletter-baco-socials">
+        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
      TESTIMONIOS
      ============================================================ -->
 <section id="testimonios">
@@ -1063,6 +1112,6 @@
 </div>
 
 
-<script src="assets/js/main.js?v=4"></script>
+<script src="assets/js/main.js?v=5"></script>
 </body>
 </html>

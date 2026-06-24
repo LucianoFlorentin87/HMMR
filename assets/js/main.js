@@ -141,6 +141,7 @@ async function cargarProductos() {
 
     crearFiltros(data.categorias);
     cargarTestimonios(data.testimonios);
+    initProductCarousel();
   } catch (err) {
     const g = document.getElementById('grid-productos');
     if (g) g.innerHTML = '<p style="text-align:center;padding:3rem;color:var(--gray-mid);grid-column:1/-1">No se pudieron cargar los productos.</p>';
@@ -545,6 +546,64 @@ document.querySelectorAll('section').forEach(sec => {
   sec.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
   observer.observe(sec);
 });
+
+// ---- PRODUCT CAROUSEL (estilo Baco, 4 por página) ----
+function initProductCarousel() {
+  const grid = document.getElementById('prodCarousel');
+  const dotsWrap = document.getElementById('carouselDots');
+  if (!grid || !todosProductos.length) return;
+
+  const ITEMS_PER_PAGE = 4;
+  const hmmrProds = todosProductos.filter(p => p.categoria === 'HMMR Jeans');
+  const pages = Math.ceil(hmmrProds.length / ITEMS_PER_PAGE);
+  let page = 0;
+
+  function renderPage(p) {
+    const start = p * ITEMS_PER_PAGE;
+    const slice = hmmrProds.slice(start, start + ITEMS_PER_PAGE);
+    grid.innerHTML = slice.map(prod => {
+      const badge = prod.etiqueta
+        ? `<span class="prod-badge ${prod.oferta ? 'badge-sale' : prod.nuevo ? 'badge-new' : 'badge-exclusive'}">${prod.etiqueta}</span>` : '';
+      const precioOrig = prod.precioOriginal
+        ? `<span class="price-was">${formatPrecio(precioGs(prod.precioOriginal))}</span>` : '';
+      const src = imgSrc(prod);
+      const fallback = prod.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
+      return `
+        <div class="prod-card" onclick="abrirModal(${prod.id})">
+          <div class="prod-img">
+            ${badge}
+            <img src="${src}" alt="${prod.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
+          </div>
+          <div class="prod-info">
+            <h3 class="prod-name">${prod.nombre}</h3>
+            <div class="prod-price">
+              <span class="price-now">${formatPrecio(precioGs(prod.precio))}</span>
+              ${precioOrig}
+            </div>
+          </div>
+        </div>`;
+    }).join('');
+    // update dots
+    dotsWrap.querySelectorAll('.carousel-dot').forEach((d,i) => d.classList.toggle('active', i === p));
+  }
+
+  // build dots
+  dotsWrap.innerHTML = Array.from({length: pages}, (_,i) =>
+    `<button class="carousel-dot${i===0?' active':''}" data-page="${i}"></button>`
+  ).join('');
+  dotsWrap.querySelectorAll('.carousel-dot').forEach(d =>
+    d.addEventListener('click', () => { page = +d.dataset.page; renderPage(page); })
+  );
+
+  document.getElementById('carouselPrev').addEventListener('click', () => {
+    page = (page - 1 + pages) % pages; renderPage(page);
+  });
+  document.getElementById('carouselNext').addEventListener('click', () => {
+    page = (page + 1) % pages; renderPage(page);
+  });
+
+  renderPage(0);
+}
 
 // ---- HERO SLIDER ----
 function initHeroSlider() {

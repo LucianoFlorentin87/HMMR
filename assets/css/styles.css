@@ -489,27 +489,29 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ticker-dot { color: var(--red); padding: 0 8px; }
 
 /* --- FEATURES BAR --- */
-.features-bar { background: var(--navy); }
+/* Features bar — estilo Baco: blanco, 3 columnas, ícono gris */
+.features-bar { background: #fff; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
 .features-grid {
   max-width: 1400px; margin: 0 auto;
-  display: grid; grid-template-columns: repeat(4,1fr);
-  border-left: 1px solid rgba(255,255,255,0.06);
+  display: grid; grid-template-columns: repeat(3,1fr);
 }
 .feature-item {
-  padding: var(--sp-4) var(--sp-3);
-  border-right: 1px solid rgba(255,255,255,0.06);
-  display: flex; align-items: center; gap: var(--sp-2);
-  transition: background var(--t-fast);
+  padding: 28px 32px;
+  border-right: 1px solid #eee;
+  display: flex; align-items: flex-start; gap: 18px;
+  transition: background 0.2s;
 }
-.feature-item:hover { background: rgba(201,150,58,0.05); }
+.feature-item:last-child { border-right: none; }
+.feature-item:hover { background: #fafafa; }
 .feat-icon {
-  width: 44px; height: 44px; min-width: 44px;
-  border: 1px solid rgba(201,150,58,0.25);
+  width: 52px; height: 52px; min-width: 52px;
+  background: #f4f4f4; border-radius: 8px;
   display: flex; align-items: center; justify-content: center;
-  color: var(--gold); font-size: 1rem;
+  color: var(--ink); font-size: 1.2rem; flex-shrink: 0;
 }
-.feat-title { font-size: 0.78rem; font-weight: var(--fw-bold); color: var(--white); margin-bottom: 2px; }
-.feat-sub { font-size: 0.65rem; color: rgba(255,255,255,0.4); }
+.feat-title { font-size: 0.9rem; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.feat-sub { font-size: 0.78rem; color: #666; line-height: 1.5; }
+.feat-link { font-size: 0.72rem; color: var(--ink); font-weight: 600; margin-top: 8px; display: inline-block; text-decoration: underline; }
 
 /* --- SECTION HELPERS --- */
 .sec-label {
@@ -529,64 +531,88 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .sec-divider.center { margin-left: auto; margin-right: auto; }
 
 /* --- PRODUCT CARD --- */
+/* ============================================================
+   PRODUCT CARDS — estilo Baco: blanco, redondeado, precio rojo
+   ============================================================ */
 .prod-card {
   background: var(--white);
+  border-radius: 12px;
   position: relative; overflow: hidden;
   cursor: pointer;
-  transition: box-shadow var(--t-med) var(--ease);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  border: 1px solid #f0f0f0;
 }
-.prod-card:hover { box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+.prod-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+  transform: translateY(-3px);
+}
 .prod-img {
   position: relative; aspect-ratio: 3/4; overflow: hidden;
-  background: var(--cream);
+  background: #f5f5f5;
+  border-radius: 12px 12px 0 0;
 }
 .prod-img img {
   width: 100%; height: 100%; object-fit: cover; object-position: top;
-  transition: transform var(--t-slow) var(--ease);
+  transition: transform 0.5s ease;
 }
-.prod-card:hover .prod-img img { transform: scale(1.07); }
+.prod-card:hover .prod-img img { transform: scale(1.05); }
+
+/* Badge estilo Baco — negro, pill, top-left */
 .prod-badge {
-  position: absolute; top: 12px; left: 12px;
-  padding: 5px 11px; font-size: 0.6rem; font-weight: var(--fw-black);
-  letter-spacing: 1.5px; text-transform: uppercase; z-index: 2;
+  position: absolute; top: 10px; left: 10px;
+  padding: 4px 12px; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.5px; text-transform: uppercase;
+  z-index: 2; border-radius: 20px;
 }
-.badge-new { background: var(--navy-deep); color: var(--white); }
-.badge-sale { background: var(--red); color: var(--white); }
-.badge-exclusive { background: var(--gold); color: var(--ink); }
+.badge-new      { background: var(--navy-deep); color: #fff; }
+.badge-sale     { background: #111; color: #fff; }
+.badge-exclusive{ background: var(--gold); color: var(--ink); }
+
+/* Botones hover */
 .prod-actions {
   position: absolute; bottom: 0; left: 0; right: 0;
   display: flex; transform: translateY(100%);
-  transition: transform var(--t-med) var(--ease);
+  transition: transform 0.25s ease;
   z-index: 3; background: var(--ink);
+  border-radius: 0 0 12px 12px;
 }
 .prod-card:hover .prod-actions { transform: translateY(0); }
 .prod-action-btn {
-  flex: 1; background: var(--ink); color: var(--white);
-  padding: 13px 8px; font-size: 0.62rem; font-weight: var(--fw-bold);
-  letter-spacing: 1.5px; text-transform: uppercase;
+  flex: 1; background: transparent; color: var(--white);
+  padding: 13px 8px; font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
   display: flex; align-items: center; justify-content: center; gap: 6px;
-  border-right: 1px solid rgba(255,255,255,0.08);
-  transition: background var(--t-fast);
+  border-right: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.15s;
 }
 .prod-action-btn:last-child { border-right: none; }
 .prod-action-btn:hover { background: var(--red); }
 .prod-action-btn.fav:hover { background: var(--gold); color: var(--ink); }
 .prod-action-btn.fav { flex: 0 0 48px; font-size: 0.85rem; }
+
+/* Info debajo de la imagen */
 .prod-info {
-  padding: var(--sp-2) var(--sp-2) var(--sp-3);
+  padding: 12px 14px 16px;
   background: var(--white);
 }
-.prod-brand { font-size: 0.58rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 3px; }
-.prod-name { font-family: var(--ff-display); font-size: 0.95rem; font-weight: var(--fw-bold); color: var(--ink); margin-bottom: var(--sp-1); line-height: 1.2; }
-.prod-price { display: flex; align-items: center; gap: 8px; }
-.price-now { font-size: 0.95rem; font-weight: var(--fw-black); color: var(--ink); }
-.price-was { font-size: 0.8rem; color: var(--gray-mid); text-decoration: line-through; }
-.price-save { font-size: 0.62rem; font-weight: var(--fw-bold); color: var(--red); letter-spacing: 1px; }
+.prod-brand { font-size: 0.55rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 3px; }
+.prod-name {
+  font-family: var(--ff-body); font-size: 0.88rem; font-weight: 500;
+  color: var(--ink); margin-bottom: 6px; line-height: 1.3;
+}
+.prod-price { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+/* Precio oferta en rojo como Baco */
+.price-now { font-size: 0.95rem; font-weight: 700; color: var(--red); }
+/* Cuando NO hay oferta, precio normal oscuro */
+.prod-price:not(:has(.price-was)) .price-now { color: var(--ink); }
+.price-was { font-size: 0.8rem; color: #aaa; text-decoration: line-through; }
+.price-save { font-size: 0.62rem; font-weight: 700; color: var(--red); letter-spacing: 1px; }
 .prod-colors { display: flex; gap: 5px; margin-top: 7px; }
 .color-dot {
-  width: 10px; height: 10px; border-radius: 50%;
+  width: 11px; height: 11px; border-radius: 50%;
   border: 1px solid rgba(0,0,0,0.15);
 }
+
 
 /* --- SECTION NUEVOS INGRESOS --- */
 #nuevos { background: var(--chalk); padding: var(--sp-7) 0; }
@@ -637,7 +663,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .ed-card:hover .ed-arrow { color: var(--gold); gap: 10px; }
 
 /* --- SECTION COLECCIÓN COMPLETA --- */
-#coleccion { background: var(--chalk); padding: var(--sp-7) 0; }
+#coleccion { background: #fff; padding: var(--sp-7) 0; }
 .coleccion-inner { max-width: 1400px; margin: 0 auto; padding: 0 var(--sp-4); }
 .coleccion-header {
   display: flex; align-items: flex-end; justify-content: space-between;
@@ -1473,3 +1499,150 @@ footer { background: #060c14; border-top: 1px solid rgba(255,255,255,0.05); }
 }
 .talla-btn:hover { border-color: var(--navy); }
 .talla-btn.selected { background: var(--ink); color: var(--white); border-color: var(--ink); }
+
+
+/* ============================================================
+   CARRUSEL DE PRODUCTOS — estilo Baco
+   ============================================================ */
+#carrusel-productos {
+  background: #fff;
+  padding: 60px 0 40px;
+  border-top: 1px solid #f0f0f0;
+}
+.carousel-section-inner { max-width: 1400px; margin: 0 auto; padding: 0 48px; }
+
+.carousel-section-header {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  margin-bottom: 32px; flex-wrap: wrap; gap: 12px;
+}
+.carousel-section-title {
+  font-family: var(--ff-display); font-size: 1.8rem; font-weight: 700;
+  color: var(--ink); margin-bottom: 6px;
+}
+.carousel-section-sub { font-size: 0.85rem; color: #777; }
+.btn-ver-todo {
+  font-size: 0.75rem; font-weight: 700; color: var(--ink);
+  text-decoration: underline; display: flex; align-items: center; gap: 6px;
+  transition: color 0.2s; white-space: nowrap;
+}
+.btn-ver-todo:hover { color: var(--red); }
+
+.prod-carousel-wrap {
+  position: relative;
+  display: flex; align-items: center;
+}
+.prod-carousel {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Carousel arrows — on the sides of the grid like Baco */
+.carousel-arrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px; height: 40px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.85rem; color: var(--ink); cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.2s;
+}
+.carousel-arrow:hover { background: var(--ink); color: #fff; }
+.carousel-prev { left: -20px; }
+.carousel-next { right: -20px; }
+
+/* Pagination dots */
+.carousel-dots {
+  display: flex; justify-content: center; gap: 6px;
+  margin-top: 24px;
+}
+.carousel-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #ddd; border: none; cursor: pointer; padding: 0;
+  transition: background 0.2s, transform 0.2s;
+}
+.carousel-dot.active { background: var(--ink); transform: scale(1.3); }
+
+@media (max-width: 1024px) {
+  .carousel-section-inner { padding: 0 40px; }
+  .prod-carousel { grid-template-columns: repeat(3,1fr); }
+}
+@media (max-width: 768px) {
+  .carousel-section-inner { padding: 0 24px; }
+  .prod-carousel { grid-template-columns: repeat(2,1fr); gap: 10px; }
+  .carousel-prev { left: -14px; }
+  .carousel-next { right: -14px; }
+}
+@media (max-width: 480px) {
+  .prod-carousel { grid-template-columns: 1fr 1fr; }
+}
+
+
+/* ============================================================
+   NEWSLETTER — estilo Baco: negro, dos columnas
+   ============================================================ */
+#newsletter-baco {
+  background: #111;
+  padding: 60px 0;
+}
+.newsletter-baco-inner {
+  max-width: 1400px; margin: 0 auto; padding: 0 48px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center; gap: 60px;
+}
+.newsletter-baco-pre {
+  font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.4); margin-bottom: 12px;
+}
+.newsletter-baco-title {
+  font-family: var(--ff-display); font-size: clamp(2rem,4vw,3rem);
+  font-weight: 400; color: #fff; line-height: 1.1; margin-bottom: 12px;
+}
+.newsletter-baco-sub { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+.newsletter-baco-input-wrap {
+  display: flex; align-items: center;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  padding: 0 16px;
+  margin-bottom: 10px;
+}
+.newsletter-baco-input-wrap i { color: rgba(255,255,255,0.4); margin-right: 12px; }
+.newsletter-baco-input-wrap input {
+  flex: 1; background: none; border: none; outline: none;
+  color: #fff; font-size: 0.9rem; padding: 16px 0;
+  font-family: var(--ff-body);
+}
+.newsletter-baco-input-wrap input::placeholder { color: rgba(255,255,255,0.3); }
+.newsletter-baco-input-wrap button {
+  background: none; border: none; color: rgba(255,255,255,0.6);
+  font-size: 1.1rem; cursor: pointer; padding: 4px;
+  transition: color 0.2s;
+}
+.newsletter-baco-input-wrap button:hover { color: #fff; }
+
+.newsletter-baco-legal { font-size: 0.7rem; color: rgba(255,255,255,0.3); }
+.newsletter-baco-legal a { color: rgba(255,255,255,0.5); text-decoration: underline; }
+
+.newsletter-baco-socials {
+  display: flex; gap: 12px; margin-top: 24px;
+}
+.newsletter-baco-socials a {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-size: 1rem;
+  transition: background 0.2s;
+}
+.newsletter-baco-socials a:hover { background: rgba(255,255,255,0.2); }
+
+@media (max-width: 768px) {
+  .newsletter-baco-inner { grid-template-columns: 1fr; gap: 32px; padding: 0 24px; }
+}
