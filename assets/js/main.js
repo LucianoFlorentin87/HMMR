@@ -127,6 +127,38 @@ function renderProductos(lista, containerId = 'grid-productos') {
   }).join('');
 }
 
+// ---- RENDER DESTACADOS (4 products with stars) ----
+function renderDestacados(lista) {
+  const grid = document.getElementById('destacados-grid');
+  if (!grid) return;
+  const items = lista.slice(0, 4);
+  grid.innerHTML = items.map(p => {
+    const badge = p.etiqueta
+      ? `<span class="dest-badge ${p.oferta ? 'badge-sale' : p.nuevo ? 'badge-new' : 'badge-exclusive'}">${p.etiqueta}</span>` : '';
+    const src = imgSrc(p);
+    const fallback = p.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
+    const brandLbl = p.categoria === 'Doom Free' ? 'Doom Free Design' : 'HMMR Jeans';
+    return `
+    <div class="dest-card" onclick="abrirModal(${p.id})">
+      <div class="dest-img-wrap">
+        <div class="dest-img">
+          ${badge}
+          <img src="${src}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
+        </div>
+      </div>
+      <div class="dest-info">
+        <p class="dest-brand">${brandLbl}</p>
+        <h3 class="dest-name">${p.nombre}</h3>
+        <div class="dest-stars">★★★★★ <span>(32)</span></div>
+        <div class="dest-price">${formatPrecio(precioGs(p.precio))}</div>
+        <button class="dest-add-btn" onclick="event.stopPropagation();agregarCarrito('${p.nombre}')">
+          <i class="fas fa-shopping-bag"></i> Agregar al carrito
+        </button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
 // ---- LOAD PRODUCTS ----
 async function cargarProductos() {
   try {
@@ -137,13 +169,10 @@ async function cargarProductos() {
     // Grid principal
     renderProductos(todosProductos);
 
-    // Nuevos ingresos (horizontal scroll) — solo productos nuevos
-    const nuevos = todosProductos.filter(p => p.nuevo);
-    renderProductos(nuevos.length ? nuevos : todosProductos.slice(0, 5), 'scroll-nuevos');
+    // Destacados — primeros 4 productos
+    renderDestacados(todosProductos);
 
     crearFiltros(data.categorias);
-    cargarTestimonios(data.testimonios);
-    initProductCarousel();
   } catch (err) {
     const g = document.getElementById('grid-productos');
     if (g) g.innerHTML = '<p style="text-align:center;padding:3rem;color:var(--gray-mid);grid-column:1/-1">No se pudieron cargar los productos.</p>';
@@ -518,19 +547,23 @@ function initCountdown() {
 }
 
 // ---- CONTACT FORM ----
-document.getElementById('form-contacto').addEventListener('submit', e => {
-  e.preventDefault();
-  const btn = e.target.querySelector('.btn-submit');
-  btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje enviado!';
-  btn.style.background = '#22c55e';
-  btn.style.borderColor = '#22c55e';
-  setTimeout(() => {
-    e.target.reset();
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensaje';
-    btn.style.background = '';
-    btn.style.borderColor = '';
-  }, 3500);
-});
+const formContacto = document.getElementById('form-contacto');
+if (formContacto) {
+  formContacto.addEventListener('submit', e => {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-submit');
+    if (!btn) return;
+    btn.innerHTML = '<i class="fas fa-check"></i> ¡Mensaje enviado!';
+    btn.style.background = '#22c55e';
+    btn.style.borderColor = '#22c55e';
+    setTimeout(() => {
+      e.target.reset();
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Enviar Mensaje';
+      btn.style.background = '';
+      btn.style.borderColor = '';
+    }, 3500);
+  });
+}
 
 // ---- SMOOTH SECTION REVEAL ----
 const observer = new IntersectionObserver((entries) => {
@@ -640,10 +673,8 @@ function initHeroSlider() {
 }
 
 // ---- INIT ----
-// Script is deferred (end of body), DOM is already ready — run directly
 function init() {
   cargarProductos();
-  initCountdown();
   initHeroSlider();
 }
 

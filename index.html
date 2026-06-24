@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=9" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
 </head>
 <body>
 
@@ -55,25 +55,18 @@
       <!-- LINKS DESKTOP -->
       <ul class="nav-links">
         <li class="nav-link-item">
-          <a href="#nuevos" class="nav-link">Novedades</a>
+          <a href="#destacados" class="nav-link">Novedades</a>
         </li>
         <li class="nav-link-item">
           <a href="#coleccion" class="nav-link">Colección <i class="fas fa-chevron-down"></i></a>
           <div class="nav-dropdown">
+            <a href="#destacados">Destacados</a>
             <a href="#coleccion">HMMR Jeans</a>
-            <a href="#doom-free">Doom Free Design</a>
-            <a href="#editorial">Temporada 2025</a>
-            <a href="#promo">Ofertas</a>
+            <a href="#categorias">Categorías</a>
           </div>
         </li>
         <li class="nav-link-item">
-          <a href="#promo" class="nav-link">Promociones</a>
-        </li>
-        <li class="nav-link-item">
-          <a href="#doom-free" class="nav-link">Doom Free</a>
-        </li>
-        <li class="nav-link-item">
-          <a href="#distribuidores" class="nav-link">Distribuidores</a>
+          <a href="#categorias" class="nav-link">Categorías</a>
         </li>
         <li class="nav-link-item">
           <a href="#nosotros" class="nav-link">Historia</a>
@@ -91,7 +84,7 @@
           <i class="fas fa-shopping-bag"></i>
           <span class="nav-cart-count">0</span>
         </button>
-        <a href="#coleccion" class="nav-cta">Comprar</a>
+        <a href="#destacados" class="nav-cta">Comprar</a>
       </div>
 
       <button id="menu-btn" class="hamburger" aria-label="Menú">
@@ -101,14 +94,12 @@
 
     <!-- MOBILE MENU -->
     <div id="mobile-menu">
-      <a href="#nuevos"       class="mobile-nav-item">Novedades</a>
-      <a href="#coleccion"    class="mobile-nav-item">Colección HMMR Jeans</a>
-      <a href="#doom-free"    class="mobile-nav-item">Doom Free Design</a>
-      <a href="#promo"        class="mobile-nav-item">Promociones</a>
-      <a href="#distribuidores" class="mobile-nav-item">Distribuidores</a>
-      <a href="#nosotros"     class="mobile-nav-item">Historia</a>
-      <a href="#contacto"     class="mobile-nav-item">Contacto</a>
-      <a href="#coleccion"    class="mobile-nav-cta">Comprar Ahora →</a>
+      <a href="#destacados"  class="mobile-nav-item">Novedades</a>
+      <a href="#coleccion"   class="mobile-nav-item">Colección HMMR Jeans</a>
+      <a href="#categorias"  class="mobile-nav-item">Categorías</a>
+      <a href="#nosotros"    class="mobile-nav-item">Historia</a>
+      <a href="#contacto"    class="mobile-nav-item">Contacto</a>
+      <a href="#destacados"  class="mobile-nav-cta">Comprar Ahora →</a>
     </div>
   </div>
 </nav>
@@ -128,24 +119,24 @@
       <h1 class="slide-h1">NUEVA<br><strong>COLECCIÓN</strong><br><em>HMMR JEANS</em></h1>
       <p class="slide-sub">Denim premium para el hombre paraguayo. Estilo, calidad y orgullo nacional.</p>
       <div class="slide-btns">
-        <a href="#coleccion" class="btn-primary">Comprar Ahora</a>
-        <a href="#nuevos" class="btn-ghost">Ver Novedades</a>
+        <a href="#destacados" class="btn-primary">Comprar Ahora</a>
+        <a href="#nosotros" class="btn-ghost">Conocer la Marca</a>
       </div>
     </div>
     <div class="slide-stripe"><span></span><span></span><span></span></div>
   </div>
 
-  <!-- SLIDE 2 — Doom Free -->
+  <!-- SLIDE 2 — Colección Temporada -->
   <div class="slide">
-    <img class="slide-img" src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1800&q=90" alt="Doom Free Design">
-    <div class="slide-overlay" style="background:linear-gradient(90deg,rgba(8,8,8,0.85) 0%,rgba(8,8,8,0.4) 60%,transparent 100%)"></div>
+    <img class="slide-img" src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1800&q=90" alt="Colección Temporada HMMR">
+    <div class="slide-overlay" style="background:linear-gradient(90deg,rgba(8,14,26,0.90) 0%,rgba(8,14,26,0.45) 60%,transparent 100%)"></div>
     <div class="slide-content">
-      <span class="slide-label" style="color:var(--gold)">⚡ Doom Free Design</span>
-      <h1 class="slide-h1" style="color:#fff">ESTILO<br><strong style="color:var(--gold)">SIN</strong><br><em>LÍMITES.</em></h1>
-      <p class="slide-sub">Ropa urbana exclusiva. Diseños que hablan por vos.</p>
+      <span class="slide-label" style="color:var(--gold)">Colección Temporada 2025</span>
+      <h1 class="slide-h1" style="color:#fff">DENIM<br><strong style="color:var(--gold)">PREMIUM</strong><br><em>PARA VOS.</em></h1>
+      <p class="slide-sub">Cortes modernos, telas de primera calidad y el estilo HMMR que te distingue.</p>
       <div class="slide-btns">
-        <a href="#doom-free" class="btn-primary" style="background:var(--gold);border-color:var(--gold);color:#000">Ver Doom Free</a>
-        <a href="#coleccion" class="btn-ghost">Toda la Colección</a>
+        <a href="#coleccion-banner" class="btn-primary" style="background:var(--gold);border-color:var(--gold);color:#000">Ver Colección</a>
+        <a href="#destacados" class="btn-ghost">Destacados</a>
       </div>
     </div>
     <div class="slide-stripe"><span></span><span></span><span></span></div>
@@ -160,7 +151,7 @@
       <h1 class="slide-h1"><strong style="font-size:clamp(4rem,12vw,9rem);line-height:1;color:#fff">30%</strong><br><strong>DESCUENTO</strong><br><em>EN JEANS SELECCIONADOS</em></h1>
       <p class="slide-sub">Por tiempo limitado. No te lo pierdas.</p>
       <div class="slide-btns">
-        <a href="#promo" class="btn-primary" style="background:var(--red);border-color:var(--red)">Ver Ofertas</a>
+        <a href="#destacados" class="btn-primary" style="background:var(--red);border-color:var(--red)">Ver Ofertas</a>
         <a href="#coleccion" class="btn-ghost">Ver Todo</a>
       </div>
     </div>
@@ -188,32 +179,32 @@
     <span class="ticker-dot">·</span>
     <span class="ticker-item">ORIGINALMENTE NACIONAL</span>
     <span class="ticker-dot">·</span>
-    <span class="ticker-item accent">DOOM FREE DESIGN</span>
-    <span class="ticker-dot">·</span>
-    <span class="ticker-item">COLECCIÓN 2025</span>
+    <span class="ticker-item accent">COLECCIÓN 2025</span>
     <span class="ticker-dot">·</span>
     <span class="ticker-item">DENIM PREMIUM</span>
     <span class="ticker-dot">·</span>
     <span class="ticker-item">SOLO CABALLEROS</span>
     <span class="ticker-dot">·</span>
-    <span class="ticker-item accent">🇵🇾 HMMR JEANS</span>
+    <span class="ticker-item accent">ENVÍO GRATIS +150.000 GS</span>
+    <span class="ticker-dot">·</span>
+    <span class="ticker-item">🇵🇾 HMMR JEANS</span>
     <span class="ticker-dot">·</span>
     <span class="ticker-item">ORIGINALMENTE NACIONAL</span>
     <span class="ticker-dot">·</span>
-    <span class="ticker-item accent">DOOM FREE DESIGN</span>
-    <span class="ticker-dot">·</span>
-    <span class="ticker-item">COLECCIÓN 2025</span>
+    <span class="ticker-item accent">COLECCIÓN 2025</span>
     <span class="ticker-dot">·</span>
     <span class="ticker-item">DENIM PREMIUM</span>
     <span class="ticker-dot">·</span>
     <span class="ticker-item">SOLO CABALLEROS</span>
+    <span class="ticker-dot">·</span>
+    <span class="ticker-item accent">ENVÍO GRATIS +150.000 GS</span>
     <span class="ticker-dot">·</span>
   </div>
 </div>
 
 
 <!-- ============================================================
-     FEATURES BAR
+     FEATURES BAR — 4 beneficios de marca
      ============================================================ -->
 <div class="features-bar">
   <div class="features-grid">
@@ -250,59 +241,19 @@
 
 
 <!-- ============================================================
-     CATEGORÍAS VISUALES
+     DESTACADOS — 4 productos con estrellas
      ============================================================ -->
-<section id="categorias-visuales">
-  <div class="catvis-inner">
-    <div style="text-align:center;margin-bottom:2.5rem">
-      <span class="sec-label">Explorá por estilo</span>
-      <h2 class="sec-title" style="margin-top:0.4rem">Encontrá tu Jean</h2>
-      <div class="sec-divider" style="margin:0.75rem auto 0"></div>
-    </div>
-    <div class="catvis-grid">
-      <a href="#coleccion" class="catvis-card" data-filter="slim" onclick="filtrarCategoria('HMMR Jeans')">
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" alt="Slim Fit">
-        <div class="catvis-overlay"><span class="catvis-name">Slim Fit</span><span class="catvis-sub">HMMR Jeans</span></div>
-      </a>
-      <a href="#coleccion" class="catvis-card" data-filter="cargo" onclick="filtrarCategoria('HMMR Jeans')">
-        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&q=80" alt="Cargo">
-        <div class="catvis-overlay"><span class="catvis-name">Cargo</span><span class="catvis-sub">HMMR Jeans</span></div>
-      </a>
-      <a href="#doom-free" class="catvis-card catvis-card--tall">
-        <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&q=80" alt="Doom Free">
-        <div class="catvis-overlay" style="background:linear-gradient(to top,rgba(8,8,8,0.9) 0%,transparent 60%)">
-          <span class="catvis-name" style="color:var(--gold)">Doom Free</span>
-          <span class="catvis-sub">Design Urbano</span>
-        </div>
-      </a>
-      <a href="#coleccion" class="catvis-card" onclick="filtrarCategoria('HMMR Jeans')">
-        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80" alt="Wide Leg">
-        <div class="catvis-overlay"><span class="catvis-name">Wide Leg</span><span class="catvis-sub">HMMR Jeans</span></div>
-      </a>
-      <a href="#coleccion" class="catvis-card" onclick="filtrarCategoria('HMMR Jeans')">
-        <img src="https://images.unsplash.com/photo-1617952236317-0bd127407984?w=600&q=80" alt="Flare">
-        <div class="catvis-overlay"><span class="catvis-name">Flare</span><span class="catvis-sub">HMMR Jeans</span></div>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     NUEVOS INGRESOS
-     ============================================================ -->
-<section id="nuevos">
-  <div class="nuevos-inner">
-    <div class="nuevos-header">
+<section id="destacados">
+  <div class="destacados-inner">
+    <div class="destacados-header">
       <div>
-        <span class="sec-label">Recién llegados</span>
-        <h2 class="sec-title" style="margin-top:0.4rem">Nuevos Ingresos</h2>
+        <span class="sec-label">Lo más pedido</span>
+        <h2 class="sec-title" style="margin-top:0.4rem">Destacados</h2>
         <div class="sec-divider"></div>
       </div>
-      <a href="#coleccion" class="btn-dark">Ver todo <i class="fas fa-arrow-right"></i></a>
+      <a href="#coleccion" class="btn-ver-todos">Ver todos los productos <i class="fas fa-arrow-right"></i></a>
     </div>
-
-    <div class="nuevos-scroll" id="scroll-nuevos">
+    <div id="destacados-grid" class="destacados-grid">
       <!-- Cargado por JS -->
     </div>
   </div>
@@ -310,101 +261,29 @@
 
 
 <!-- ============================================================
-     COLECCIÓN EDITORIAL
+     COLECCIÓN TEMPORADA 2025 — banner horizontal
      ============================================================ -->
-<section id="editorial">
-  <div class="editorial-inner">
-    <div style="display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem">
-      <div>
-        <span class="sec-label dark">Temporada</span>
-        <h2 class="sec-title" style="margin-top:0.4rem">Colección<br/>Invierno 2025</h2>
-        <div class="sec-divider"></div>
-      </div>
-      <p style="max-width:340px;font-size:0.85rem;color:var(--gray-mid);line-height:1.7">
-        Cortes modernos, telas de primera calidad y el estilo HMMR que te distingue donde vayas.
-      </p>
-    </div>
-
-    <div class="editorial-grid">
-
-      <div class="ed-card large" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=700&q=85" alt="HMMR Jean Slim" style="height:100%"/>
-        <div class="ed-overlay">
-          <span class="ed-tag">Más Vendido · HMMR Jeans</span>
-          <h3 class="ed-name">Jean Slim<br/>Clásico</h3>
-          <span class="ed-arrow">Explorar <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="ed-card small" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&q=85" alt="Jean Cargo" style="height:100%"/>
-        <div class="ed-overlay">
-          <span class="ed-tag">Novedades</span>
-          <h3 class="ed-name">Jean Cargo<br/>Urbano</h3>
-          <span class="ed-arrow">Explorar <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="ed-card small" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=600&q=85" alt="Jean Skinny" style="height:100%"/>
-        <div class="ed-overlay">
-          <span class="ed-tag">Exclusivo</span>
-          <h3 class="ed-name">Jean Skinny<br/>Premium</h3>
-          <span class="ed-arrow">Explorar <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="ed-card small" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=600&q=85" alt="Jean Tapered" style="height:100%"/>
-        <div class="ed-overlay">
-          <span class="ed-tag">Colección 2025</span>
-          <h3 class="ed-name">Jean Tapered<br/>Fit</h3>
-          <span class="ed-arrow">Explorar <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-      <div class="ed-card small" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&q=85" alt="Jogger Denim" style="height:100%"/>
-        <div class="ed-overlay">
-          <span class="ed-tag">Nuevo Ingreso</span>
-          <h3 class="ed-name">Jogger<br/>Denim</h3>
-          <span class="ed-arrow">Explorar <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </div>
-
-    </div>
+<div id="coleccion-banner" class="coleccion-banner">
+  <div class="coleccion-banner-text">
+    <span class="sec-label">Nueva Temporada</span>
+    <h2 class="coleccion-banner-title">COLECCIÓN<br/><em>TEMPORADA 2025</em></h2>
+    <p class="coleccion-banner-sub">Jeans, remeras y camperas pensados para el caballero paraguayo que no hace concesiones al estilo.</p>
+    <a href="#coleccion" class="btn-primary">Ver Colección <i class="fas fa-arrow-right"></i></a>
   </div>
-</section>
-
-
-<!-- ============================================================
-     BANNER INTERMEDIO
-     ============================================================ -->
-<div class="mid-banner">
-  <div class="mid-banner-bg" style="background-image:url('https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=1600&q=85')"></div>
-  <div class="mid-banner-overlay"></div>
-  <div class="mid-banner-content">
-    <span class="mid-banner-label">Colección 2025</span>
-    <h2 class="mid-banner-title">Denim que<br/><em>habla por vos.</em></h2>
-    <p class="mid-banner-sub">Calidad premium. Hecho para el hombre paraguayo que exige lo mejor.</p>
-    <a href="#coleccion" class="btn-primary">Explorar Colección <i class="fas fa-arrow-right"></i></a>
-  </div>
-  <div class="mid-banner-stats">
-    <div class="mid-banner-stat"><span>10K+</span><small>Clientes</small></div>
-    <div class="mid-banner-stat"><span>150+</span><small>Modelos</small></div>
-    <div class="mid-banner-stat"><span>5★</span><small>Valoración</small></div>
+  <div class="coleccion-banner-img">
+    <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=900&q=85" alt="Colección HMMR 2025" />
   </div>
 </div>
 
 
 <!-- ============================================================
-     COLECCIÓN COMPLETA
+     COLECCIÓN COMPLETA — grid con filtros
      ============================================================ -->
 <section id="coleccion">
   <div class="coleccion-inner">
     <div class="coleccion-header">
       <div>
-        <span class="sec-label">Catálogo</span>
+        <span class="sec-label">Catálogo completo</span>
         <h2 class="sec-title" style="margin-top:0.4rem">Toda la Colección</h2>
         <div class="sec-divider"></div>
       </div>
@@ -416,185 +295,139 @@
       <i class="fas fa-search" style="font-size:2rem;margin-bottom:1rem;display:block"></i>
       No hay productos en esta categoría.
     </div>
-
-    <div style="text-align:center;margin-top:3rem">
-      <a href="#contacto" class="btn-dark">
-        Ver catálogo completo <i class="fas fa-arrow-right"></i>
-      </a>
-    </div>
   </div>
 </section>
 
 
 <!-- ============================================================
-     DOOM FREE DESIGN
+     SERVICE BAR — beneficios de compra
      ============================================================ -->
-<section id="doom-free">
-  <div class="doom-watermark">DOOM FREE</div>
-  <div class="doom-inner">
-
-    <div class="doom-header">
-      <span class="sec-label" style="color:rgba(255,255,255,0.3);letter-spacing:6px">Segunda Marca · Diseño Exclusivo</span>
-      <h2 class="doom-logo-text" style="margin-top:0.75rem">
-        Doom Free<br/><em>Design</em>
-      </h2>
-      <p class="doom-sub">
-        Más allá del denim. Una línea creativa para el caballero que no sigue tendencias —
-        las define. Estética urbana, minimalista y sin concesiones.
-      </p>
-    </div>
-
-    <div class="doom-grid">
-
-      <div class="doom-card" style="grid-row:span 2" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=700&q=85"
-          alt="Doom Free Urban"
-          class="tall"
-          style="height:540px" />
-        <div class="doom-card-overlay">
-          <span class="doom-tag">Colección Principal</span>
-          <h3 class="doom-title">Urban<br/>Caballero</h3>
-        </div>
+<div class="service-bar">
+  <div class="service-grid">
+    <div class="service-item">
+      <div class="service-icon"><i class="fas fa-exchange-alt"></i></div>
+      <div class="service-text">
+        <div class="service-title">Cambios sin complicaciones</div>
+        <div class="service-sub">30 días para cambiar tu prenda</div>
       </div>
-
-      <div class="doom-card" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1617952236317-0bd127407984?w=600&q=85"
-          alt="Doom Free Formal"
-          class="short"
-          style="height:268px" />
-        <div class="doom-card-overlay">
-          <span class="doom-tag">Temporada</span>
-          <h3 class="doom-title">Formal Edition</h3>
-        </div>
-      </div>
-
-      <div class="doom-card" onclick="location.href='#coleccion'">
-        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=85"
-          alt="Doom Free Casual"
-          class="short"
-          style="height:268px" />
-        <div class="doom-card-overlay">
-          <span class="doom-tag">Exclusivo</span>
-          <h3 class="doom-title">Casual Chic</h3>
-        </div>
-      </div>
-
     </div>
-
-
-    <div class="doom-cta">
-      <a href="#coleccion" class="btn-light">
-        Ver Colección Doom Free <i class="fas fa-arrow-right"></i>
-      </a>
+    <div class="service-item">
+      <div class="service-icon"><i class="fas fa-lock"></i></div>
+      <div class="service-text">
+        <div class="service-title">Pagos Seguros</div>
+        <div class="service-sub">Transacciones 100% protegidas</div>
+      </div>
     </div>
-
+    <div class="service-item">
+      <div class="service-icon"><i class="fas fa-credit-card"></i></div>
+      <div class="service-text">
+        <div class="service-title">3 y 6 Cuotas</div>
+        <div class="service-sub">Sin interés con tarjetas seleccionadas</div>
+      </div>
+    </div>
+    <div class="service-item">
+      <div class="service-icon"><i class="fab fa-whatsapp"></i></div>
+      <div class="service-text">
+        <div class="service-title">Atención Personalizada</div>
+        <div class="service-sub">Respondemos por WhatsApp</div>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 
 
 <!-- ============================================================
-     PROMOCIONES
+     CATEGORÍAS — 4 cards
      ============================================================ -->
-<section id="promo">
-  <div class="promo-inner">
+<section id="categorias">
+  <div class="categorias-inner">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span class="sec-label">Explorá por estilo</span>
+      <h2 class="sec-title" style="margin-top:0.4rem">Categorías</h2>
+      <div class="sec-divider" style="margin:0.75rem auto 0"></div>
+    </div>
+    <div class="categorias-grid">
 
-    <div>
-      <span class="sec-label" style="color:rgba(255,255,255,0.4)">Oferta especial · Tiempo limitado</span>
-      <span class="promo-off">40%<br/>OFF</span>
-      <p class="promo-desc">
-        Liquidación de temporada. Los mejores jeans del mercado
-        paraguayo a precios que no vas a creer.
-      </p>
-
-      <div class="countdown">
-        <div class="cd-box">
-          <span class="cd-num" id="cd-dias">00</span>
-          <span class="cd-lbl">Días</span>
+      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" alt="Jeans HMMR" />
+        <div class="cat-overlay">
+          <span class="cat-name">Jeans</span>
+          <span class="cat-link">VER MÁS <i class="fas fa-arrow-right"></i></span>
         </div>
-        <div class="cd-box">
-          <span class="cd-num" id="cd-horas">00</span>
-          <span class="cd-lbl">Horas</span>
-        </div>
-        <div class="cd-box">
-          <span class="cd-num" id="cd-mins">00</span>
-          <span class="cd-lbl">Min</span>
-        </div>
-        <div class="cd-box">
-          <span class="cd-num" id="cd-segs">00</span>
-          <span class="cd-lbl">Seg</span>
-        </div>
-      </div>
-
-      <a href="#coleccion" class="btn-primary">
-        <i class="fas fa-bolt"></i> Aprovechar Oferta
       </a>
-    </div>
 
-    <div class="promo-img">
-      <img src="https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=700&q=85" alt="HMMR Promo" />
-      <div class="promo-img-tag">Hasta 40% OFF</div>
-    </div>
+      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80" alt="Remeras HMMR" />
+        <div class="cat-overlay">
+          <span class="cat-name">Remeras</span>
+          <span class="cat-link">VER MÁS <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
 
+      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&q=80" alt="Camperas HMMR" />
+        <div class="cat-overlay">
+          <span class="cat-name">Camperas</span>
+          <span class="cat-link">VER MÁS <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+      <a href="#coleccion" class="cat-card" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&q=80" alt="Accesorios HMMR" />
+        <div class="cat-overlay">
+          <span class="cat-name">Accesorios</span>
+          <span class="cat-link">VER MÁS <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+
+    </div>
   </div>
 </section>
 
 
 <!-- ============================================================
-     HISTORIA DE HMMR
+     NOSOTROS — texto izquierda, imagen derecha
      ============================================================ -->
 <section id="nosotros">
   <div class="nosotros-inner">
 
-    <div class="nos-img">
-      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=85" alt="Historia HMMR" />
-      <div class="nos-badge">
-        <span class="nb-num">10+</span>
-        <span class="nb-lbl">Años en el<br/>mercado</span>
-      </div>
-    </div>
-
-    <div>
+    <div class="nos-text">
       <span class="sec-label dark">Historia · Identidad</span>
       <h2 class="sec-title" style="margin-top:0.4rem">
-        La Historia de<br/>
-        <em style="font-style:italic;color:var(--red)">HMMR Jeans</em>
+        HMMR JEANS<br/>
+        <em style="font-style:italic;color:var(--gold)">Originalmente Nacional</em>
       </h2>
       <div class="sec-divider"></div>
 
-      <p style="font-size:0.88rem;color:var(--gray-mid);line-height:1.85;margin-top:1.5rem;margin-bottom:2rem;max-width:480px">
+      <p style="font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.85;margin-top:1.5rem;margin-bottom:2rem;max-width:480px">
         HMMR Jeans nació del orgullo paraguayo. Creamos indumentaria masculina de
         calidad premium con identidad propia, combinando el espíritu nacional con
         diseños modernos que marcan tendencia. Somos una marca paraguaya que
         viste a los caballeros que quieren destacar.
       </p>
 
-      <div class="nos-features">
-        <div class="nos-feature">
-          <div class="nos-icon"><i class="fas fa-gem"></i></div>
-          <div>
-            <p class="nos-feat-title">Calidad Premium</p>
-            <p class="nos-feat-text">Telas de primera selección, costuras reforzadas y acabados impecables.</p>
-          </div>
+      <div class="nos-stats">
+        <div class="nos-stat">
+          <span class="nos-stat-num">10+</span>
+          <span class="nos-stat-lbl">Años en el mercado</span>
         </div>
-        <div class="nos-feature">
-          <div class="nos-icon"><i class="fas fa-cut"></i></div>
-          <div>
-            <p class="nos-feat-title">Diseño Exclusivo</p>
-            <p class="nos-feat-text">Cortes diseñados para el cuerpo y el estilo del caballero moderno.</p>
-          </div>
+        <div class="nos-stat">
+          <span class="nos-stat-num">10K+</span>
+          <span class="nos-stat-lbl">Clientes satisfechos</span>
         </div>
-        <div class="nos-feature">
-          <div class="nos-icon"><i class="fas fa-flag"></i></div>
-          <div>
-            <p class="nos-feat-title">100% Paraguayo</p>
-            <p class="nos-feat-text">Orgullo nacional en cada prenda. Originalmente Nacional.</p>
-          </div>
+        <div class="nos-stat">
+          <span class="nos-stat-num">150+</span>
+          <span class="nos-stat-lbl">Modelos disponibles</span>
         </div>
       </div>
 
-      <a href="#contacto" class="btn-dark" style="margin-top:1.5rem">
-        Conocé más <i class="fas fa-arrow-right"></i>
+      <a href="#contacto" class="btn-primary" style="margin-top:2rem;display:inline-flex">
+        CONOCÉ NUESTRA HISTORIA <i class="fas fa-arrow-right"></i>
       </a>
+    </div>
+
+    <div class="nos-img">
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=700&q=85" alt="Historia HMMR" />
     </div>
 
   </div>
@@ -602,66 +435,60 @@
 
 
 <!-- ============================================================
-     DISTRIBUIDORES
+     INSTAGRAM + WHATSAPP HELP
      ============================================================ -->
-<section id="distribuidores">
-  <div class="dist-inner">
+<section id="instagram">
+  <div class="insta-wrap">
 
-    <div class="dist-header">
-      <span class="sec-label" style="color:rgba(255,255,255,0.35)">Paraguay · Red nacional</span>
-      <h2 class="sec-title light" style="margin-top:0.4rem">Nuestros Distribuidores</h2>
-      <div class="sec-divider gold center"></div>
-      <p style="font-size:0.82rem;color:rgba(255,255,255,0.35);max-width:500px;margin:1.25rem auto 0;line-height:1.8">
-        Encontrá HMMR Jeans y Doom Free Design en todo el país.
-        ¿Querés ser distribuidor? Escribinos.
-      </p>
-    </div>
-
-    <div class="dist-grid">
-      <div class="dist-card">
-        <div class="dist-city">Asunción</div>
-        <div class="dist-name">HMMR Store Central</div>
-        <div class="dist-address">Av. Mariscal López 1234<br/>Shopping del Sol, Local 45</div>
-        <div class="dist-phone"><i class="fas fa-phone"></i> +595 981 000 001</div>
+    <div class="insta-feed">
+      <div class="insta-header">
+        <div class="insta-handle"><i class="fab fa-instagram"></i> @hmmrjeans</div>
+        <p class="insta-sub">Seguinos para ver las últimas novedades y outfits</p>
       </div>
-      <div class="dist-card">
-        <div class="dist-city">Ciudad del Este</div>
-        <div class="dist-name">Distribuidora Oriente</div>
-        <div class="dist-address">Shopping Monalisa, Local 22<br/>Ciudad del Este</div>
-        <div class="dist-phone"><i class="fas fa-phone"></i> +595 982 000 002</div>
+      <div class="insta-grid">
+        <div class="insta-post">
+          <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=70" alt="Instagram HMMR" />
+          <div class="insta-hover"><span><i class="fas fa-heart"></i> 243</span><span><i class="fas fa-comment"></i> 18</span></div>
+        </div>
+        <div class="insta-post">
+          <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=300&q=70" alt="Instagram HMMR" />
+          <div class="insta-hover"><span><i class="fas fa-heart"></i> 198</span><span><i class="fas fa-comment"></i> 12</span></div>
+        </div>
+        <div class="insta-post">
+          <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&q=70" alt="Instagram HMMR" />
+          <div class="insta-hover"><span><i class="fas fa-heart"></i> 312</span><span><i class="fas fa-comment"></i> 27</span></div>
+        </div>
+        <div class="insta-post">
+          <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&q=70" alt="Instagram HMMR" />
+          <div class="insta-hover"><span><i class="fas fa-heart"></i> 176</span><span><i class="fas fa-comment"></i> 9</span></div>
+        </div>
+        <div class="insta-post">
+          <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=300&q=70" alt="Instagram HMMR" />
+          <div class="insta-hover"><span><i class="fas fa-heart"></i> 421</span><span><i class="fas fa-comment"></i> 34</span></div>
+        </div>
+        <div class="insta-post">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=70" alt="Instagram HMMR" />
+          <div class="insta-hover"><span><i class="fas fa-heart"></i> 289</span><span><i class="fas fa-comment"></i> 21</span></div>
+        </div>
       </div>
-      <div class="dist-card">
-        <div class="dist-city">Encarnación</div>
-        <div class="dist-name">HMMR Sur</div>
-        <div class="dist-address">Av. Costanera 567<br/>Shopping Americanas, Local 8</div>
-        <div class="dist-phone"><i class="fas fa-phone"></i> +595 983 000 003</div>
-      </div>
-      <div class="dist-card">
-        <div class="dist-city">Luque</div>
-        <div class="dist-name">Distribuidora Central</div>
-        <div class="dist-address">Shopping China Luque<br/>Planta Baja, Local 12</div>
-        <div class="dist-phone"><i class="fas fa-phone"></i> +595 984 000 004</div>
-      </div>
-      <div class="dist-card">
-        <div class="dist-city">Capiatá</div>
-        <div class="dist-name">HMMR Capiatá</div>
-        <div class="dist-address">Av. Ñu Guazú 890<br/>Galería Fashion</div>
-        <div class="dist-phone"><i class="fas fa-phone"></i> +595 985 000 005</div>
-      </div>
-      <div class="dist-card" style="border:1px solid rgba(201,150,58,0.25);background:rgba(201,150,58,0.05)">
-        <div class="dist-city" style="color:var(--gold)">¿Tu ciudad?</div>
-        <div class="dist-name">Sé distribuidor HMMR</div>
-        <div class="dist-address" style="color:rgba(255,255,255,0.5)">Sumá tu local a nuestra red de distribución nacional y vendé las mejores marcas del país.</div>
-        <a href="#contacto" style="font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);display:inline-flex;align-items:center;gap:6px;margin-top:0.5rem">
-          Contactar <i class="fas fa-arrow-right"></i>
+      <div style="text-align:center;margin-top:2rem">
+        <a href="https://instagram.com/hmmrjeans" target="_blank" rel="noopener" class="btn-insta">
+          <i class="fab fa-instagram"></i> Seguir en Instagram
         </a>
       </div>
     </div>
 
-    <div class="dist-cta">
-      <a href="#contacto" class="btn-light">
-        Quiero ser distribuidor <i class="fas fa-arrow-right"></i>
+    <div class="wa-help">
+      <div class="wa-help-icon"><i class="fab fa-whatsapp"></i></div>
+      <h3 class="wa-help-title">¿Necesitás Ayuda?</h3>
+      <p class="wa-help-sub">Nuestro equipo está disponible para asesorarte en tu compra, consultas de talles, envíos y más.</p>
+      <a href="https://wa.me/595981000001?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda"
+         target="_blank" rel="noopener" class="btn-wa-help">
+        <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
       </a>
+      <div class="wa-help-hours">
+        <i class="fas fa-clock"></i> Lun–Vie: 8:00 a 18:00
+      </div>
     </div>
 
   </div>
@@ -669,228 +496,20 @@
 
 
 <!-- ============================================================
-     CARRUSEL DE PRODUCTOS — estilo Baco
+     NEWSLETTER — barra horizontal
      ============================================================ -->
-<section id="carrusel-productos">
-  <div class="carousel-section-inner">
-    <div class="carousel-section-header">
-      <div>
-        <h2 class="carousel-section-title">Colección HMMR Jeans</h2>
-        <p class="carousel-section-sub">Denim premium para el hombre paraguayo que exige lo mejor.</p>
-      </div>
-      <a href="#coleccion" class="btn-ver-todo">Ver todo <i class="fas fa-arrow-right"></i></a>
+<div class="newsletter-bar">
+  <div class="newsletter-bar-inner">
+    <div class="newsletter-bar-text">
+      <h3 class="newsletter-bar-title">Suscribite y recibí descuentos exclusivos</h3>
+      <p class="newsletter-bar-sub">Novedades, promociones anticipadas y beneficios para suscriptores.</p>
     </div>
-    <div class="prod-carousel-wrap">
-      <button class="carousel-arrow carousel-prev" id="carouselPrev"><i class="fas fa-chevron-left"></i></button>
-      <div class="prod-carousel" id="prodCarousel">
-        <!-- Cargado por JS -->
-      </div>
-      <button class="carousel-arrow carousel-next" id="carouselNext"><i class="fas fa-chevron-right"></i></button>
-    </div>
-    <div class="carousel-dots" id="carouselDots"></div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     NEWSLETTER — estilo Baco
-     ============================================================ -->
-<section id="newsletter-baco">
-  <div class="newsletter-baco-inner">
-    <div class="newsletter-baco-left">
-      <p class="newsletter-baco-pre">Unite a nuestra comunidad HMMR</p>
-      <h2 class="newsletter-baco-title">Recibí los descuentos</h2>
-      <p class="newsletter-baco-sub">Recibí descuentos reales, promociones anticipadas y beneficios pensados para vos.</p>
-    </div>
-    <div class="newsletter-baco-right">
-      <form class="newsletter-baco-form" onsubmit="return false">
-        <div class="newsletter-baco-input-wrap">
-          <i class="fas fa-envelope"></i>
-          <input type="email" placeholder="Correo electrónico" required>
-          <button type="submit"><i class="fas fa-arrow-right"></i></button>
-        </div>
-        <p class="newsletter-baco-legal">Podés ver los <a href="#">términos y condiciones</a></p>
-      </form>
-      <div class="newsletter-baco-socials">
-        <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     TESTIMONIOS
-     ============================================================ -->
-<section id="testimonios">
-  <div class="testi-inner">
-    <div style="text-align:center;margin-bottom:3.5rem">
-      <span class="sec-label dark">Lo que dicen</span>
-      <h2 class="sec-title" style="margin-top:0.4rem">Nuestros Clientes</h2>
-      <div class="sec-divider center"></div>
-    </div>
-    <div id="grid-testimonios" class="testi-grid"></div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     INSTAGRAM FEED
-     ============================================================ -->
-<section id="instagram">
-  <div class="insta-inner">
-    <div class="insta-header">
-      <div class="insta-handle">
-        <i class="fab fa-instagram"></i> @hmmrjeans
-      </div>
-      <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);letter-spacing:1px">
-        Seguinos para ver las últimas novedades y outfits
-      </p>
-    </div>
-    <div class="insta-grid">
-      <div class="insta-post">
-        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=70" alt="Instagram HMMR" />
-        <div class="insta-hover"><span><i class="fas fa-heart"></i> 243</span><span><i class="fas fa-comment"></i> 18</span></div>
-      </div>
-      <div class="insta-post">
-        <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=300&q=70" alt="Instagram HMMR" />
-        <div class="insta-hover"><span><i class="fas fa-heart"></i> 198</span><span><i class="fas fa-comment"></i> 12</span></div>
-      </div>
-      <div class="insta-post">
-        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&q=70" alt="Instagram HMMR" />
-        <div class="insta-hover"><span><i class="fas fa-heart"></i> 312</span><span><i class="fas fa-comment"></i> 27</span></div>
-      </div>
-      <div class="insta-post">
-        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&q=70" alt="Instagram HMMR" />
-        <div class="insta-hover"><span><i class="fas fa-heart"></i> 176</span><span><i class="fas fa-comment"></i> 9</span></div>
-      </div>
-      <div class="insta-post">
-        <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=300&q=70" alt="Instagram HMMR" />
-        <div class="insta-hover"><span><i class="fas fa-heart"></i> 421</span><span><i class="fas fa-comment"></i> 34</span></div>
-      </div>
-      <div class="insta-post">
-        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=70" alt="Instagram HMMR" />
-        <div class="insta-hover"><span><i class="fas fa-heart"></i> 289</span><span><i class="fas fa-comment"></i> 21</span></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:2.5rem">
-      <a href="https://instagram.com/hmmrjeans" target="_blank" rel="noopener"
-        style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.45);font-size:0.72rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border:1px solid rgba(255,255,255,0.12);padding:12px 28px;transition:all 0.25s"
-        onmouseover="this.style.borderColor='#E1306C';this.style.color='#E1306C'"
-        onmouseout="this.style.borderColor='rgba(255,255,255,0.12)';this.style.color='rgba(255,255,255,0.45)'">
-        <i class="fab fa-instagram"></i> Seguir en Instagram
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============================================================
-     MAPA
-     ============================================================ -->
-<div class="mapa-wrap">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115871.83!2d-57.6588!3d-25.2867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x945da7d67de95285%3A0xef9c2e9e5b9d2d06!2sAsunci%C3%B3n%2C%20Paraguay!5e0!3m2!1ses!2spy!4v1700000000000"
-    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-    title="Distribuidores HMMR Jeans Paraguay">
-  </iframe>
-</div>
-
-
-<!-- ============================================================
-     CONTACTO
-     ============================================================ -->
-<section id="contacto">
-  <div class="contacto-inner">
-
-    <div>
-      <span class="sec-label" style="color:rgba(255,255,255,0.3)">¿Hablamos?</span>
-      <h2 class="sec-title light" style="margin-top:0.4rem">Ponete en<br/>Contacto</h2>
-      <div class="sec-divider gold"></div>
-      <p style="font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.8;margin-top:1.25rem">
-        Consultas, pedidos mayoristas, distribución y más.
-        Respondemos en menos de 24 horas.
-      </p>
-
-      <div class="contact-list">
-        <div class="contact-row">
-          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-          <div>
-            <p class="contact-lbl">WhatsApp</p>
-            <p class="contact-val">+595 981 000 001</p>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-          <div>
-            <p class="contact-lbl">Email</p>
-            <p class="contact-val">info@hmmrjeans.com.py</p>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-          <div>
-            <p class="contact-lbl">Sede Central</p>
-            <p class="contact-val">Asunción, Paraguay</p>
-          </div>
-        </div>
-        <div class="contact-row">
-          <div class="contact-icon"><i class="fas fa-clock"></i></div>
-          <div>
-            <p class="contact-lbl">Horario</p>
-            <p class="contact-val">Lun – Vie: 8:00 a 18:00</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="social-row" style="margin-top:1.5rem">
-        <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="social-btn" title="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="#" class="social-btn" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-
-    <form id="form-contacto" class="form-contact" novalidate>
-      <div class="form-row-2">
-        <div class="form-grp">
-          <label class="form-lbl">Nombre</label>
-          <input type="text" class="form-ctrl" placeholder="Tu nombre" required />
-        </div>
-        <div class="form-grp">
-          <label class="form-lbl">Teléfono / WhatsApp</label>
-          <input type="tel" class="form-ctrl" placeholder="+595 9XX XXX XXX" />
-        </div>
-      </div>
-      <div class="form-grp">
-        <label class="form-lbl">Email</label>
-        <input type="email" class="form-ctrl" placeholder="tu@email.com" required />
-      </div>
-      <div class="form-grp">
-        <label class="form-lbl">Motivo de consulta</label>
-        <select class="form-ctrl" required>
-          <option value="">Seleccioná</option>
-          <option>Consulta sobre productos</option>
-          <option>Pedido mayorista</option>
-          <option>Quiero ser distribuidor</option>
-          <option>Seguimiento de pedido</option>
-          <option>Doom Free Design — Diseño</option>
-          <option>Otro</option>
-        </select>
-      </div>
-      <div class="form-grp">
-        <label class="form-lbl">Mensaje</label>
-        <textarea class="form-ctrl" rows="5" placeholder="¿En qué podemos ayudarte?" required style="resize:vertical"></textarea>
-      </div>
-      <button type="submit" class="btn-submit">
-        <i class="fas fa-paper-plane"></i> Enviar Mensaje
-      </button>
+    <form class="newsletter-bar-form" onsubmit="return false">
+      <input type="email" placeholder="Tu correo electrónico" required />
+      <button type="submit">SUSCRIBIRME <i class="fas fa-arrow-right"></i></button>
     </form>
-
   </div>
-</section>
+</div>
 
 
 <!-- ============================================================
@@ -899,18 +518,16 @@
 <footer>
   <div class="footer-top">
 
-    <div>
-      <div class="footer-logo-wrap">
-        <a href="#hero" class="nav-logo">
-          <div class="logo-brand">
-            <span class="logo-hmmr" style="font-size:1.6rem">HMMR</span>
-          </div>
-          <span class="logo-jeans">JEANS</span>
-          <div class="logo-stripe" style="margin-top:5px">
-            <span></span><span></span><span></span>
-          </div>
-        </a>
-      </div>
+    <div class="footer-brand-col">
+      <a href="#hero" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+        <div class="logo-brand">
+          <span class="logo-hmmr" style="font-size:1.6rem">HMMR</span>
+        </div>
+        <span class="logo-jeans" style="display:block;margin-top:2px">JEANS</span>
+        <div class="logo-stripe" style="margin-top:5px">
+          <span></span><span></span><span></span>
+        </div>
+      </a>
       <p class="footer-tagline">"Originalmente Nacional" — Indumentaria masculina premium desde Paraguay.</p>
       <div class="social-row" style="margin-top:1.5rem">
         <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
@@ -921,19 +538,11 @@
     </div>
 
     <div>
-      <p class="footer-col-title">Tienda</p>
-      <a href="#nuevos"    class="footer-lnk">Nuevos Ingresos</a>
-      <a href="#coleccion" class="footer-lnk">HMMR Jeans</a>
-      <a href="#doom-free" class="footer-lnk">Doom Free Design</a>
-      <a href="#promo"     class="footer-lnk">Promociones</a>
-    </div>
-
-    <div>
-      <p class="footer-col-title">Empresa</p>
-      <a href="#nosotros"      class="footer-lnk">Historia HMMR</a>
-      <a href="#distribuidores" class="footer-lnk">Distribuidores</a>
-      <a href="#contacto"      class="footer-lnk">Contacto</a>
-      <a href="#"              class="footer-lnk">Trabaja con nosotros</a>
+      <p class="footer-col-title">Información</p>
+      <a href="#destacados" class="footer-lnk">Novedades</a>
+      <a href="#coleccion"  class="footer-lnk">Colección HMMR</a>
+      <a href="#categorias" class="footer-lnk">Categorías</a>
+      <a href="#nosotros"   class="footer-lnk">Historia HMMR</a>
     </div>
 
     <div>
@@ -945,24 +554,25 @@
     </div>
 
     <div>
-      <p class="footer-col-title">Newsletter</p>
-      <p style="font-size:0.75rem;color:rgba(255,255,255,0.3);line-height:1.6;margin-bottom:0.75rem">
-        Novedades, ofertas y lanzamientos exclusivos directamente a tu correo.
-      </p>
-      <div class="newsletter-form">
-        <input type="email" class="newsletter-in" placeholder="tu@email.com" />
-        <button class="newsletter-btn"><i class="fas fa-arrow-right"></i></button>
-      </div>
+      <p class="footer-col-title">Mi Cuenta</p>
+      <a href="#" class="footer-lnk">Iniciar Sesión</a>
+      <a href="#" class="footer-lnk">Registrarse</a>
+      <a href="#" class="footer-lnk">Mis Pedidos</a>
+      <a href="#" class="footer-lnk">Mis Favoritos</a>
+    </div>
+
+    <div>
+      <p class="footer-col-title">Contacto</p>
+      <a href="https://wa.me/595981000001" target="_blank" rel="noopener" class="footer-lnk"><i class="fab fa-whatsapp" style="color:var(--gold);margin-right:6px"></i>+595 981 000 001</a>
+      <a href="mailto:info@hmmrjeans.com.py" class="footer-lnk"><i class="fas fa-envelope" style="color:var(--gold);margin-right:6px"></i>info@hmmrjeans.com.py</a>
+      <p class="footer-lnk" style="cursor:default"><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:6px"></i>Asunción, Paraguay</p>
+      <p class="footer-lnk" style="cursor:default"><i class="fas fa-clock" style="color:var(--gold);margin-right:6px"></i>Lun–Vie: 8:00 a 18:00</p>
     </div>
 
   </div>
 
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 HMMR Jeans & Doom Free Design. Todos los derechos reservados.</p>
-    <div class="footer-brands">
-      <span class="brand-pill active-brand">HMMR JEANS</span>
-      <span class="brand-pill">DOOM FREE</span>
-    </div>
+    <p class="footer-copy">© 2025 HMMR Jeans. Todos los derechos reservados. <span style="color:var(--gold)">"Originalmente Nacional"</span></p>
     <div class="footer-legal">
       <a href="#">Términos</a>
       <a href="#">Privacidad</a>
@@ -1012,7 +622,7 @@
     <p class="search-label">¿Qué estás buscando?</p>
     <div class="search-input-wrap">
       <i class="fas fa-search"></i>
-      <input type="text" id="search-input" placeholder="Ej: jeans negros, Doom Free, slim fit…" autocomplete="off">
+      <input type="text" id="search-input" placeholder="Ej: jeans negros, slim fit…" autocomplete="off">
     </div>
     <div id="search-results" class="search-results"></div>
   </div>
@@ -1098,6 +708,14 @@
 </div>
 
 
-<script src="assets/js/main.js?v=7"></script>
+<!-- ============================================================
+     CONTACTO — formulario
+     ============================================================ -->
+<section id="contacto" style="display:none">
+  <form id="form-contacto"></form>
+</section>
+
+
+<script src="assets/js/main.js?v=8"></script>
 </body>
 </html>
