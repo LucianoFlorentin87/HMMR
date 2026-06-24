@@ -218,53 +218,167 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 /* --- HERO --- */
+/* ============================================================
+   HERO — Fullscreen Slider estilo Baco
+   ============================================================ */
 #hero {
-  position: relative; overflow: hidden;
-  background: var(--navy-deep);
-}
-
-/* --- HERO SLIDER --- */
-.hero-slider { position: relative; width: 100%; }
-
-.hero-slide {
-  display: none;
   position: relative;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center top;
-  background-image: var(--slide-bg);
-  align-items: center;
-}
-.hero-slide.active {
-  display: flex;
-  animation: heroFadeIn 0.7s ease both;
-}
-@keyframes heroFadeIn { from { opacity:0; } to { opacity:1; } }
-
-.hero-overlay {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    105deg,
-    rgba(13,27,42,0.92) 0%,
-    rgba(13,27,42,0.65) 55%,
-    rgba(13,27,42,0.25) 100%
-  );
-}
-.hero-stripe {
-  position: absolute; bottom: 0; left: 0; right: 0;
-  height: 4px; display: flex; z-index: 2;
-}
-.hero-stripe span:nth-child(1) { flex: 1; background: var(--red); }
-.hero-stripe span:nth-child(2) { flex: 1; background: var(--white); }
-.hero-stripe span:nth-child(3) { flex: 1; background: var(--navy-mid); }
-.hero-content {
-  position: relative; z-index: 2;
-  max-width: 1400px; margin: 0 auto; padding: 0 var(--sp-4);
-  padding-top: 80px;
-  display: grid; grid-template-columns: 1fr 1fr;
-  align-items: center; gap: var(--sp-6);
   width: 100%;
+  height: 100vh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #000;
 }
+
+/* Cada slide ocupa todo el hero */
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  pointer-events: none;
+}
+.slide.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Imagen de fondo que cubre todo */
+.slide-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Degradado oscuro sobre la imagen (igual que Baco) */
+.slide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(8,8,8,0.80) 0%,
+    rgba(8,8,8,0.45) 55%,
+    transparent 100%);
+}
+
+/* Franja paraguaya abajo */
+.slide-stripe {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 5px; display: flex; z-index: 3;
+}
+.slide-stripe span:nth-child(1) { flex:1; background:var(--red); }
+.slide-stripe span:nth-child(2) { flex:1; background:#fff; }
+.slide-stripe span:nth-child(3) { flex:1; background:var(--navy-mid); }
+
+/* Contenido del slide — texto a la izquierda, encima de la imagen */
+.slide-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 80px;
+  padding-top: 80px; /* offset navbar */
+  max-width: 780px;
+}
+
+.slide-label {
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.slide-h1 {
+  font-family: var(--ff-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: #fff;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+.slide-h1 strong {
+  font-weight: 900;
+  display: block;
+}
+.slide-h1 em {
+  font-style: italic;
+  color: var(--gold);
+  display: block;
+}
+
+.slide-sub {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  max-width: 480px;
+  margin-bottom: 36px;
+}
+
+.slide-btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* Flechas — pegadas a los bordes como en Baco */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  width: 52px; height: 52px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+.hero-arrow:hover { background: rgba(255,255,255,0.3); }
+.hero-prev { left: 20px; }
+.hero-next { right: 20px; }
+
+/* Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+.hero-dot {
+  width: 32px; height: 3px;
+  background: rgba(255,255,255,0.3);
+  border: none; cursor: pointer; padding: 0;
+  transition: background 0.3s, width 0.3s;
+}
+.hero-dot.active { background: var(--gold); width: 48px; }
+
+/* Mobile */
+@media (max-width: 768px) {
+  .slide-content { padding: 0 24px; padding-top: 100px; max-width: 100%; }
+  .slide-h1 { font-size: clamp(2rem, 8vw, 3.2rem); }
+  .slide-sub { font-size: 0.85rem; }
+  .hero-prev { left: 10px; }
+  .hero-next { right: 10px; }
+  .hero-arrow { width: 40px; height: 40px; }
+}
+
+/* Mantener clases antiguas del hero para que no rompan otras partes */
+.hero-content { display: none; }
+.hero-bg, .hero-img-col, .hero-stats { display: none; }
 .hero-text { animation: fadeUp 0.9s var(--ease) both; }
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(30px); }

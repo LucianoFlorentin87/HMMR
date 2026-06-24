@@ -548,17 +548,17 @@ document.querySelectorAll('section').forEach(sec => {
 
 // ---- HERO SLIDER ----
 function initHeroSlider() {
-  const slides = document.querySelectorAll('.hero-slide');
+  const slides = document.querySelectorAll('#hero .slide');
   const dots   = document.querySelectorAll('.hero-dot');
   if (!slides.length) return;
   let current = 0, timer;
 
   function goTo(idx) {
     slides[current].classList.remove('active');
-    dots[current] && dots[current].classList.remove('active');
+    if (dots[current]) dots[current].classList.remove('active');
     current = (idx + slides.length) % slides.length;
     slides[current].classList.add('active');
-    dots[current] && dots[current].classList.add('active');
+    if (dots[current]) dots[current].classList.add('active');
   }
 
   function next() { goTo(current + 1); }
@@ -567,8 +567,10 @@ function initHeroSlider() {
   function startAuto() { timer = setInterval(next, 5000); }
   function resetAuto()  { clearInterval(timer); startAuto(); }
 
-  document.getElementById('heroNext') && document.getElementById('heroNext').addEventListener('click', () => { next(); resetAuto(); });
-  document.getElementById('heroPrev') && document.getElementById('heroPrev').addEventListener('click', () => { prev(); resetAuto(); });
+  const btnNext = document.getElementById('heroNext');
+  const btnPrev = document.getElementById('heroPrev');
+  if (btnNext) btnNext.addEventListener('click', () => { next(); resetAuto(); });
+  if (btnPrev) btnPrev.addEventListener('click', () => { prev(); resetAuto(); });
   dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.slide); resetAuto(); }));
 
   startAuto();
