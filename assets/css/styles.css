@@ -660,7 +660,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
    INSTAGRAM + WHATSAPP HELP
    ============================================================ */
 #instagram{background:var(--bg);padding:70px 0}
-.insta-outer{max-width:1280px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 280px;gap:32px;align-items:start}
+.insta-outer{max-width:1280px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 260px;gap:40px;align-items:center}
 .insta-main{}
 
 .insta-section-title{
