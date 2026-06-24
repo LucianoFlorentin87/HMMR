@@ -115,81 +115,86 @@
 
 
 <!-- ============================================================
-     HERO
+     HERO SLIDER
      ============================================================ -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-stripe">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="hero-slider" id="heroSlider">
 
-  <div class="hero-content">
-    <div class="hero-text">
-      <span class="hero-overline">🇵🇾 Originalmente Nacional · 2025</span>
-
-      <h1 class="hero-h1">
-        Vestí<br/>
-        <span class="line-accent">el Orgullo</span><br/>
-        <span class="line-italic">Paraguayo.</span>
-      </h1>
-
-      <p class="hero-sub">
-        HMMR Jeans y Doom Free Design. Dos marcas. Un solo estándar:
-        indumentaria masculina premium con identidad propia.
-      </p>
-
-      <div class="hero-btns">
-        <a href="#coleccion" class="btn-primary">
-          <i class="fas fa-shopping-bag"></i> Comprar Ahora
-        </a>
-        <a href="#doom-free" class="btn-ghost">
-          <i class="fas fa-palette"></i> Doom Free Design
-        </a>
-      </div>
-
-      <div class="hero-stats">
-        <div>
-          <span class="hero-stat-num">10K+</span>
-          <span class="hero-stat-lbl">Clientes</span>
+    <!-- SLIDE 1 -->
+    <div class="hero-slide active" style="--slide-bg: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1400&q=85')">
+      <div class="hero-overlay"></div>
+      <div class="hero-stripe"><span></span><span></span><span></span></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-overline">🇵🇾 Originalmente Nacional · 2025</span>
+          <h1 class="hero-h1">Vestí<br/><span class="line-accent">el Orgullo</span><br/><span class="line-italic">Paraguayo.</span></h1>
+          <p class="hero-sub">HMMR Jeans y Doom Free Design. Dos marcas. Un solo estándar: indumentaria masculina premium con identidad propia.</p>
+          <div class="hero-btns">
+            <a href="#coleccion" class="btn-primary"><i class="fas fa-shopping-bag"></i> Comprar Ahora</a>
+            <a href="#doom-free" class="btn-ghost"><i class="fas fa-palette"></i> Doom Free Design</a>
+          </div>
         </div>
-        <div>
-          <span class="hero-stat-num">150+</span>
-          <span class="hero-stat-lbl">Modelos</span>
-        </div>
-        <div>
-          <span class="hero-stat-num">2</span>
-          <span class="hero-stat-lbl">Marcas</span>
-        </div>
-        <div>
-          <span class="hero-stat-num">5★</span>
-          <span class="hero-stat-lbl">Valoración</span>
+        <div class="hero-img-col">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=85" alt="HMMR Jeans" style="height:520px;width:100%;object-fit:cover;object-position:top center"/>
+          <div class="hero-badge-float"><span class="from">Desde</span><span class="price">74.900 Gs</span></div>
         </div>
       </div>
     </div>
 
-    <div class="hero-img-col">
-      <img
-        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&q=85"
-        alt="HMMR Jeans"
-        style="height:560px;width:100%;object-fit:cover;object-position:top center"
-      />
-      <div class="hero-badge-float">
-        <span class="from">Desde</span>
-        <span class="price">150.000 Gs</span>
-      </div>
-      <div class="hero-tag-float">
-        <i class="fas fa-shield-alt"></i>
-        <span>Garantía</span>
-        <span style="color:var(--gold);font-weight:700;font-size:0.7rem;margin-top:2px">30 días</span>
+    <!-- SLIDE 2 -->
+    <div class="hero-slide" style="--slide-bg: url('https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1400&q=85')">
+      <div class="hero-overlay" style="background:linear-gradient(105deg,rgba(8,8,8,0.88) 0%,rgba(8,8,8,0.3) 100%)"></div>
+      <div class="hero-stripe"><span></span><span></span><span></span></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-overline" style="color:var(--gold)">⚡ COLECCIÓN DOOM FREE</span>
+          <h1 class="hero-h1">Estilo<br/><span class="line-accent">sin</span><br/><span class="line-italic">Límites.</span></h1>
+          <p class="hero-sub">Doom Free Design — ropa urbana para el hombre que marca tendencia. Diseños exclusivos, carácter propio.</p>
+          <div class="hero-btns">
+            <a href="#doom-free" class="btn-primary" style="background:var(--gold);border-color:var(--gold);color:var(--ink)"><i class="fas fa-fire"></i> Ver Doom Free</a>
+            <a href="#coleccion" class="btn-ghost">Toda la Colección</a>
+          </div>
+        </div>
+        <div class="hero-img-col">
+          <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&q=85" alt="Doom Free Design" style="height:520px;width:100%;object-fit:cover;object-position:top center"/>
+          <div class="hero-badge-float" style="background:var(--gold);color:var(--ink)"><span class="from">Doom Free</span><span class="price">Design</span></div>
+        </div>
       </div>
     </div>
+
+    <!-- SLIDE 3 -->
+    <div class="hero-slide" style="--slide-bg: url('https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=1400&q=85')">
+      <div class="hero-overlay" style="background:linear-gradient(105deg,rgba(200,16,46,0.15) 0%,rgba(13,27,42,0.88) 60%)"></div>
+      <div class="hero-stripe"><span></span><span></span><span></span></div>
+      <div class="hero-content">
+        <div class="hero-text">
+          <span class="hero-overline" style="color:var(--red)">🔥 OFERTA DE TEMPORADA</span>
+          <h1 class="hero-h1">Hasta<br/><span class="line-accent">30% OFF</span><br/><span class="line-italic">Ahora.</span></h1>
+          <p class="hero-sub">Selección de jeans HMMR con descuentos exclusivos por tiempo limitado. No te lo pierdas.</p>
+          <div class="hero-btns">
+            <a href="#promo" class="btn-primary" style="background:var(--red);border-color:var(--red)"><i class="fas fa-tag"></i> Ver Ofertas</a>
+            <a href="#coleccion" class="btn-ghost">Toda la Colección</a>
+          </div>
+        </div>
+        <div class="hero-img-col">
+          <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=600&q=85" alt="Ofertas HMMR" style="height:520px;width:100%;object-fit:cover;object-position:top center"/>
+          <div class="hero-badge-float" style="background:var(--red)"><span class="from">Hasta</span><span class="price">30% OFF</span></div>
+        </div>
+      </div>
+    </div>
+
   </div>
 
-  <div class="hero-scroll">
-    <i class="fas fa-chevron-down"></i>
-    <span>Scroll</span>
+  <!-- SLIDER CONTROLS -->
+  <button class="hero-arrow hero-prev" id="heroPrev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
+  <button class="hero-arrow hero-next" id="heroNext" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+  <div class="hero-dots" id="heroDots">
+    <button class="hero-dot active" data-slide="0"></button>
+    <button class="hero-dot" data-slide="1"></button>
+    <button class="hero-dot" data-slide="2"></button>
   </div>
+
+  <div class="hero-scroll"><i class="fas fa-chevron-down"></i><span>Scroll</span></div>
 </section>
 
 
@@ -261,6 +266,45 @@
     </div>
   </div>
 </div>
+
+
+<!-- ============================================================
+     CATEGORÍAS VISUALES
+     ============================================================ -->
+<section id="categorias-visuales">
+  <div class="catvis-inner">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span class="sec-label">Explorá por estilo</span>
+      <h2 class="sec-title" style="margin-top:0.4rem">Encontrá tu Jean</h2>
+      <div class="sec-divider" style="margin:0.75rem auto 0"></div>
+    </div>
+    <div class="catvis-grid">
+      <a href="#coleccion" class="catvis-card" data-filter="slim" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" alt="Slim Fit">
+        <div class="catvis-overlay"><span class="catvis-name">Slim Fit</span><span class="catvis-sub">HMMR Jeans</span></div>
+      </a>
+      <a href="#coleccion" class="catvis-card" data-filter="cargo" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=600&q=80" alt="Cargo">
+        <div class="catvis-overlay"><span class="catvis-name">Cargo</span><span class="catvis-sub">HMMR Jeans</span></div>
+      </a>
+      <a href="#doom-free" class="catvis-card catvis-card--tall">
+        <img src="https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=600&q=80" alt="Doom Free">
+        <div class="catvis-overlay" style="background:linear-gradient(to top,rgba(8,8,8,0.9) 0%,transparent 60%)">
+          <span class="catvis-name" style="color:var(--gold)">Doom Free</span>
+          <span class="catvis-sub">Design Urbano</span>
+        </div>
+      </a>
+      <a href="#coleccion" class="catvis-card" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=600&q=80" alt="Wide Leg">
+        <div class="catvis-overlay"><span class="catvis-name">Wide Leg</span><span class="catvis-sub">HMMR Jeans</span></div>
+      </a>
+      <a href="#coleccion" class="catvis-card" onclick="filtrarCategoria('HMMR Jeans')">
+        <img src="https://images.unsplash.com/photo-1617952236317-0bd127407984?w=600&q=80" alt="Flare">
+        <div class="catvis-overlay"><span class="catvis-name">Flare</span><span class="catvis-sub">HMMR Jeans</span></div>
+      </a>
+    </div>
+  </div>
+</section>
 
 
 <!-- ============================================================
@@ -350,6 +394,26 @@
     </div>
   </div>
 </section>
+
+
+<!-- ============================================================
+     BANNER INTERMEDIO
+     ============================================================ -->
+<div class="mid-banner">
+  <div class="mid-banner-bg" style="background-image:url('https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?w=1600&q=85')"></div>
+  <div class="mid-banner-overlay"></div>
+  <div class="mid-banner-content">
+    <span class="mid-banner-label">Colección 2025</span>
+    <h2 class="mid-banner-title">Denim que<br/><em>habla por vos.</em></h2>
+    <p class="mid-banner-sub">Calidad premium. Hecho para el hombre paraguayo que exige lo mejor.</p>
+    <a href="#coleccion" class="btn-primary">Explorar Colección <i class="fas fa-arrow-right"></i></a>
+  </div>
+  <div class="mid-banner-stats">
+    <div class="mid-banner-stat"><span>10K+</span><small>Clientes</small></div>
+    <div class="mid-banner-stat"><span>150+</span><small>Modelos</small></div>
+    <div class="mid-banner-stat"><span>5★</span><small>Valoración</small></div>
+  </div>
+</div>
 
 
 <!-- ============================================================

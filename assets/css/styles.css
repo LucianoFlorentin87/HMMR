@@ -1203,3 +1203,172 @@ footer { background: #060c14; border-top: 1px solid rgba(255,255,255,0.05); }
   .search-results { grid-template-columns: repeat(2,1fr); }
   #cart-sidebar { width: 100%; max-width: 100%; right: -100%; }
 }
+
+
+/* ============================================================
+   HERO SLIDER
+   ============================================================ */
+#hero { position: relative; overflow: hidden; }
+
+.hero-slider { position: relative; width: 100%; }
+
+.hero-slide {
+  display: none;
+  position: relative;
+  min-height: 100vh;
+  background-image: var(--slide-bg);
+  background-size: cover;
+  background-position: center;
+}
+.hero-slide.active { display: block; }
+.hero-slide.slide-in  { animation: slideIn 0.6s ease forwards; }
+.hero-slide.slide-out { animation: slideOut 0.6s ease forwards; }
+
+@keyframes slideIn  { from { opacity:0; transform:translateX(60px); } to { opacity:1; transform:translateX(0); } }
+@keyframes slideOut { from { opacity:1; transform:translateX(0); } to { opacity:0; transform:translateX(-60px); } }
+
+.hero-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  z-index: 10; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; width: 48px; height: 48px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; font-size: 0.9rem;
+  backdrop-filter: blur(6px); transition: background 0.2s;
+}
+.hero-arrow:hover { background: rgba(255,255,255,0.25); }
+.hero-prev { left: 24px; }
+.hero-next { right: 24px; }
+
+.hero-dots {
+  position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%);
+  display: flex; gap: 8px; z-index: 10;
+}
+.hero-dot {
+  width: 28px; height: 3px; background: rgba(255,255,255,0.3);
+  border: none; cursor: pointer; padding: 0; transition: background 0.3s, width 0.3s;
+}
+.hero-dot.active { background: var(--gold); width: 44px; }
+
+/* ============================================================
+   CATEGORÍAS VISUALES
+   ============================================================ */
+#categorias-visuales { background: var(--chalk); padding: var(--sp-8) 0; }
+.catvis-inner { max-width: 1400px; margin: 0 auto; padding: 0 var(--sp-5); }
+
+.catvis-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 260px 260px;
+  gap: 12px;
+}
+
+.catvis-card {
+  position: relative; overflow: hidden; display: block; cursor: pointer;
+  text-decoration: none;
+}
+.catvis-card img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top center;
+  transition: transform 0.5s ease;
+  display: block;
+}
+.catvis-card:hover img { transform: scale(1.06); }
+
+.catvis-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(8,8,8,0.75) 0%, transparent 55%);
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 20px;
+  transition: background 0.3s;
+}
+.catvis-card:hover .catvis-overlay { background: linear-gradient(to top, rgba(8,8,8,0.85) 0%, rgba(8,8,8,0.2) 100%); }
+
+.catvis-name {
+  font-family: var(--ff-display); font-size: 1.15rem; font-weight: 700;
+  color: var(--white); display: block; letter-spacing: 0.5px;
+}
+.catvis-sub {
+  font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.65); display: block; margin-top: 3px;
+}
+
+/* Tall card spans 2 rows */
+.catvis-card--tall {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+.catvis-card--tall img { height: 100%; }
+
+@media (max-width: 900px) {
+  .catvis-grid { grid-template-columns: repeat(2,1fr); grid-template-rows: auto; }
+  .catvis-card--tall { grid-column: auto; grid-row: auto; }
+  .catvis-card { height: 220px; }
+}
+@media (max-width: 600px) {
+  .catvis-grid { grid-template-columns: 1fr 1fr; }
+  .catvis-card { height: 180px; }
+}
+
+
+/* ============================================================
+   BANNER INTERMEDIO
+   ============================================================ */
+.mid-banner {
+  position: relative; height: 420px; overflow: hidden;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--sp-8);
+}
+.mid-banner-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center 30%;
+}
+.mid-banner-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(13,27,42,0.92) 0%, rgba(13,27,42,0.55) 60%, transparent 100%);
+}
+.mid-banner-content { position: relative; z-index: 1; max-width: 500px; }
+.mid-banner-label {
+  font-size: 0.6rem; letter-spacing: 4px; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 12px;
+}
+.mid-banner-title {
+  font-family: var(--ff-display); font-size: clamp(2rem,4vw,3.2rem);
+  font-weight: 900; color: var(--white); line-height: 1.1; margin-bottom: 16px;
+}
+.mid-banner-title em { color: var(--gold); font-style: italic; }
+.mid-banner-sub { font-size: 0.85rem; color: rgba(255,255,255,0.7); margin-bottom: 28px; line-height: 1.6; }
+
+.mid-banner-stats {
+  position: relative; z-index: 1;
+  display: flex; flex-direction: column; gap: 20px; align-items: flex-end;
+}
+.mid-banner-stat { text-align: right; }
+.mid-banner-stat span { font-family: var(--ff-display); font-size: 2rem; font-weight: 900; color: var(--white); display: block; line-height: 1; }
+.mid-banner-stat small { font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+@media (max-width: 768px) {
+  .mid-banner { height: auto; padding: var(--sp-8) var(--sp-4); flex-direction: column; align-items: flex-start; gap: var(--sp-5); }
+  .mid-banner-stats { flex-direction: row; align-items: flex-start; }
+  .mid-banner-stat { text-align: left; }
+  .mid-banner-overlay { background: rgba(13,27,42,0.82); }
+}
+
+
+/* ============================================================
+   TALLAS EN MODAL / TARJETAS
+   ============================================================ */
+.tallas-wrap {
+  margin-bottom: 1.25rem;
+}
+.tallas-label {
+  font-size: 0.6rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gray-mid); font-weight: 600; margin-bottom: 0.5rem; display: block;
+}
+.tallas-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.talla-btn {
+  min-width: 38px; height: 34px; padding: 0 8px;
+  border: 1px solid var(--gray-light); background: var(--white);
+  font-size: 0.72rem; font-weight: 600; color: var(--ink);
+  cursor: pointer; transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.talla-btn:hover { border-color: var(--navy); }
+.talla-btn.selected { background: var(--ink); color: var(--white); border-color: var(--ink); }

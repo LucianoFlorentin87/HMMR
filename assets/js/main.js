@@ -61,6 +61,15 @@ function precioGs(precio) {
   return precio * 1000;
 }
 
+// ---- IMAGE WITH FALLBACK ----
+function imgSrc(p) {
+  return p.imagen || p.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
+}
+function imgError(el, p) {
+  if (p.imagenFallback) el.src = p.imagenFallback;
+  else el.src = 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
+}
+
 // ---- RENDER PRODUCTS ----
 function renderProductos(lista, containerId = 'grid-productos') {
   const grid = document.getElementById(containerId);
@@ -83,18 +92,19 @@ function renderProductos(lista, containerId = 'grid-productos') {
       `<span class="color-dot" style="background:${coloresMap[c] || '#999'}" title="${c}"></span>`
     ).join('');
     const brandLbl = p.categoria === 'Doom Free' ? 'Doom Free Design' : 'HMMR Jeans';
+    const src = imgSrc(p);
+    const fallback = p.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
 
     return `
     <div class="prod-card" data-id="${p.id}">
       <div class="prod-img">
         ${badge}
-        <img src="${p.imagen}" alt="${p.nombre}" loading="lazy"
-          onerror="this.src='https://via.placeholder.com/400x530/142438/C9963A?text=HMMR'">
+        <img src="${src}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
         <div class="prod-actions">
           <button class="prod-action-btn" onclick="abrirModal(${p.id})">
             <i class="fas fa-eye"></i> Ver
           </button>
-          <button class="prod-action-btn" onclick="agregarCarrito('${p.nombre}')">
+          <button class="prod-action-btn" onclick="abrirModal(${p.id})">
             <i class="fas fa-shopping-bag"></i> Añadir
           </button>
           <button class="prod-action-btn fav" onclick="toggleFav(this)">
@@ -402,11 +412,22 @@ function abrirModal(id) {
   const precioOrig = p.precioOriginal
     ? `<span class="price-was" style="font-size:0.9rem">${formatPrecio(precioGs(p.precioOriginal))}</span>` : '';
 
+  const tallasHtml = p.tallas && p.tallas.length
+    ? `<div class="tallas-wrap">
+        <span class="tallas-label">Talle</span>
+        <div class="tallas-list">
+          ${p.tallas.map(t => `<button class="talla-btn" onclick="selectTalla(this)">${t}</button>`).join('')}
+        </div>
+       </div>` : '';
+
+  const src = imgSrc(p);
+  const fallback = p.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
+
   document.getElementById('modal-body').innerHTML = `
     <div style="display:grid;grid-template-columns:1fr 1fr">
-      <img src="${p.imagen}" alt="${p.nombre}"
+      <img src="${src}" alt="${p.nombre}"
         style="width:100%;height:480px;object-fit:cover;object-position:top"
-        onerror="this.src='https://via.placeholder.com/400x530/142438/C9963A?text=HMMR'">
+        onerror="this.onerror=null;this.src='${fallback}'">
       <div style="padding:2.5rem;display:flex;flex-direction:column;justify-content:space-between;background:var(--chalk)">
         <div>
           ${badge}
@@ -424,6 +445,7 @@ function abrirModal(id) {
             <span style="font-size:1.4rem;font-weight:900;color:var(--ink)">${formatPrecio(precioGs(p.precio))}</span>
             ${precioOrig}
           </div>
+          ${tallasHtml}
           <p style="font-size:0.68rem;color:var(--gray-mid);margin-bottom:1.75rem">
             <i class="fas fa-shield-alt" style="color:var(--gold);margin-right:4px"></i> Garantía 30 días · Envío a todo Paraguay
           </p>
@@ -453,6 +475,23 @@ function abrirModal(id) {
 function cerrarModal() {
   document.getElementById('modal-producto').classList.remove('open');
   document.body.style.overflow = '';
+}
+
+function selectTalla(btn) {
+  btn.closest('.tallas-list').querySelectorAll('.talla-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+}
+
+// ---- FILTER BY CATEGORY (from visual categories) ----
+function filtrarCategoria(cat) {
+  setTimeout(() => {
+    const btns = document.querySelectorAll('#filtros .filter-btn');
+    btns.forEach(b => {
+      b.classList.remove('active');
+      if (b.dataset.cat === cat) b.classList.add('active');
+    });
+    renderProductos(cat === 'Todos' ? todosProductos : todosProductos.filter(p => p.categoria === cat));
+  }, 300);
 }
 document.getElementById('modal-producto').addEventListener('click', e => {
   if (e.target === e.currentTarget) cerrarModal();
@@ -507,8 +546,37 @@ document.querySelectorAll('section').forEach(sec => {
   observer.observe(sec);
 });
 
+// ---- HERO SLIDER ----
+function initHeroSlider() {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots   = document.querySelectorAll('.hero-dot');
+  if (!slides.length) return;
+  let current = 0, timer;
+
+  function goTo(idx) {
+    slides[current].classList.remove('active');
+    dots[current] && dots[current].classList.remove('active');
+    current = (idx + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current] && dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAuto() { timer = setInterval(next, 5000); }
+  function resetAuto()  { clearInterval(timer); startAuto(); }
+
+  document.getElementById('heroNext') && document.getElementById('heroNext').addEventListener('click', () => { next(); resetAuto(); });
+  document.getElementById('heroPrev') && document.getElementById('heroPrev').addEventListener('click', () => { prev(); resetAuto(); });
+  dots.forEach(d => d.addEventListener('click', () => { goTo(+d.dataset.slide); resetAuto(); }));
+
+  startAuto();
+}
+
 // ---- INIT ----
 document.addEventListener('DOMContentLoaded', () => {
   cargarProductos();
   initCountdown();
+  initHeroSlider();
 });
