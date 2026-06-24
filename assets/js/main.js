@@ -132,28 +132,26 @@ function renderDestacados(lista) {
   const grid = document.getElementById('destacados-grid');
   if (!grid) return;
   const items = lista.slice(0, 4);
-  grid.innerHTML = items.map(p => {
-    const badge = p.etiqueta
-      ? `<span class="dest-badge ${p.oferta ? 'badge-sale' : p.nuevo ? 'badge-new' : 'badge-exclusive'}">${p.etiqueta}</span>` : '';
+  const ratings = [128, 96, 78, 64];
+  grid.innerHTML = items.map((p, i) => {
     const src = imgSrc(p);
     const fallback = p.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
-    const brandLbl = p.categoria === 'Doom Free' ? 'Doom Free Design' : 'HMMR Jeans';
+    const stars = p.estrellas ? Math.round(p.estrellas) : 4;
+    const starHtml = '★'.repeat(stars) + (stars < 5 ? '<span style="opacity:.35">★</span>'.repeat(5-stars) : '');
     return `
     <div class="dest-card" onclick="abrirModal(${p.id})">
-      <div class="dest-img-wrap">
-        <div class="dest-img">
-          ${badge}
-          <img src="${src}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
-        </div>
+      <div class="dest-img">
+        <img src="${src}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fallback}'">
       </div>
       <div class="dest-info">
-        <p class="dest-brand">${brandLbl}</p>
         <h3 class="dest-name">${p.nombre}</h3>
-        <div class="dest-stars">★★★★★ <span>(32)</span></div>
         <div class="dest-price">${formatPrecio(precioGs(p.precio))}</div>
-        <button class="dest-add-btn" onclick="event.stopPropagation();agregarCarrito('${p.nombre}')">
-          <i class="fas fa-shopping-bag"></i> Agregar al carrito
-        </button>
+        <div class="dest-bottom">
+          <div class="dest-stars">${starHtml} <span>(${ratings[i] || 32})</span></div>
+          <button class="dest-cart-btn" onclick="event.stopPropagation();agregarCarrito('${p.nombre}')">
+            <i class="fas fa-shopping-bag"></i>
+          </button>
+        </div>
       </div>
     </div>`;
   }).join('');
