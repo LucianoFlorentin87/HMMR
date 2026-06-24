@@ -692,13 +692,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .wa-help-sub{font-size:0.78rem;color:var(--muted);line-height:1.65;margin-bottom:20px}
 .btn-wa{
   display:flex;align-items:center;justify-content:center;gap:8px;
-  width:100%;padding:11px;background:transparent;color:#25D366;
+  width:100%;padding:13px;background:#25D366;color:#fff;
   font-size:0.68rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  text-decoration:none;cursor:pointer;
-  border:1px solid #25D366;
-  transition:all 0.2s;
+  text-decoration:none;cursor:pointer;border:none;
+  transition:background 0.2s;
 }
-.btn-wa:hover{background:#25D366;color:#fff}
+.btn-wa:hover{background:#1da854}
 
 @media(max-width:900px){
   .insta-outer{grid-template-columns:1fr}
