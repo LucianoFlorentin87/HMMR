@@ -53,7 +53,7 @@ const coloresMap = {
 };
 
 function formatPrecio(num) {
-  return num.toLocaleString('es-PY') + ' Gs';
+  return 'GS. ' + num.toLocaleString('es-PY');
 }
 
 function precioGs(precio) {

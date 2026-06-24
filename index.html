@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=10" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=11" />
 </head>
 <body>
 
@@ -47,6 +47,7 @@
         <div class="logo-jeans-row" style="display:flex;align-items:center;justify-content:center;gap:6px">
           <span class="logo-jeans">JEANS</span>
         </div>
+        <div class="logo-sub">Originalmente Nacional</div>
         <div class="logo-stripe">
           <span></span><span></span><span></span>
         </div>
@@ -110,20 +111,17 @@
      ============================================================ -->
 <section id="hero">
 
-  <!-- SLIDE 1 — Nueva Colección -->
+  <!-- SLIDE 1 — Originalmente Nacional -->
   <div class="slide active">
     <img class="slide-img" src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800&q=90" alt="Nueva Colección HMMR">
     <div class="slide-overlay"></div>
     <div class="slide-content">
-      <span class="slide-label">🇵🇾 Originalmente Nacional · 2025</span>
-      <h1 class="slide-h1">NUEVA<br><strong>COLECCIÓN</strong><br><em>HMMR JEANS</em></h1>
-      <p class="slide-sub">Denim premium para el hombre paraguayo. Estilo, calidad y orgullo nacional.</p>
-      <div class="slide-btns">
-        <a href="#destacados" class="btn-primary">Comprar Ahora</a>
-        <a href="#nosotros" class="btn-ghost">Conocer la Marca</a>
-      </div>
+      <div class="slide-pretitle">ORIGINALMENTE</div>
+      <div class="slide-bigword">NACIONAL</div>
+      <p class="slide-tagline">— JEANS QUE CUENTAN NUESTRA HISTORIA.</p>
+      <div class="flag-ribbon"><span></span><span></span><span></span></div>
+      <a href="#destacados" class="btn-hero">COMPRAR AHORA</a>
     </div>
-    <div class="slide-stripe"><span></span><span></span><span></span></div>
   </div>
 
   <!-- SLIDE 2 — Colección Temporada -->
@@ -245,16 +243,16 @@
      ============================================================ -->
 <section id="destacados">
   <div class="destacados-inner">
-    <div class="destacados-header">
-      <div>
-        <span class="sec-label">Lo más pedido</span>
-        <h2 class="sec-title" style="margin-top:0.4rem">Destacados</h2>
-        <div class="sec-divider"></div>
-      </div>
-      <a href="#coleccion" class="btn-ver-todos">Ver todos los productos <i class="fas fa-arrow-right"></i></a>
+    <div class="sec-heading">
+      <span class="sec-heading-line"></span>
+      <span class="sec-heading-text">DESTACADOS</span>
+      <span class="sec-heading-line"></span>
     </div>
     <div id="destacados-grid" class="destacados-grid">
       <!-- Cargado por JS -->
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="#coleccion" class="btn-ver-todos">VER TODOS LOS PRODUCTOS <i class="fas fa-arrow-right"></i></a>
     </div>
   </div>
 </section>
@@ -263,14 +261,15 @@
 <!-- ============================================================
      COLECCIÓN TEMPORADA 2025 — banner horizontal
      ============================================================ -->
-<div id="coleccion-banner" class="coleccion-banner">
-  <div class="coleccion-banner-text">
-    <span class="sec-label">Nueva Temporada</span>
-    <h2 class="coleccion-banner-title">COLECCIÓN<br/><em>TEMPORADA 2025</em></h2>
-    <p class="coleccion-banner-sub">Jeans, remeras y camperas pensados para el caballero paraguayo que no hace concesiones al estilo.</p>
-    <a href="#coleccion" class="btn-primary">Ver Colección <i class="fas fa-arrow-right"></i></a>
+<div id="coleccion-banner">
+  <div class="cbanner-left">
+    <div class="cbanner-small">— COLECCIÓN —</div>
+    <div class="cbanner-main">TEMPORADA</div>
+    <div class="cbanner-year">✦ 2025 ✦</div>
+    <p style="font-size:0.82rem;color:var(--muted);line-height:1.75;max-width:360px;margin-bottom:0">Jeans, remeras y camperas pensados para el caballero paraguayo que no hace concesiones al estilo.</p>
+    <a href="#coleccion" class="btn-hero" style="margin-top:2rem;display:inline-block">VER COLECCIÓN</a>
   </div>
-  <div class="coleccion-banner-img">
+  <div class="cbanner-right">
     <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=900&q=85" alt="Colección HMMR 2025" />
   </div>
 </div>
@@ -341,10 +340,10 @@
      ============================================================ -->
 <section id="categorias">
   <div class="categorias-inner">
-    <div style="text-align:center;margin-bottom:2.5rem">
-      <span class="sec-label">Explorá por estilo</span>
-      <h2 class="sec-title" style="margin-top:0.4rem">Categorías</h2>
-      <div class="sec-divider" style="margin:0.75rem auto 0"></div>
+    <div class="sec-heading">
+      <span class="sec-heading-line"></span>
+      <span class="sec-heading-text">CATEGORÍAS</span>
+      <span class="sec-heading-line"></span>
     </div>
     <div class="categorias-grid">
 
@@ -392,38 +391,15 @@
   <div class="nosotros-inner">
 
     <div class="nos-text">
-      <span class="sec-label dark">Historia · Identidad</span>
-      <h2 class="sec-title" style="margin-top:0.4rem">
-        HMMR JEANS<br/>
-        <em style="font-style:italic;color:var(--gold)">Originalmente Nacional</em>
-      </h2>
-      <div class="sec-divider"></div>
-
-      <p style="font-size:0.88rem;color:rgba(255,255,255,0.5);line-height:1.85;margin-top:1.5rem;margin-bottom:2rem;max-width:480px">
+      <h2 class="nos-title-main">HMMR JEANS</h2>
+      <div class="nos-title-gold">Originalmente Nacional</div>
+      <p style="font-size:0.85rem;color:var(--muted);line-height:1.85;max-width:440px;margin-bottom:28px">
         HMMR Jeans nació del orgullo paraguayo. Creamos indumentaria masculina de
         calidad premium con identidad propia, combinando el espíritu nacional con
         diseños modernos que marcan tendencia. Somos una marca paraguaya que
         viste a los caballeros que quieren destacar.
       </p>
-
-      <div class="nos-stats">
-        <div class="nos-stat">
-          <span class="nos-stat-num">10+</span>
-          <span class="nos-stat-lbl">Años en el mercado</span>
-        </div>
-        <div class="nos-stat">
-          <span class="nos-stat-num">10K+</span>
-          <span class="nos-stat-lbl">Clientes satisfechos</span>
-        </div>
-        <div class="nos-stat">
-          <span class="nos-stat-num">150+</span>
-          <span class="nos-stat-lbl">Modelos disponibles</span>
-        </div>
-      </div>
-
-      <a href="#contacto" class="btn-primary" style="margin-top:2rem;display:inline-flex">
-        CONOCÉ NUESTRA HISTORIA <i class="fas fa-arrow-right"></i>
-      </a>
+      <a href="#contacto" style="display:inline-block;border:1px solid rgba(255,255,255,0.35);color:#fff;padding:13px 28px;font-size:0.65rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;transition:all 0.2s">CONOCÉ NUESTRA HISTORIA</a>
     </div>
 
     <div class="nos-img">
@@ -438,57 +414,37 @@
      INSTAGRAM + WHATSAPP HELP
      ============================================================ -->
 <section id="instagram">
-  <div class="insta-wrap">
+  <div class="insta-outer">
 
-    <div class="insta-feed">
-      <div class="insta-header">
-        <div class="insta-handle"><i class="fab fa-instagram"></i> @hmmrjeans</div>
-        <p class="insta-sub">Seguinos para ver las últimas novedades y outfits</p>
+    <div>
+      <div class="sec-heading" style="margin-bottom:2rem">
+        <span class="sec-heading-line"></span>
+        <span class="sec-heading-text">SEGUINOS EN INSTAGRAM</span>
+        <span class="sec-heading-line"></span>
       </div>
       <div class="insta-grid">
         <div class="insta-post">
           <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=70" alt="Instagram HMMR" />
-          <div class="insta-hover"><span><i class="fas fa-heart"></i> 243</span><span><i class="fas fa-comment"></i> 18</span></div>
         </div>
         <div class="insta-post">
           <img src="https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=300&q=70" alt="Instagram HMMR" />
-          <div class="insta-hover"><span><i class="fas fa-heart"></i> 198</span><span><i class="fas fa-comment"></i> 12</span></div>
         </div>
         <div class="insta-post">
           <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=300&q=70" alt="Instagram HMMR" />
-          <div class="insta-hover"><span><i class="fas fa-heart"></i> 312</span><span><i class="fas fa-comment"></i> 27</span></div>
         </div>
         <div class="insta-post">
           <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&q=70" alt="Instagram HMMR" />
-          <div class="insta-hover"><span><i class="fas fa-heart"></i> 176</span><span><i class="fas fa-comment"></i> 9</span></div>
         </div>
-        <div class="insta-post">
-          <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=300&q=70" alt="Instagram HMMR" />
-          <div class="insta-hover"><span><i class="fas fa-heart"></i> 421</span><span><i class="fas fa-comment"></i> 34</span></div>
-        </div>
-        <div class="insta-post">
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300&q=70" alt="Instagram HMMR" />
-          <div class="insta-hover"><span><i class="fas fa-heart"></i> 289</span><span><i class="fas fa-comment"></i> 21</span></div>
-        </div>
-      </div>
-      <div style="text-align:center;margin-top:2rem">
-        <a href="https://instagram.com/hmmrjeans" target="_blank" rel="noopener" class="btn-insta">
-          <i class="fab fa-instagram"></i> Seguir en Instagram
-        </a>
       </div>
     </div>
 
     <div class="wa-help">
-      <div class="wa-help-icon"><i class="fab fa-whatsapp"></i></div>
-      <h3 class="wa-help-title">¿Necesitás Ayuda?</h3>
+      <h3 class="wa-help-title">¿NECESITÁS AYUDA?</h3>
       <p class="wa-help-sub">Nuestro equipo está disponible para asesorarte en tu compra, consultas de talles, envíos y más.</p>
       <a href="https://wa.me/595981000001?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda"
-         target="_blank" rel="noopener" class="btn-wa-help">
-        <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+         target="_blank" rel="noopener" class="btn-wa">
+        <i class="fab fa-whatsapp"></i> ESCRIBIR POR WHATSAPP
       </a>
-      <div class="wa-help-hours">
-        <i class="fas fa-clock"></i> Lun–Vie: 8:00 a 18:00
-      </div>
     </div>
 
   </div>
@@ -500,13 +456,13 @@
      ============================================================ -->
 <div class="newsletter-bar">
   <div class="newsletter-bar-inner">
-    <div class="newsletter-bar-text">
-      <h3 class="newsletter-bar-title">Suscribite y recibí descuentos exclusivos</h3>
-      <p class="newsletter-bar-sub">Novedades, promociones anticipadas y beneficios para suscriptores.</p>
+    <div class="nl-icon"><i class="fas fa-envelope"></i></div>
+    <div class="nl-text">
+      <div class="nl-title">ENTERATE DE NOVEDADES Y PROMOCIONES</div>
     </div>
-    <form class="newsletter-bar-form" onsubmit="return false">
+    <form class="nl-form" onsubmit="return false">
       <input type="email" placeholder="Tu correo electrónico" required />
-      <button type="submit">SUSCRIBIRME <i class="fas fa-arrow-right"></i></button>
+      <button type="submit">SUSCRIBIRME</button>
     </form>
   </div>
 </div>
@@ -572,7 +528,8 @@
   </div>
 
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 HMMR Jeans. Todos los derechos reservados. <span style="color:var(--gold)">"Originalmente Nacional"</span></p>
+    <p class="footer-copy">© 2025 HMMR Jeans. Todos los derechos reservados.</p>
+    <p class="footer-dev">DESARROLLADO EN PARAGUAY 🇵🇾</p>
     <div class="footer-legal">
       <a href="#">Términos</a>
       <a href="#">Privacidad</a>
@@ -716,6 +673,6 @@
 </section>
 
 
-<script src="assets/js/main.js?v=8"></script>
+<script src="assets/js/main.js?v=9"></script>
 </body>
 </html>
