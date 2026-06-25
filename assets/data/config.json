@@ -51,9 +51,9 @@
     },
     {
       "id": 3,
-      "nombre": "Camperas",
-      "imagen": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&q=80",
-      "filtro": "HMMR Jeans"
+      "nombre": "Abrigos",
+      "filtro": "HMMR Jeans",
+      "imagen": "https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&q=80"
     },
     {
       "id": 4,
