@@ -192,6 +192,10 @@ textarea.form-control{resize:vertical;min-height:80px}
   <div class="topbar">
     <div class="topbar-logo">HMMR <span>ADMIN</span></div>
     <div class="topbar-right">
+      <div id="topbar-user" style="display:none;align-items:center;gap:8px;padding:6px 12px;background:#0a0f1a;border:1px solid #1e2d3d;border-radius:8px;font-size:0.78rem">
+        <span style="width:28px;height:28px;border-radius:50%;background:#c58c38;display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:0.75rem" id="topbar-avatar">?</span>
+        <div><div style="color:#e2e8f0;font-weight:600;line-height:1.2" id="topbar-nombre">—</div><div style="color:#64748b;font-size:0.68rem;letter-spacing:1px;text-transform:uppercase" id="topbar-rol">—</div></div>
+      </div>
       <a href="/" target="_blank" class="btn btn-outline btn-sm">Ver sitio →</a>
       <button class="btn btn-outline btn-sm" onclick="pedirToken()">⚙ Token</button>
       <button class="btn btn-outline btn-sm" onclick="cerrarSesion()">Salir</button>
@@ -516,6 +520,7 @@ const REPO        = 'LucianoFlorentin87/HMMR';
 const PROD_PATH   = 'assets/data/productos.json';
 const CFG_PATH    = 'assets/data/config.json';
 const TOKEN_KEY   = 'hmmr_gh_token';
+const SESSION_KEY = 'hmmr_session';
 
 let productos = [], categoriasProd = [], prodSHA = '';
 let siteConfig = {}, cfgSHA = '';
@@ -558,31 +563,43 @@ async function doLogin() {
 
   if (found) {
     usuarioActual = found;
-    document.getElementById('login-screen').style.display = 'none';
-    document.getElementById('panel').style.display = 'block';
-    // Restringir tabs para rol editor
-    if (found.rol === 'editor') {
-      document.querySelectorAll('.tab').forEach(t => {
-        const txt = t.textContent.trim();
-        if (!['PRODUCTOS','HERO SLIDER','CATEGORÍAS'].includes(txt)) t.style.display = 'none';
-      });
-    }
-    iniciarPanel();
+    localStorage.setItem(SESSION_KEY, JSON.stringify(found));
+    activarPanel(found);
   } else {
     document.getElementById('login-error').style.display = 'block';
     document.getElementById('login-pass').value = '';
   }
 }
 
+function activarPanel(user) {
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('panel').style.display = 'block';
+  // Chip de usuario en topbar
+  const initials = user.nombre.split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  document.getElementById('topbar-avatar').textContent = initials;
+  document.getElementById('topbar-nombre').textContent = user.nombre;
+  document.getElementById('topbar-rol').textContent = user.rol === 'admin' ? 'Administrador' : 'Editor';
+  document.getElementById('topbar-user').style.display = 'flex';
+  // Restringir tabs para rol editor
+  document.querySelectorAll('.tab').forEach(t => t.style.display = '');
+  if (user.rol === 'editor') {
+    document.querySelectorAll('.tab').forEach(t => {
+      const txt = t.textContent.trim();
+      if (!['PRODUCTOS','HERO SLIDER','CATEGORÍAS'].includes(txt)) t.style.display = 'none';
+    });
+  }
+  iniciarPanel();
+}
+
 function cerrarSesion() {
+  localStorage.removeItem(SESSION_KEY);
   document.getElementById('login-screen').style.display = 'flex';
   document.getElementById('panel').style.display = 'none';
   document.getElementById('login-user').value = '';
   document.getElementById('login-pass').value = '';
   document.getElementById('login-error').style.display = 'none';
+  document.getElementById('topbar-user').style.display = 'none';
   usuarioActual = null;
-  // Restaurar tabs
-  document.querySelectorAll('.tab').forEach(t => t.style.display = '');
 }
 
 // ============================================================
@@ -1101,6 +1118,17 @@ function eliminarUsuario(i) {
 ['modal-producto','modal-slide','modal-cat','modal-usuario'].forEach(id => {
   document.getElementById(id).addEventListener('click', function(e) { if(e.target===this) this.classList.remove('open'); });
 });
+
+// Restaurar sesión al cargar la página
+(function restaurarSesion() {
+  try {
+    const saved = localStorage.getItem(SESSION_KEY);
+    if (saved) {
+      usuarioActual = JSON.parse(saved);
+      activarPanel(usuarioActual);
+    }
+  } catch(e) { localStorage.removeItem(SESSION_KEY); }
+})();
 </script>
 </body>
 </html>
