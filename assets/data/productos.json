@@ -4,8 +4,8 @@
       "id": 1,
       "nombre": "Jean Clasico Slim",
       "categoria": "HMMR Jeans",
-      "precio": 89900,
-      "precioOriginal": 119900,
+      "precio": 250000,
+      "precioOriginal": 350000,
       "imagen": "assets/img/productos/jean-slim-clasico.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80",
       "descripcion": "Jean de corte slim con tela premium de alta durabilidad. Perfecto para el día a día.",
@@ -22,10 +22,10 @@
         "36",
         "38"
       ],
-      "nuevo": false,
+      "nuevo": true,
       "oferta": false,
       "etiqueta": "30% OFF",
-      "estrellas": 4
+      "estrellas": 4.5
     },
     {
       "id": 2,
