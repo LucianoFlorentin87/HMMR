@@ -160,6 +160,7 @@ textarea.form-control{resize:vertical;min-height:80px}
     <div class="tab" onclick="switchTab('categorias')">CATEGORÍAS</div>
     <div class="tab" onclick="switchTab('paginas')">CONTENIDO</div>
     <div class="tab" onclick="switchTab('contacto')">CONTACTO</div>
+    <div class="tab" onclick="switchTab('usuarios')">USUARIOS</div>
   </div>
 
   <div class="content">
@@ -213,6 +214,26 @@ textarea.form-control{resize:vertical;min-height:80px}
 
     <!-- ===== TAB: CONTENIDO ===== -->
     <div id="tab-paginas" class="tab-pane">
+      <!-- Logo -->
+      <div class="card" style="margin-bottom:20px">
+        <div class="card-header"><div class="card-title">LOGO</div><button class="btn btn-gold btn-sm" onclick="guardarLogo()">Guardar</button></div>
+        <div class="card-body">
+          <div class="form-grid">
+            <div class="form-group full">
+              <label>Logo imagen (opcional — si subís una imagen reemplaza el texto)</label>
+              <div class="img-upload-wrap">
+                <input class="form-control" id="logo-imagen" type="url" placeholder="https://... (dejá vacío para usar texto)">
+                <label class="btn btn-outline btn-sm" style="cursor:pointer;white-space:nowrap">📁 Subir<input type="file" accept="image/*" style="display:none" onchange="subirImagen(this,'logo-imagen')"></label>
+              </div>
+              <span class="form-hint">Recomendado: PNG transparente, altura ~60px</span>
+            </div>
+            <div class="form-group"><label>Nombre (ej: HMMR)</label><input class="form-control" id="logo-nombre" placeholder="HMMR"></div>
+            <div class="form-group"><label>Subtítulo (ej: JEANS)</label><input class="form-control" id="logo-subtitulo" placeholder="JEANS"></div>
+            <div class="form-group full"><label>Eslogan (ej: Originalmente Nacional)</label><input class="form-control" id="logo-eslogan" placeholder="Originalmente Nacional"></div>
+          </div>
+        </div>
+      </div>
+
       <!-- Coleccion Banner -->
       <div class="card" style="margin-bottom:20px">
         <div class="card-header"><div class="card-title">BANNER COLECCIÓN</div><button class="btn btn-gold btn-sm" onclick="guardarColBanner()">Guardar</button></div>
@@ -271,6 +292,33 @@ textarea.form-control{resize:vertical;min-height:80px}
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL USUARIO -->
+<div class="modal-bg" id="modal-usuario">
+  <div class="modal" style="max-width:480px">
+    <div class="modal-header"><div class="modal-title" id="modal-usr-titulo">Nuevo Usuario</div><button class="modal-close" onclick="cerrarModalUsuario()">×</button></div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group"><label>Nombre completo</label><input class="form-control" id="usr-nombre" placeholder="Juan Pérez"></div>
+        <div class="form-group"><label>Usuario (para login)</label><input class="form-control" id="usr-usuario" placeholder="juanperez"></div>
+        <div class="form-group"><label>Contraseña</label><input class="form-control" id="usr-pass" type="password" placeholder="Mínimo 6 caracteres"></div>
+        <div class="form-group"><label>Repetir contraseña</label><input class="form-control" id="usr-pass2" type="password" placeholder="Repetir contraseña"></div>
+        <div class="form-group full">
+          <label>Rol</label>
+          <select class="form-control" id="usr-rol">
+            <option value="admin">Admin — acceso total</option>
+            <option value="editor">Editor — solo productos e imágenes</option>
+          </select>
+        </div>
+      </div>
+      <p style="font-size:0.75rem;color:#475569;margin-top:12px">La contraseña se guarda de forma segura (hash SHA-256).</p>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="cerrarModalUsuario()">Cancelar</button>
+      <button class="btn btn-gold" onclick="guardarUsuario()">Guardar usuario</button>
     </div>
   </div>
 </div>
@@ -369,6 +417,24 @@ textarea.form-control{resize:vertical;min-height:80px}
   </div>
 </div>
 
+    <!-- ===== TAB: USUARIOS ===== -->
+    <div id="tab-usuarios" class="tab-pane">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+        <div style="font-size:1rem;font-weight:600">Usuarios con acceso al panel</div>
+        <button class="btn btn-gold btn-sm" onclick="abrirNuevoUsuario()">+ Nuevo usuario</button>
+      </div>
+      <div class="table-wrap">
+        <div style="overflow-x:auto">
+          <table>
+            <thead><tr><th>NOMBRE</th><th>USUARIO</th><th>ROL</th><th>ACCIONES</th></tr></thead>
+            <tbody id="tabla-usuarios"><tr><td colspan="4" style="text-align:center;padding:2rem;color:#475569">Cargando...</td></tr></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
@@ -405,7 +471,8 @@ function cerrarSesion() {
 // TABS
 // ============================================================
 function switchTab(name) {
-  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', ['productos','hero','categorias','paginas','contacto'][i] === name));
+  const names = ['productos','hero','categorias','paginas','contacto','usuarios'];
+  document.querySelectorAll('.tab').forEach((t,i) => t.classList.toggle('active', names[i] === name));
   document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
 }
@@ -583,6 +650,7 @@ async function cargarConfig() {
     renderCats();
     poblarFormContenido();
     poblarFormContacto();
+    renderUsuarios();
   } catch(e) { console.warn('config.json:', e.message); }
 }
 
@@ -707,7 +775,17 @@ function eliminarCat(i) {
 }
 
 // ---- CONTENIDO (nosotros, coleccion banner, instagram) ----
+async function guardarLogo() {
+  siteConfig.logo = { imagen: document.getElementById('logo-imagen').value.trim(), nombre: document.getElementById('logo-nombre').value.trim(), subtitulo: document.getElementById('logo-subtitulo').value.trim(), eslogan: document.getElementById('logo-eslogan').value.trim() };
+  await guardarConfig('Admin: actualizar logo');
+}
+
 function poblarFormContenido() {
+  const lg = siteConfig.logo || {};
+  document.getElementById('logo-imagen').value   = lg.imagen   || '';
+  document.getElementById('logo-nombre').value   = lg.nombre   || '';
+  document.getElementById('logo-subtitulo').value= lg.subtitulo|| '';
+  document.getElementById('logo-eslogan').value  = lg.eslogan  || '';
   const cb = siteConfig.coleccionBanner || {};
   document.getElementById('cb-subtitulo').value = cb.subtitulo || '';
   document.getElementById('cb-titulo').value    = cb.titulo    || '';
@@ -807,8 +885,84 @@ function toast(msg, type) {
   clearTimeout(t._t); t._t = setTimeout(() => { t.className=''; }, 3500);
 }
 
+// ============================================================
+// USUARIOS
+// ============================================================
+async function sha256(str) {
+  const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+  return Array.from(new Uint8Array(buf)).map(b=>b.toString(16).padStart(2,'0')).join('');
+}
+
+let editUsrIdx = null;
+
+function renderUsuarios() {
+  const usuarios = siteConfig.usuarios || [];
+  const tbody = document.getElementById('tabla-usuarios');
+  if (!usuarios.length) { tbody.innerHTML='<tr><td colspan="4" style="text-align:center;padding:2rem;color:#475569">No hay usuarios</td></tr>'; return; }
+  tbody.innerHTML = usuarios.map((u,i) => `<tr>
+    <td style="font-weight:600">${u.nombre}</td>
+    <td style="color:#64748b">@${u.usuario}</td>
+    <td><span class="badge ${u.rol==='admin'?'badge-gold':'badge-green'}">${u.rol.toUpperCase()}</span></td>
+    <td><div style="display:flex;gap:8px">
+      <button class="btn btn-outline btn-sm" onclick="editarUsuario(${i})">Editar</button>
+      ${usuarios.length>1?`<button class="btn btn-danger btn-sm" onclick="eliminarUsuario(${i})">Eliminar</button>`:''}
+    </div></td>
+  </tr>`).join('');
+}
+
+function abrirNuevoUsuario() {
+  editUsrIdx = null;
+  document.getElementById('modal-usr-titulo').textContent = 'Nuevo Usuario';
+  ['usr-nombre','usr-usuario','usr-pass','usr-pass2'].forEach(id => document.getElementById(id).value='');
+  document.getElementById('usr-rol').value = 'editor';
+  document.getElementById('modal-usuario').classList.add('open');
+}
+
+function editarUsuario(i) {
+  editUsrIdx = i;
+  const u = siteConfig.usuarios[i];
+  document.getElementById('modal-usr-titulo').textContent = 'Editar Usuario';
+  document.getElementById('usr-nombre').value  = u.nombre || '';
+  document.getElementById('usr-usuario').value = u.usuario || '';
+  document.getElementById('usr-pass').value    = '';
+  document.getElementById('usr-pass2').value   = '';
+  document.getElementById('usr-rol').value     = u.rol || 'editor';
+  document.getElementById('modal-usuario').classList.add('open');
+}
+
+function cerrarModalUsuario() { document.getElementById('modal-usuario').classList.remove('open'); }
+
+async function guardarUsuario() {
+  const nombre  = document.getElementById('usr-nombre').value.trim();
+  const usuario = document.getElementById('usr-usuario').value.trim().toLowerCase().replace(/\s+/g,'');
+  const pass    = document.getElementById('usr-pass').value;
+  const pass2   = document.getElementById('usr-pass2').value;
+  const rol     = document.getElementById('usr-rol').value;
+  if (!nombre || !usuario) { toast('Nombre y usuario son obligatorios','error'); return; }
+  if (editUsrIdx === null && !pass) { toast('La contraseña es obligatoria','error'); return; }
+  if (pass && pass !== pass2) { toast('Las contraseñas no coinciden','error'); return; }
+  if (pass && pass.length < 6) { toast('La contraseña debe tener al menos 6 caracteres','error'); return; }
+  // Verificar usuario único
+  const existe = (siteConfig.usuarios||[]).some((u,i) => u.usuario === usuario && i !== editUsrIdx);
+  if (existe) { toast('Ese nombre de usuario ya existe','error'); return; }
+  const hash = pass ? await sha256(pass) : (editUsrIdx !== null ? siteConfig.usuarios[editUsrIdx].passwordHash : '');
+  const obj = { nombre, usuario, rol, passwordHash: hash };
+  if (!siteConfig.usuarios) siteConfig.usuarios = [];
+  if (editUsrIdx !== null) siteConfig.usuarios[editUsrIdx] = obj; else siteConfig.usuarios.push(obj);
+  cerrarModalUsuario();
+  renderUsuarios();
+  await guardarConfig('Admin: actualizar usuarios');
+}
+
+function eliminarUsuario(i) {
+  if (!confirm(`¿Eliminás al usuario "${siteConfig.usuarios[i].nombre}"?`)) return;
+  siteConfig.usuarios.splice(i,1);
+  renderUsuarios();
+  guardarConfig('Admin: eliminar usuario');
+}
+
 // Cerrar modals al click fuera
-['modal-producto','modal-slide','modal-cat'].forEach(id => {
+['modal-producto','modal-slide','modal-cat','modal-usuario'].forEach(id => {
   document.getElementById(id).addEventListener('click', function(e) { if(e.target===this) this.classList.remove('open'); });
 });
 </script>

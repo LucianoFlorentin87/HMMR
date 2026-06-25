@@ -756,6 +756,34 @@ async function aplicarConfig() {
     if (!r.ok) return;
     const cfg = await r.json();
 
+    // LOGO
+    if (cfg.logo) {
+      const l = cfg.logo;
+      document.querySelectorAll('.logo, .footer-logo-top').forEach(el => {
+        if (l.imagen) {
+          // Logo imagen
+          el.innerHTML = `<img src="${l.imagen}" alt="${l.nombre || 'Logo'}" style="height:36px;object-fit:contain">`;
+        } else {
+          // Logo texto
+          const svgIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;fill:#fff;flex-shrink:0"><rect x="9" y="11" width="10" height="6" rx="1" transform="rotate(-45 14 14)"/><rect x="4" y="14" width="12" height="4" rx="1" transform="rotate(-45 10 16)"/></svg>`;
+          const isFooter = el.classList.contains('footer-logo-top');
+          if (isFooter) {
+            el.innerHTML = `${svgIcon} ${l.nombre || 'HMMR'} <span style="font-size:0.75rem;font-weight:400;letter-spacing:4px;font-family:Inter,sans-serif">${l.subtitulo || 'JEANS'}</span>`;
+          } else {
+            el.innerHTML = `${svgIcon} ${l.nombre || 'HMMR'} <span style="font-size:0.75rem;font-weight:400;letter-spacing:4px;font-family:Inter,sans-serif">${l.subtitulo || 'JEANS'}</span>`;
+            const subEl = el.parentElement && el.parentElement.querySelector('.logo-sub-text');
+            if (subEl) subEl.textContent = l.eslogan || '';
+          }
+        }
+      });
+      // Eslogan en navbar
+      const subNav = document.querySelector('.logo-sub-text');
+      if (subNav && !cfg.logo.imagen) subNav.textContent = l.eslogan || '';
+      // Footer eslogan
+      const footerSub = document.querySelector('.footer-logo-sub');
+      if (footerSub) footerSub.textContent = l.eslogan || '';
+    }
+
     // HERO SLIDES
     if (cfg.hero && cfg.hero.slides) {
       const heroEl = document.getElementById('hero');

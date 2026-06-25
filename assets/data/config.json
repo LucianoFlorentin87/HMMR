@@ -1,4 +1,10 @@
 {
+  "logo": {
+    "imagen": "",
+    "nombre": "HMMR",
+    "subtitulo": "JEANS",
+    "eslogan": "Originalmente Nacional"
+  },
   "hero": {
     "slides": [
       {
@@ -61,6 +67,9 @@
       "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=300&q=70"
     ]
   },
+  "usuarios": [
+    { "nombre": "Admin", "usuario": "admin", "rol": "admin", "passwordHash": "" }
+  ],
   "contacto": {
     "whatsapp": "595981123456",
     "email": "hola@hmmrjeans.com",
