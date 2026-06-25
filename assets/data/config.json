@@ -46,8 +46,8 @@
     {
       "id": 2,
       "nombre": "Remeras",
-      "imagen": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80",
-      "filtro": "HMMR Jeans"
+      "filtro": "HMMR Jeans",
+      "imagen": ""
     },
     {
       "id": 3,
