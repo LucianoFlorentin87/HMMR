@@ -87,7 +87,7 @@
       "precio": 99900,
       "precioOriginal": 139900,
       "imagen": "assets/img/productos/jean-cargo-urbano.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-2-1782426587542.jpeg",
       "descripcion": "Jean cargo con bolsillos funcionales y estilo urbano. Para el hombre que no para.",
       "colores": [
         "negro",
@@ -103,7 +103,8 @@
       ],
       "nuevo": false,
       "oferta": true,
-      "etiqueta": "28% OFF"
+      "etiqueta": "28% OFF",
+      "estrellas": 4.5
     },
     {
       "id": 5,
