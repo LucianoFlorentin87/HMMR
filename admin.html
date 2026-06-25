@@ -480,6 +480,35 @@ textarea.form-control{resize:vertical;min-height:80px}
   </div>
 </div>
 
+<!-- MODAL TOKEN -->
+<div class="modal-bg" id="modal-token">
+  <div class="modal" style="max-width:520px">
+    <div class="modal-header">
+      <div class="modal-title">⚙ Configurar GitHub Token</div>
+    </div>
+    <div class="modal-body">
+      <p style="color:#94a3b8;font-size:0.88rem;margin-bottom:16px">Para guardar cambios en la web necesitás un <strong style="color:#e2e8f0">GitHub Personal Access Token</strong>. Este token se guarda solo en <strong style="color:#e2e8f0">este navegador</strong>.</p>
+      <div style="background:#0a0f1a;border:1px solid #1e2d3d;border-radius:10px;padding:16px;margin-bottom:16px">
+        <p style="font-size:0.8rem;color:#64748b;margin-bottom:8px">Pasos para obtener el token:</p>
+        <ol style="font-size:0.82rem;color:#94a3b8;padding-left:18px;line-height:1.8">
+          <li>Andá a <a href="https://github.com/settings/tokens/new?scopes=repo&description=HMMR+Admin" target="_blank" style="color:#c58c38">github.com → Settings → Tokens</a></li>
+          <li>Creá un token con permiso <strong style="color:#e2e8f0">repo</strong></li>
+          <li>Copiá el token y pegalo abajo</li>
+        </ol>
+      </div>
+      <div class="form-group">
+        <label>Token de GitHub</label>
+        <input class="form-control" id="token-input" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" onkeydown="if(event.key==='Enter')guardarTokenModal()">
+      </div>
+      <div id="token-error" style="display:none;color:#ef4444;font-size:0.82rem;margin-top:8px;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:10px 14px"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="document.getElementById('modal-token').classList.remove('open')">Ahora no</button>
+      <button class="btn btn-gold" onclick="guardarTokenModal()">Guardar token</button>
+    </div>
+  </div>
+</div>
+
 <div id="toast"></div>
 
 <script>
@@ -570,14 +599,32 @@ function switchTab(name) {
 // INIT
 // ============================================================
 function iniciarPanel() {
-  if (!localStorage.getItem(TOKEN_KEY)) document.getElementById('setup-banner').style.display = 'flex';
+  if (!localStorage.getItem(TOKEN_KEY)) {
+    document.getElementById('setup-banner').style.display = 'flex';
+    mostrarModalToken();
+  }
   cargarProductos();
   cargarConfig();
 }
 
+function mostrarModalToken() {
+  document.getElementById('modal-token').classList.add('open');
+  document.getElementById('token-input').value = '';
+  document.getElementById('token-error').style.display = 'none';
+}
+
+function guardarTokenModal() {
+  const t = document.getElementById('token-input').value.trim();
+  if (!t) { document.getElementById('token-error').textContent = 'El token no puede estar vacío'; document.getElementById('token-error').style.display = 'block'; return; }
+  if (!t.startsWith('ghp_') && !t.startsWith('github_pat_')) { document.getElementById('token-error').textContent = 'El token debe comenzar con ghp_ o github_pat_'; document.getElementById('token-error').style.display = 'block'; return; }
+  localStorage.setItem(TOKEN_KEY, t);
+  document.getElementById('modal-token').classList.remove('open');
+  document.getElementById('setup-banner').style.display = 'none';
+  toast('Token guardado. ¡Ya podés guardar cambios!', 'success');
+}
+
 function pedirToken() {
-  const t = prompt('Pegá tu GitHub Personal Access Token:');
-  if (t && t.trim()) { localStorage.setItem(TOKEN_KEY, t.trim()); document.getElementById('setup-banner').style.display = 'none'; toast('Token guardado', 'success'); }
+  mostrarModalToken();
 }
 
 // ============================================================
