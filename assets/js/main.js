@@ -894,6 +894,18 @@ async function aplicarConfig() {
       if (fb && c.facebook) fb.href = c.facebook;
       const tt = document.getElementById('footer-tiktok');
       if (tt && c.tiktok && c.tiktok !== '#') tt.href = c.tiktok;
+      // Sección contacto
+      const waLink = (num, msg) => `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
+      ['ct-wa-link','dist-wa-btn','contacto-wa-btn'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && c.whatsapp) el.href = waLink(c.whatsapp, el.id.includes('dist') ? 'Hola HMMR Jeans, me interesa ser distribuidor' : 'Hola HMMR Jeans, necesito ayuda');
+      });
+      const ctEmail = document.getElementById('ct-email-link');
+      if (ctEmail && c.email) { ctEmail.href = 'mailto:' + c.email; ctEmail.textContent = c.email; }
+      const distEmail = document.getElementById('dist-email-btn');
+      if (distEmail && c.email) distEmail.href = 'mailto:' + c.email + '?subject=Quiero%20ser%20distribuidor';
+      const ctMaps = document.getElementById('ct-maps-link');
+      if (ctMaps && c.maps) ctMaps.href = c.maps;
     }
   } catch(e) {
     console.warn('config.json no disponible:', e.message);
