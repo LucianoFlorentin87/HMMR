@@ -59,7 +59,7 @@
       "precio": 250000,
       "precioOriginal": 300000,
       "imagen": "assets/img/productos/jean-wide-leg.jpg",
-      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-05-22-at-211125-20-1782423350579.jpeg",
+      "imagenFallback": "",
       "descripcion": "Tendencia wide leg con caÃÂ­da perfecta y tela suave. El estilo que domina la temporada.",
       "colores": [
         "azul claro",
