@@ -40,8 +40,8 @@
     {
       "id": 1,
       "nombre": "Jeans",
-      "imagen": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80",
-      "filtro": "HMMR Jeans"
+      "filtro": "HMMR Jeans",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-05-22-at-211125-19-1782426332519.jpeg"
     },
     {
       "id": 2,
