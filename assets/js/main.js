@@ -157,21 +157,67 @@ function renderDestacados(lista) {
   }).join('');
 }
 
+// ---- GOOGLE SHEETS CONFIG ----
+// Para administrar productos desde Google Sheets:
+// 1. Creá una hoja con las columnas indicadas en el README
+// 2. Publicala: Archivo → Compartir → Publicar en la web → CSV
+// 3. Pegá el ID de la hoja aquí (la parte larga de la URL entre /d/ y /edit)
+const SHEETS_ID = '';  // <-- pegá tu ID acá
+
+function parsearSheets(csv) {
+  const lineas = csv.trim().split('\n');
+  const cabeceras = lineas[0].split(',').map(h => h.trim().replace(/^"|"$/g, ''));
+  return lineas.slice(1).map((linea, i) => {
+    const cols = linea.match(/(".*?"|[^,]+)(?=,|$)/g) || [];
+    const obj = {};
+    cabeceras.forEach((h, idx) => {
+      obj[h] = (cols[idx] || '').replace(/^"|"$/g, '').trim();
+    });
+    return {
+      id:             i + 1,
+      nombre:         obj.nombre        || '',
+      categoria:      obj.categoria     || 'HMMR Jeans',
+      precio:         parseFloat(obj.precio)          || 0,
+      precioOriginal: obj.precioOriginal ? parseFloat(obj.precioOriginal) : null,
+      imagen:         obj.imagen        || '',
+      imagenFallback: obj.imagenFallback || '',
+      descripcion:    obj.descripcion   || '',
+      colores:        obj.colores       ? obj.colores.split('|').map(c => c.trim()) : [],
+      tallas:         obj.tallas        ? obj.tallas.split('|').map(t => t.trim())  : [],
+      nuevo:          obj.nuevo         === 'true' || obj.nuevo  === 'si',
+      oferta:         obj.oferta        === 'true' || obj.oferta === 'si',
+      etiqueta:       obj.etiqueta      || null,
+      estrellas:      parseFloat(obj.estrellas) || 4
+    };
+  }).filter(p => p.nombre);
+}
+
 // ---- LOAD PRODUCTS ----
 async function cargarProductos() {
   try {
-    const resp = await fetch('assets/data/productos.json');
-    const data = await resp.json();
-    todosProductos = data.productos;
+    let productos, categorias;
 
-    // Grid principal
+    if (SHEETS_ID) {
+      // Leer desde Google Sheets publicado como CSV
+      const url = `https://docs.google.com/spreadsheets/d/${SHEETS_ID}/gviz/tq?tqx=out:csv&sheet=Productos`;
+      const resp = await fetch(url);
+      const csv  = await resp.text();
+      productos   = parsearSheets(csv);
+      categorias  = ['Todos', ...new Set(productos.map(p => p.categoria))];
+    } else {
+      // Fallback: JSON local
+      const resp  = await fetch('assets/data/productos.json');
+      const data  = await resp.json();
+      productos   = data.productos;
+      categorias  = data.categorias;
+    }
+
+    todosProductos = productos;
     renderProductos(todosProductos);
-
-    // Destacados — primeros 4 productos
     renderDestacados(todosProductos);
-
-    crearFiltros(data.categorias);
+    crearFiltros(categorias);
   } catch (err) {
+    console.error('Error cargando productos:', err);
     const g = document.getElementById('grid-productos');
     if (g) g.innerHTML = '<p style="text-align:center;padding:3rem;color:var(--gray-mid);grid-column:1/-1">No se pudieron cargar los productos.</p>';
   }
