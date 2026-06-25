@@ -536,7 +536,7 @@
     /* ============================================================
        COLECCIÓN COMPLETA (funcional)
        ============================================================ */
-    #coleccion{padding:70px 6%;background:var(--dark2)}
+    #coleccion{padding:70px 6%;background:var(--dark2);display:none}
     .coleccion-header{
       display:flex;align-items:flex-end;justify-content:space-between;
       margin-bottom:36px;flex-wrap:wrap;gap:20px;
@@ -1003,7 +1003,7 @@
     <!-- Cargado por JS -->
   </div>
   <div style="text-align:center">
-    <a href="#coleccion" class="btn-ver-todos">VER TODOS LOS PRODUCTOS <i class="fas fa-arrow-right"></i></a>
+    <a href="#coleccion" class="btn-ver-todos" onclick="document.getElementById('coleccion').style.display='block'">VER TODOS LOS PRODUCTOS <i class="fas fa-arrow-right"></i></a>
   </div>
 </section>
 
@@ -1017,7 +1017,7 @@
     <div class="cbanner-main">TEMPORADA</div>
     <div class="cbanner-year">★ 2025 ★</div>
     <div class="cbanner-ornament">★</div>
-    <a href="#coleccion" class="btn-hero" style="display:inline-block;margin-top:0">VER COLECCIÓN</a>
+    <a href="#coleccion" class="btn-hero" style="display:inline-block;margin-top:0" onclick="document.getElementById('coleccion').style.display='block'">VER COLECCIÓN</a>
   </div>
   <div class="cbanner-right">
     <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=900&q=85" alt="Colección HMMR 2025" />
@@ -1070,28 +1070,28 @@
     <span class="sec-heading-line"></span>
   </div>
   <div class="categories">
-    <a href="#coleccion" class="category-card" onclick="filtrarCategoria('HMMR Jeans')">
+    <a href="#coleccion" class="category-card" onclick="document.getElementById('coleccion').style.display='block';filtrarCategoria('HMMR Jeans')">
       <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=600&q=80" alt="Jeans HMMR" />
       <div class="cat-overlay">
         <span class="cat-name">Jeans</span>
         <span class="cat-link">VER MÁS →</span>
       </div>
     </a>
-    <a href="#coleccion" class="category-card" onclick="filtrarCategoria('HMMR Jeans')">
+    <a href="#coleccion" class="category-card" onclick="document.getElementById('coleccion').style.display='block';filtrarCategoria('HMMR Jeans')">
       <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600&q=80" alt="Remeras HMMR" />
       <div class="cat-overlay">
         <span class="cat-name">Remeras</span>
         <span class="cat-link">VER MÁS →</span>
       </div>
     </a>
-    <a href="#coleccion" class="category-card" onclick="filtrarCategoria('HMMR Jeans')">
+    <a href="#coleccion" class="category-card" onclick="document.getElementById('coleccion').style.display='block';filtrarCategoria('HMMR Jeans')">
       <img src="https://images.unsplash.com/photo-1490578474895-699cd4e2cf59?w=600&q=80" alt="Camperas HMMR" />
       <div class="cat-overlay">
         <span class="cat-name">Camperas</span>
         <span class="cat-link">VER MÁS →</span>
       </div>
     </a>
-    <a href="#coleccion" class="category-card" onclick="filtrarCategoria('HMMR Jeans')">
+    <a href="#coleccion" class="category-card" onclick="document.getElementById('coleccion').style.display='block';filtrarCategoria('HMMR Jeans')">
       <img src="https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=600&q=80" alt="Accesorios HMMR" />
       <div class="cat-overlay">
         <span class="cat-name">Accesorios</span>
