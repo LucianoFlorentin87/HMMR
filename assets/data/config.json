@@ -88,18 +88,8 @@
     ]
   },
   "usuarios": [
-    {
-      "nombre": "Admin",
-      "usuario": "admin",
-      "rol": "admin",
-      "passwordHash": ""
-    },
-    {
-      "nombre": "Sofia Coronel",
-      "usuario": "scoronel",
-      "rol": "editor",
-      "passwordHash": "b8de6a1bd651a7d1dc13c5d77d5b4734a4d837e8471278159e7c8e108355af24"
-    }
+    { "nombre": "Admin", "usuario": "admin", "rol": "admin", "passwordHash": "e693c5b99c20f0afd4e0fba86fd13fd998d8a3f4b48357c4f4db36dcbb1d1597" },
+    { "nombre": "Sofia Coronel", "usuario": "scoronel", "rol": "editor", "passwordHash": "b8de6a1bd651a7d1dc13c5d77d5b4734a4d837e8471278159e7c8e108355af24" }
   ],
   "contacto": {
     "whatsapp": "595981123456",

@@ -136,9 +136,10 @@ textarea.form-control{resize:vertical;min-height:80px}
   <div class="login-box">
     <div class="login-logo">HMMR</div>
     <div class="login-sub">PANEL DE ADMINISTRACIÓN</div>
-    <input type="password" id="login-pass" placeholder="Contraseña" onkeydown="if(event.key==='Enter')doLogin()">
+    <input type="text" id="login-user" placeholder="Usuario" onkeydown="if(event.key==='Enter')doLogin()" autocomplete="username">
+    <input type="password" id="login-pass" placeholder="Contraseña" onkeydown="if(event.key==='Enter')doLogin()" autocomplete="current-password">
     <button onclick="doLogin()">INGRESAR</button>
-    <div class="login-error" id="login-error">Contraseña incorrecta</div>
+    <div class="login-error" id="login-error">Usuario o contraseña incorrectos</div>
   </div>
 </div>
 
@@ -438,7 +439,6 @@ textarea.form-control{resize:vertical;min-height:80px}
 <div id="toast"></div>
 
 <script>
-const ADMIN_PASS  = 'hmmr2025';
 const REPO        = 'LucianoFlorentin87/HMMR';
 const PROD_PATH   = 'assets/data/productos.json';
 const CFG_PATH    = 'assets/data/config.json';
@@ -447,24 +447,62 @@ const TOKEN_KEY   = 'hmmr_gh_token';
 let productos = [], categoriasProd = [], prodSHA = '';
 let siteConfig = {}, cfgSHA = '';
 let editProdIdx = null, editSlideIdx = null, editCatIdx = null;
+let usuarioActual = null;
 
 // ============================================================
 // LOGIN
 // ============================================================
-function doLogin() {
-  if (document.getElementById('login-pass').value === ADMIN_PASS) {
+async function doLogin() {
+  const usuario = document.getElementById('login-user').value.trim().toLowerCase();
+  const pass    = document.getElementById('login-pass').value;
+  if (!usuario || !pass) { document.getElementById('login-error').style.display = 'block'; return; }
+
+  // Cargar config para obtener usuarios
+  let usuarios = [];
+  try {
+    const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${CFG_PATH}`);
+    if (r.ok) {
+      const meta = await r.json();
+      const cfg  = JSON.parse(atob(meta.content.replace(/\n/g,'')));
+      usuarios   = cfg.usuarios || [];
+      cfgSHA     = meta.sha;
+      siteConfig = cfg;
+    }
+  } catch(e) {}
+
+  // Fallback: usuario admin hardcodeado si no hay usuarios en config
+  if (!usuarios.length) usuarios = [{ usuario:'admin', passwordHash:'', rol:'admin', nombre:'Admin' }];
+
+  const hash = await sha256(pass);
+  const found = usuarios.find(u => u.usuario === usuario && (u.passwordHash === hash || (u.passwordHash === '' && pass === 'hmmr2025')));
+
+  if (found) {
+    usuarioActual = found;
     document.getElementById('login-screen').style.display = 'none';
     document.getElementById('panel').style.display = 'block';
+    // Restringir tabs para rol editor
+    if (found.rol === 'editor') {
+      document.querySelectorAll('.tab').forEach(t => {
+        const txt = t.textContent.trim();
+        if (!['PRODUCTOS','HERO SLIDER','CATEGORÍAS'].includes(txt)) t.style.display = 'none';
+      });
+    }
     iniciarPanel();
   } else {
     document.getElementById('login-error').style.display = 'block';
     document.getElementById('login-pass').value = '';
   }
 }
+
 function cerrarSesion() {
   document.getElementById('login-screen').style.display = 'flex';
   document.getElementById('panel').style.display = 'none';
+  document.getElementById('login-user').value = '';
   document.getElementById('login-pass').value = '';
+  document.getElementById('login-error').style.display = 'none';
+  usuarioActual = null;
+  // Restaurar tabs
+  document.querySelectorAll('.tab').forEach(t => t.style.display = '');
 }
 
 // ============================================================
