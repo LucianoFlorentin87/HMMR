@@ -2,18 +2,30 @@
   "productos": [
     {
       "id": 1,
-      "nombre": "Jean Clásico Slim",
+      "nombre": "Jean Clasico Slim",
       "categoria": "HMMR Jeans",
       "precio": 89900,
       "precioOriginal": 119900,
       "imagen": "assets/img/productos/jean-slim-clasico.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80",
       "descripcion": "Jean de corte slim con tela premium de alta durabilidad. Perfecto para el día a día.",
-      "colores": ["azul", "negro", "gris"],
-      "tallas": ["28", "30", "32", "34", "36", "38"],
+      "colores": [
+        "azul",
+        "negro",
+        "gris"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
       "nuevo": false,
-      "oferta": true,
-      "etiqueta": "30% OFF"
+      "oferta": false,
+      "etiqueta": "30% OFF",
+      "estrellas": 4
     },
     {
       "id": 2,
@@ -23,9 +35,18 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-skinny-pushup.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80",
-      "descripcion": "Jean skinny con efecto push up y tela elástica premium. Moldea y estiliza tu figura.",
-      "colores": ["azul", "negro"],
-      "tallas": ["28", "30", "32", "34", "36"],
+      "descripcion": "Jean skinny con efecto push up y tela elÃ¡stica premium. Moldea y estiliza tu figura.",
+      "colores": [
+        "azul",
+        "negro"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -38,9 +59,21 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-wide-leg.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
-      "descripcion": "Tendencia wide leg con caída perfecta y tela suave. El estilo que domina la temporada.",
-      "colores": ["azul claro", "blanco", "negro"],
-      "tallas": ["28", "30", "32", "34", "36", "38", "40"],
+      "descripcion": "Tendencia wide leg con caÃ­da perfecta y tela suave. El estilo que domina la temporada.",
+      "colores": [
+        "azul claro",
+        "blanco",
+        "negro"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -54,8 +87,18 @@
       "imagen": "assets/img/productos/jean-cargo-urbano.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=400&q=80",
       "descripcion": "Jean cargo con bolsillos funcionales y estilo urbano. Para el hombre que no para.",
-      "colores": ["negro", "khaki", "azul"],
-      "tallas": ["30", "32", "34", "36", "38"],
+      "colores": [
+        "negro",
+        "khaki",
+        "azul"
+      ],
+      "tallas": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "28% OFF"
@@ -68,39 +111,69 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-mom-vintage.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=400&q=80",
-      "descripcion": "Estilo mom vintage con lavado desgastado auténtico. Comodidad y estilo en uno.",
-      "colores": ["azul claro", "blanco roto"],
-      "tallas": ["28", "30", "32", "34", "36"],
+      "descripcion": "Estilo mom vintage con lavado desgastado autÃ©ntico. Comodidad y estilo en uno.",
+      "colores": [
+        "azul claro",
+        "blanco roto"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
       "nuevo": false,
       "oferta": false,
       "etiqueta": null
     },
     {
       "id": 6,
-      "nombre": "Jean Recto Clásico",
+      "nombre": "Jean Recto ClÃ¡sico",
       "categoria": "HMMR Jeans",
       "precio": 74900,
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-recto-clasico.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80",
-      "descripcion": "Corte recto atemporal, ideal para cualquier ocasión. El básico que nunca falla.",
-      "colores": ["azul", "gris", "negro"],
-      "tallas": ["28", "30", "32", "34", "36", "38", "40"],
+      "descripcion": "Corte recto atemporal, ideal para cualquier ocasiÃ³n. El bÃ¡sico que nunca falla.",
+      "colores": [
+        "azul",
+        "gris",
+        "negro"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40"
+      ],
       "nuevo": false,
       "oferta": false,
       "etiqueta": null
     },
     {
       "id": 7,
-      "nombre": "Jean Skinny Clásico",
+      "nombre": "Jean Skinny ClÃ¡sico",
       "categoria": "HMMR Jeans",
       "precio": 82900,
       "precioOriginal": 109900,
       "imagen": "assets/img/productos/jean-skinny-clasico.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&q=80",
       "descripcion": "Corte skinny ajustado con tela stretch de alta calidad. Estilo y comodidad garantizados.",
-      "colores": ["azul", "negro"],
-      "tallas": ["28", "30", "32", "34", "36"],
+      "colores": [
+        "azul",
+        "negro"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "25% OFF"
@@ -114,8 +187,18 @@
       "imagen": "assets/img/productos/jean-flare-retro.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1617952236317-0bd127407984?w=400&q=80",
       "descripcion": "Corte flare inspirado en los 70s con tela premium y acabado impecable.",
-      "colores": ["azul claro", "negro", "blanco roto"],
-      "tallas": ["28", "30", "32", "34", "36"],
+      "colores": [
+        "azul claro",
+        "negro",
+        "blanco roto"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -129,8 +212,18 @@
       "imagen": "assets/img/productos/jean-tapered-fit.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&q=80",
       "descripcion": "Corte tapered moderno, ancho arriba y ajustado en el tobillo. Tendencia urbana.",
-      "colores": ["negro", "gris", "azul"],
-      "tallas": ["30", "32", "34", "36", "38"],
+      "colores": [
+        "negro",
+        "gris",
+        "azul"
+      ],
+      "tallas": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -143,9 +236,20 @@
       "precioOriginal": 119900,
       "imagen": "assets/img/productos/df-jean-boyfriend.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=400&q=80",
-      "descripcion": "Jean boyfriend oversized con efecto desgastado. Comodidad máxima con mucho estilo.",
-      "colores": ["azul claro", "blanco roto", "gris"],
-      "tallas": ["28", "30", "32", "34", "36", "38"],
+      "descripcion": "Jean boyfriend oversized con efecto desgastado. Comodidad mÃ¡xima con mucho estilo.",
+      "colores": [
+        "azul claro",
+        "blanco roto",
+        "gris"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "26% OFF"
@@ -158,9 +262,19 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/df-jogger-denim.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=400&q=80",
-      "descripcion": "Jogger en denim elástico con puño en el tobillo. La fusión perfecta entre comodidad y estilo.",
-      "colores": ["negro", "gris", "azul"],
-      "tallas": ["S", "M", "L", "XL", "XXL"],
+      "descripcion": "Jogger en denim elÃ¡stico con puÃ±o en el tobillo. La fusiÃ³n perfecta entre comodidad y estilo.",
+      "colores": [
+        "negro",
+        "gris",
+        "azul"
+      ],
+      "tallas": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
       "nuevo": true,
       "oferta": false,
       "etiqueta": "NUEVO"
@@ -174,14 +288,28 @@
       "imagen": "assets/img/productos/df-cintura-alta.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=400&q=80",
       "descripcion": "Jean de cintura alta que estiliza la silueta. Tela con lycra para mayor confort.",
-      "colores": ["azul", "negro", "blanco"],
-      "tallas": ["28", "30", "32", "34", "36"],
+      "colores": [
+        "azul",
+        "negro",
+        "blanco"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36"
+      ],
       "nuevo": false,
       "oferta": true,
       "etiqueta": "21% OFF"
     }
   ],
-  "categorias": ["Todos", "HMMR Jeans", "Doom Free"],
+  "categorias": [
+    "Todos",
+    "HMMR Jeans",
+    "Doom Free"
+  ],
   "banners": [
     {
       "id": 1,
@@ -192,44 +320,6 @@
       "cta": "Comprar Ahora",
       "link": "#coleccion",
       "activo": true
-    }
-  ],
-  "testimonios": [
-    {
-      "nombre": "Carlos M.",
-      "ciudad": "Asunción",
-      "texto": "Los jeans HMMR son de una calidad increíble. Ya compré 3 pares y siempre superan mis expectativas.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Diego R.",
-      "ciudad": "Ciudad del Este",
-      "texto": "El jean slim es perfecto, cómodo y con un estilo único. Los recomiendo al 100%.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Rodrigo A.",
-      "ciudad": "Encarnación",
-      "texto": "El cargo es exactamente lo que buscaba. Calidad brutal y llegó súper rápido.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Fernando L.",
-      "ciudad": "Luque",
-      "texto": "Orgulloso de usar una marca paraguaya. El jean tapered fit es una pasada.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Sebastián P.",
-      "ciudad": "Capiatá",
-      "texto": "El jogger de mi hijo llegó perfecto. Tela muy resistente y buen precio.",
-      "estrellas": 5
-    },
-    {
-      "nombre": "Martín F.",
-      "ciudad": "Lambaré",
-      "texto": "El jean recto clásico es una joya. Mis amigos me preguntaron la marca al toque.",
-      "estrellas": 5
     }
   ]
 }
