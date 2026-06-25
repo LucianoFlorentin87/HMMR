@@ -548,7 +548,7 @@ async function doLogin() {
     const r = await fetch(`https://api.github.com/repos/${REPO}/contents/${CFG_PATH}`);
     if (r.ok) {
       const meta = await r.json();
-      const cfg  = JSON.parse(atob(meta.content.replace(/\n/g,'')));
+      const cfg  = JSON.parse(decodeURIComponent(escape(atob(meta.content.replace(/\n/g,'')))));
       usuarios   = cfg.usuarios || [];
       cfgSHA     = meta.sha;
       siteConfig = cfg;
@@ -671,7 +671,7 @@ async function cargarProductos() {
   try {
     const meta = await ghGet(PROD_PATH);
     prodSHA = meta.sha;
-    const data = JSON.parse(atob(meta.content.replace(/\n/g,'')));
+    const data = JSON.parse(decodeURIComponent(escape(atob(meta.content.replace(/\n/g,'')))));
     productos = data.productos;
     categoriasProd = data.categorias || ['Todos',...new Set(data.productos.map(p=>p.categoria))];
     actualizarStats();
@@ -798,7 +798,7 @@ async function cargarConfig() {
   try {
     const meta = await ghGet(CFG_PATH);
     cfgSHA = meta.sha;
-    siteConfig = JSON.parse(atob(meta.content.replace(/\n/g,'')));
+    siteConfig = JSON.parse(decodeURIComponent(escape(atob(meta.content.replace(/\n/g,'')))));
     renderSlides();
     renderCats();
     poblarFormContenido();
