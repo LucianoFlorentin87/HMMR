@@ -29,8 +29,8 @@
         "id": 3,
         "imagen": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1800&q=90",
         "pretitulo": "Nueva",
-        "titulo": "COLECCIÃÂÃÂN",
-        "subtitulo": "ÃÂ¢ÃÂÃÂ ESTILO PARAGUAYO, CALIDAD PREMIUM.",
+        "titulo": "COLECCIÃÂÃÂÃÂÃÂN",
+        "subtitulo": "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ ESTILO PARAGUAYO, CALIDAD PREMIUM.",
         "boton": "VER OFERTAS",
         "link": "#destacados"
       }
@@ -63,19 +63,19 @@
     }
   ],
   "coleccionBanner": {
-    "subtitulo": "ÃÂ¢ÃÂÃÂ COLECCIÃÂÃÂN ÃÂ¢ÃÂÃÂ",
+    "subtitulo": "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ COLECCIÃÂÃÂÃÂÃÂN ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ",
     "titulo": "TEMPORADA",
-    "ano": "ÃÂ¢ÃÂÃÂ 2025 ÃÂ¢ÃÂÃÂ",
+    "ano": "ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ 2025 ÃÂÃÂ¢ÃÂÃÂÃÂÃÂ",
     "imagen": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=85",
-    "boton": "VER COLECCIÃÂÃÂN",
+    "boton": "VER COLECCIÃÂÃÂÃÂÃÂN",
     "link": "#coleccion"
   },
   "nosotros": {
     "titulo": "HMMR JEANS",
     "subtitulo": "Originalmente Nacional",
-    "texto": "Somos una marca paraguaya que nace con el propÃÂÃÂ³sito de ofrecer productos de calidad, diseÃÂÃÂ±ados para durar y acompaÃÂÃÂ±arte siempre. HMMR Jeans es mÃÂÃÂ¡s que ropa: es identidad, esfuerzo y orgullo nacional.",
+    "texto": "Somos una marca paraguaya que nace con el propÃÂÃÂÃÂÃÂ³sito de ofrecer productos de calidad, diseÃÂÃÂÃÂÃÂ±ados para durar y acompaÃÂÃÂÃÂÃÂ±arte siempre. HMMR Jeans es mÃÂÃÂÃÂÃÂ¡s que ropa: es identidad, esfuerzo y orgullo nacional.",
     "imagen": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=85",
-    "boton": "CONOCÃÂÃÂ NUESTRA HISTORIA"
+    "boton": "CONOCÃÂÃÂÃÂÃÂ NUESTRA HISTORIA"
   },
   "instagram": {
     "handle": "@hmmrjeans",
@@ -107,7 +107,7 @@
     "instagram": "https://instagram.com/hmmrjeans",
     "facebook": "#",
     "tiktok": "#",
-    "direccion": "AsunciÃÂÃÂ³n, Paraguay",
+    "direccion": "AsunciÃÂÃÂÃÂÃÂ³n, Paraguay",
     "telefono": "+595 981 123 456"
   }
 }
