@@ -56,10 +56,10 @@
       "id": 3,
       "nombre": "Jean Wide Leg",
       "categoria": "HMMR Jeans",
-      "precio": 94900,
-      "precioOriginal": null,
+      "precio": 250000,
+      "precioOriginal": 300000,
       "imagen": "assets/img/productos/jean-wide-leg.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-05-22-at-211125-20-1782423350579.jpeg",
       "descripcion": "Tendencia wide leg con caÃÂ­da perfecta y tela suave. El estilo que domina la temporada.",
       "colores": [
         "azul claro",
@@ -76,8 +76,9 @@
         "40"
       ],
       "nuevo": true,
-      "oferta": false,
-      "etiqueta": "NUEVO"
+      "oferta": true,
+      "etiqueta": "NUEVO",
+      "estrellas": 4.5
     },
     {
       "id": 4,
