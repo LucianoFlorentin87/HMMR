@@ -217,7 +217,7 @@
       "precio": 91900,
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-tapered-fit.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=400&q=80",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-1-1782426639973.jpeg",
       "descripcion": "Corte tapered moderno, ancho arriba y ajustado en el tobillo. Tendencia urbana.",
       "colores": [
         "negro",
@@ -233,7 +233,8 @@
       ],
       "nuevo": true,
       "oferta": false,
-      "etiqueta": "NUEVO"
+      "etiqueta": "NUEVO",
+      "estrellas": 4.5
     },
     {
       "id": 10,
