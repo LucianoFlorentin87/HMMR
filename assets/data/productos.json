@@ -296,7 +296,7 @@
       "precio": 86900,
       "precioOriginal": 109900,
       "imagen": "assets/img/productos/df-cintura-alta.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1584370848010-d7fe6bc767ec?w=400&q=80",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-1-1782426687864.jpeg",
       "descripcion": "Jean de cintura alta que estiliza la silueta. Tela con lycra para mayor confort.",
       "colores": [
         "azul",
@@ -312,7 +312,8 @@
       ],
       "nuevo": false,
       "oferta": true,
-      "etiqueta": "21% OFF"
+      "etiqueta": "21% OFF",
+      "estrellas": 4.5
     }
   ],
   "categorias": [
