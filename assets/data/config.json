@@ -12,25 +12,25 @@
         "imagen": "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1800&q=90",
         "pretitulo": "Originalmente",
         "titulo": "NACIONAL",
-        "subtitulo": "â JEANS QUE CUENTAN NUESTRA HISTORIA.",
+        "subtitulo": "JEANS QUE CUENTAN NUESTRA HISTORIA.",
         "boton": "COMPRAR AHORA",
         "link": "#destacados"
       },
       {
         "id": 2,
         "imagen": "https://images.unsplash.com/photo-1552902865-b72c031ac5ea?w=1800&q=90",
-        "pretitulo": "ColecciÃ³n",
+        "pretitulo": "ColecciÃÂ³n",
         "titulo": "TEMPORADA",
-        "subtitulo": "â DENIM PREMIUM PARA VOS.",
-        "boton": "VER COLECCIÃN",
+        "subtitulo": "Ã¢ÂÂ DENIM PREMIUM PARA VOS.",
+        "boton": "VER COLECCIÃÂN",
         "link": "#coleccion-banner"
       },
       {
         "id": 3,
         "imagen": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1800&q=90",
         "pretitulo": "Nueva",
-        "titulo": "COLECCIÃN",
-        "subtitulo": "â ESTILO PARAGUAYO, CALIDAD PREMIUM.",
+        "titulo": "COLECCIÃÂN",
+        "subtitulo": "Ã¢ÂÂ ESTILO PARAGUAYO, CALIDAD PREMIUM.",
         "boton": "VER OFERTAS",
         "link": "#destacados"
       }
@@ -63,19 +63,19 @@
     }
   ],
   "coleccionBanner": {
-    "subtitulo": "â COLECCIÃN â",
+    "subtitulo": "Ã¢ÂÂ COLECCIÃÂN Ã¢ÂÂ",
     "titulo": "TEMPORADA",
-    "ano": "â 2025 â",
+    "ano": "Ã¢ÂÂ 2025 Ã¢ÂÂ",
     "imagen": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=85",
-    "boton": "VER COLECCIÃN",
+    "boton": "VER COLECCIÃÂN",
     "link": "#coleccion"
   },
   "nosotros": {
     "titulo": "HMMR JEANS",
     "subtitulo": "Originalmente Nacional",
-    "texto": "Somos una marca paraguaya que nace con el propÃ³sito de ofrecer productos de calidad, diseÃ±ados para durar y acompaÃ±arte siempre. HMMR Jeans es mÃ¡s que ropa: es identidad, esfuerzo y orgullo nacional.",
+    "texto": "Somos una marca paraguaya que nace con el propÃÂ³sito de ofrecer productos de calidad, diseÃÂ±ados para durar y acompaÃÂ±arte siempre. HMMR Jeans es mÃÂ¡s que ropa: es identidad, esfuerzo y orgullo nacional.",
     "imagen": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=85",
-    "boton": "CONOCÃ NUESTRA HISTORIA"
+    "boton": "CONOCÃÂ NUESTRA HISTORIA"
   },
   "instagram": {
     "handle": "@hmmrjeans",
@@ -88,8 +88,18 @@
     ]
   },
   "usuarios": [
-    { "nombre": "Admin", "usuario": "admin", "rol": "admin", "passwordHash": "e693c5b99c20f0afd4e0fba86fd13fd998d8a3f4b48357c4f4db36dcbb1d1597" },
-    { "nombre": "Sofia Coronel", "usuario": "scoronel", "rol": "editor", "passwordHash": "b8de6a1bd651a7d1dc13c5d77d5b4734a4d837e8471278159e7c8e108355af24" }
+    {
+      "nombre": "Admin",
+      "usuario": "admin",
+      "rol": "admin",
+      "passwordHash": "e693c5b99c20f0afd4e0fba86fd13fd998d8a3f4b48357c4f4db36dcbb1d1597"
+    },
+    {
+      "nombre": "Sofia Coronel",
+      "usuario": "scoronel",
+      "rol": "editor",
+      "passwordHash": "b8de6a1bd651a7d1dc13c5d77d5b4734a4d837e8471278159e7c8e108355af24"
+    }
   ],
   "contacto": {
     "whatsapp": "595981123456",
@@ -97,7 +107,7 @@
     "instagram": "https://instagram.com/hmmrjeans",
     "facebook": "#",
     "tiktok": "#",
-    "direccion": "AsunciÃ³n, Paraguay",
+    "direccion": "AsunciÃÂ³n, Paraguay",
     "telefono": "+595 981 123 456"
   }
 }
