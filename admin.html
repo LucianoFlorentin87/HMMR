@@ -337,6 +337,7 @@ textarea.form-control{resize:vertical;min-height:80px}
             <div class="form-group"><label>WhatsApp (solo números)</label><input class="form-control" id="ct-whatsapp" placeholder="595981123456"></div>
             <div class="form-group"><label>Email</label><input class="form-control" id="ct-email" placeholder="hola@hmmrjeans.com"></div>
             <div class="form-group"><label>Dirección</label><input class="form-control" id="ct-direccion" placeholder="Asunción, Paraguay"></div>
+            <div class="form-group"><label>Link Google Maps</label><input class="form-control" id="ct-maps" placeholder="https://maps.app.goo.gl/..."></div>
             <div class="form-group"><label>Teléfono (mostrar)</label><input class="form-control" id="ct-telefono" placeholder="+595 981 123 456"></div>
             <div class="form-group"><label>Instagram URL</label><input class="form-control" id="ct-instagram" placeholder="https://instagram.com/hmmrjeans"></div>
             <div class="form-group"><label>Facebook URL</label><input class="form-control" id="ct-facebook" placeholder="https://facebook.com/hmmrjeans"></div>
@@ -1004,13 +1005,14 @@ function poblarFormContacto() {
   document.getElementById('ct-whatsapp').value   = c.whatsapp   || '';
   document.getElementById('ct-email').value      = c.email      || '';
   document.getElementById('ct-direccion').value  = c.direccion  || '';
+  document.getElementById('ct-maps').value       = c.maps       || '';
   document.getElementById('ct-telefono').value   = c.telefono   || '';
   document.getElementById('ct-instagram').value  = c.instagram  || '';
   document.getElementById('ct-facebook').value   = c.facebook   || '';
   document.getElementById('ct-tiktok').value     = c.tiktok     || '';
 }
 async function guardarContacto() {
-  siteConfig.contacto = { whatsapp: document.getElementById('ct-whatsapp').value.trim(), email: document.getElementById('ct-email').value.trim(), direccion: document.getElementById('ct-direccion').value.trim(), telefono: document.getElementById('ct-telefono').value.trim(), instagram: document.getElementById('ct-instagram').value.trim(), facebook: document.getElementById('ct-facebook').value.trim(), tiktok: document.getElementById('ct-tiktok').value.trim() };
+  siteConfig.contacto = { whatsapp: document.getElementById('ct-whatsapp').value.trim(), email: document.getElementById('ct-email').value.trim(), direccion: document.getElementById('ct-direccion').value.trim(), maps: document.getElementById('ct-maps').value.trim(), telefono: document.getElementById('ct-telefono').value.trim(), instagram: document.getElementById('ct-instagram').value.trim(), facebook: document.getElementById('ct-facebook').value.trim(), tiktok: document.getElementById('ct-tiktok').value.trim() };
   await guardarConfig('Admin: actualizar contacto');
 }
 

@@ -873,14 +873,27 @@ async function aplicarConfig() {
     // CONTACTO
     if (cfg.contacto) {
       const c = cfg.contacto;
+      const waMsg = encodeURIComponent('Hola HMMR Jeans, me interesan sus productos');
       const waFloat = document.getElementById('whatsapp-float');
-      if (waFloat && c.whatsapp) {
-        waFloat.href = `https://wa.me/${c.whatsapp}?text=Hola%20HMMR%20Jeans%2C%20me%20interesan%20sus%20productos`;
+      if (waFloat && c.whatsapp) waFloat.href = `https://wa.me/${c.whatsapp}?text=${waMsg}`;
+      document.querySelectorAll('.btn-wa, a[href*="wa.me"]').forEach(el => {
+        if (c.whatsapp) el.href = `https://wa.me/${c.whatsapp}?text=${waMsg}`;
+      });
+      const tel = document.getElementById('footer-telefono');
+      if (tel && c.telefono) tel.textContent = c.telefono;
+      const email = document.getElementById('footer-email');
+      if (email && c.email) email.textContent = c.email;
+      const dir = document.getElementById('footer-direccion');
+      if (dir) {
+        if (c.direccion) dir.textContent = c.direccion;
+        if (c.maps) dir.href = c.maps;
       }
-      const waBtn = document.querySelector('.btn-wa');
-      if (waBtn && c.whatsapp) {
-        waBtn.href = `https://wa.me/${c.whatsapp}?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda`;
-      }
+      const ig = document.getElementById('footer-ig');
+      if (ig && c.instagram) ig.href = c.instagram;
+      const fb = document.getElementById('footer-fb');
+      if (fb && c.facebook) fb.href = c.facebook;
+      const tt = document.getElementById('footer-tiktok');
+      if (tt && c.tiktok && c.tiktok !== '#') tt.href = c.tiktok;
     }
   } catch(e) {
     console.warn('config.json no disponible:', e.message);
