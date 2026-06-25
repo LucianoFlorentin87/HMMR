@@ -270,7 +270,7 @@
       "precio": 95900,
       "precioOriginal": null,
       "imagen": "assets/img/productos/df-jogger-denim.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=400&q=80",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192808-2-1782426668153.jpeg",
       "descripcion": "Jogger en denim elÃÂ¡stico con puÃÂ±o en el tobillo. La fusiÃÂ³n perfecta entre comodidad y estilo.",
       "colores": [
         "negro",
@@ -286,7 +286,8 @@
       ],
       "nuevo": true,
       "oferta": false,
-      "etiqueta": "NUEVO"
+      "etiqueta": "NUEVO",
+      "estrellas": 4.5
     },
     {
       "id": 12,
