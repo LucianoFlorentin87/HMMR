@@ -318,7 +318,10 @@ textarea.form-control{resize:vertical;min-height:80px}
           <div style="margin-top:16px">
             <label style="display:block;margin-bottom:10px">FOTOS (4 imágenes)</label>
             <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px" id="ig-fotos-wrap">
-              ${[0,1,2,3].map(i=>`<div><div class="img-upload-wrap"><input class="form-control" id="ig-foto-${i}" type="url" placeholder="URL foto ${i+1}"><label class="btn btn-outline btn-sm" style="cursor:pointer;white-space:nowrap">📁<input type="file" accept="image/*" style="display:none" onchange="subirImagen(this,'ig-foto-${i}')"></label></div></div>`).join('')}
+              <div><div class="img-upload-wrap"><input class="form-control" id="ig-foto-0" type="url" placeholder="URL foto 1"><label class="btn btn-outline btn-sm" style="cursor:pointer;white-space:nowrap">📁<input type="file" accept="image/*" style="display:none" onchange="subirImagen(this,'ig-foto-0')"></label></div></div>
+              <div><div class="img-upload-wrap"><input class="form-control" id="ig-foto-1" type="url" placeholder="URL foto 2"><label class="btn btn-outline btn-sm" style="cursor:pointer;white-space:nowrap">📁<input type="file" accept="image/*" style="display:none" onchange="subirImagen(this,'ig-foto-1')"></label></div></div>
+              <div><div class="img-upload-wrap"><input class="form-control" id="ig-foto-2" type="url" placeholder="URL foto 3"><label class="btn btn-outline btn-sm" style="cursor:pointer;white-space:nowrap">📁<input type="file" accept="image/*" style="display:none" onchange="subirImagen(this,'ig-foto-2')"></label></div></div>
+              <div><div class="img-upload-wrap"><input class="form-control" id="ig-foto-3" type="url" placeholder="URL foto 4"><label class="btn btn-outline btn-sm" style="cursor:pointer;white-space:nowrap">📁<input type="file" accept="image/*" style="display:none" onchange="subirImagen(this,'ig-foto-3')"></label></div></div>
             </div>
           </div>
         </div>
@@ -784,11 +787,22 @@ function eliminarProducto(idx) {
 async function guardarProductosEnGH() {
   toast('Guardando...','');
   try {
+    if (!prodSHA) { const m = await ghGet(PROD_PATH); prodSHA = m.sha; }
     const banners = [{id:1,imagen:'assets/img/banners/hero-slide-1.jpg',imagenFallback:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1400&q=85',titulo:'Vestí el Orgullo Paraguayo',subtitulo:'Colección HMMR Jeans 2025',cta:'Comprar Ahora',link:'#coleccion',activo:true}];
     const res = await ghPut(PROD_PATH, {productos, categorias: categoriasProd, banners}, prodSHA, 'Admin: actualizar productos');
     prodSHA = res.content.sha;
     toast('¡Guardado! La web se actualiza en ~2 min', 'success');
-  } catch(e) { toast('Error: '+e.message,'error'); }
+  } catch(e) {
+    if (e.message && e.message.includes('does not match')) {
+      try {
+        const m = await ghGet(PROD_PATH); prodSHA = m.sha;
+        const banners = [{id:1,imagen:'assets/img/banners/hero-slide-1.jpg',imagenFallback:'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1400&q=85',titulo:'Vestí el Orgullo Paraguayo',subtitulo:'Colección HMMR Jeans 2025',cta:'Comprar Ahora',link:'#coleccion',activo:true}];
+        const res = await ghPut(PROD_PATH, {productos, categorias: categoriasProd, banners}, prodSHA, 'Admin: actualizar productos');
+        prodSHA = res.content.sha;
+        toast('¡Guardado! La web se actualiza en ~2 min', 'success');
+      } catch(e2) { toast('Error: '+e2.message,'error'); }
+    } else { toast('Error: '+e.message,'error'); }
+  }
 }
 
 // ============================================================
@@ -810,10 +824,26 @@ async function cargarConfig() {
 async function guardarConfig(msg) {
   toast('Guardando...','');
   try {
+    // Si no tenemos SHA actualizado, lo obtenemos primero
+    if (!cfgSHA) {
+      const meta = await ghGet(CFG_PATH);
+      cfgSHA = meta.sha;
+    }
     const res = await ghPut(CFG_PATH, siteConfig, cfgSHA, msg || 'Admin: actualizar config');
     cfgSHA = res.content.sha;
     toast('¡Guardado! La web se actualiza en ~2 min','success');
-  } catch(e) { toast('Error: '+e.message,'error'); }
+  } catch(e) {
+    // SHA desactualizado: recargar y reintentar una vez
+    if (e.message && e.message.includes('does not match')) {
+      try {
+        const meta = await ghGet(CFG_PATH);
+        cfgSHA = meta.sha;
+        const res = await ghPut(CFG_PATH, siteConfig, cfgSHA, msg || 'Admin: actualizar config');
+        cfgSHA = res.content.sha;
+        toast('¡Guardado! La web se actualiza en ~2 min','success');
+      } catch(e2) { toast('Error: '+e2.message,'error'); }
+    } else { toast('Error: '+e.message,'error'); }
+  }
 }
 
 // ---- HERO SLIDES ----
