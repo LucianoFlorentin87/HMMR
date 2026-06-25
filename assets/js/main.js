@@ -161,7 +161,7 @@ function renderDestacados(lista) {
 }
 
 // ---- GOOGLE SHEETS CONFIG ----
-const SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1AXepLPeXzyuAi1l2Z4Pm3jDWLjPDB2SB_S5UktMpnpc/export?format=csv&gid=0';
+const SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSmG6SKGKRJ2JxcBcHDXBv_BVBWgleXAkaZ-WYBA6v7hVfjcf-56EK8j3N0HVJsRfRm7mESHaGhgz6U/pub?gid=2097976075&single=true&output=csv';
 
 function parsearCSV(csv) {
   const rows = [];
