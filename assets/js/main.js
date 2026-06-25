@@ -158,11 +158,7 @@ function renderDestacados(lista) {
 }
 
 // ---- GOOGLE SHEETS CONFIG ----
-// Para administrar productos desde Google Sheets:
-// 1. Creá una hoja con las columnas indicadas en el README
-// 2. Publicala: Archivo → Compartir → Publicar en la web → CSV
-// 3. Pegá el ID de la hoja aquí (la parte larga de la URL entre /d/ y /edit)
-const SHEETS_ID = '';  // <-- pegá tu ID acá
+const SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSmG6SKGKRJ2JxcBcHDXBv_BVBWgleXAkaZ-WYBA6v7hVfjcf-56EK8j3N0HVJsRfRm7mESHaGhgz6U/pub?gid=2097976075&single=true&output=csv';
 
 function parsearSheets(csv) {
   const lineas = csv.trim().split('\n');
@@ -197,10 +193,8 @@ async function cargarProductos() {
   try {
     let productos, categorias;
 
-    if (SHEETS_ID) {
-      // Leer desde Google Sheets publicado como CSV
-      const url = `https://docs.google.com/spreadsheets/d/${SHEETS_ID}/gviz/tq?tqx=out:csv&sheet=Productos`;
-      const resp = await fetch(url);
+    if (SHEETS_CSV_URL) {
+      const resp = await fetch(SHEETS_CSV_URL);
       const csv  = await resp.text();
       productos   = parsearSheets(csv);
       categorias  = ['Todos', ...new Set(productos.map(p => p.categoria))];
