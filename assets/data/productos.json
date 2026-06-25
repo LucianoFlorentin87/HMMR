@@ -31,10 +31,10 @@
       "id": 2,
       "nombre": "Jean Skinny Push Up",
       "categoria": "HMMR Jeans",
-      "precio": 79900,
-      "precioOriginal": null,
+      "precio": 250000,
+      "precioOriginal": 300000,
       "imagen": "assets/img/productos/jean-skinny-pushup.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-05-22-at-211125-19-1782423284830.jpeg",
       "descripcion": "Jean skinny con efecto push up y tela elÃÂ¡stica premium. Moldea y estiliza tu figura.",
       "colores": [
         "azul",
@@ -48,8 +48,9 @@
         "36"
       ],
       "nuevo": true,
-      "oferta": false,
-      "etiqueta": "NUEVO"
+      "oferta": true,
+      "etiqueta": "NUEVO",
+      "estrellas": 4.5
     },
     {
       "id": 3,
