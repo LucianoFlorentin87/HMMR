@@ -113,7 +113,7 @@
       "precio": 84900,
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-mom-vintage.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=400&q=80",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-3-1782426598993.jpeg",
       "descripcion": "Estilo mom vintage con lavado desgastado autÃÂ©ntico. Comodidad y estilo en uno.",
       "colores": [
         "azul claro",
@@ -128,7 +128,8 @@
       ],
       "nuevo": false,
       "oferta": false,
-      "etiqueta": null
+      "etiqueta": null,
+      "estrellas": 4.5
     },
     {
       "id": 6,
