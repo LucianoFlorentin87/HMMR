@@ -4,11 +4,11 @@
       "id": 1,
       "nombre": "Jean Clasico Slim",
       "categoria": "HMMR Jeans",
-      "precio": 250000,
-      "precioOriginal": 350000,
+      "precio": 300000,
+      "precioOriginal": 400000,
       "imagen": "assets/img/productos/jean-slim-clasico.jpg",
-      "imagenFallback": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&q=80",
-      "descripcion": "Jean de corte slim con tela premium de alta durabilidad. Perfecto para el día a día.",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-05-22-at-211125-19-1782423253504.jpeg",
+      "descripcion": "Jean de corte slim con tela premium de alta durabilidad. Perfecto para el dÃ­a a dÃ­a.",
       "colores": [
         "azul",
         "negro",
@@ -23,7 +23,7 @@
         "38"
       ],
       "nuevo": true,
-      "oferta": false,
+      "oferta": true,
       "etiqueta": "30% OFF",
       "estrellas": 4.5
     },
@@ -35,7 +35,7 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-skinny-pushup.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=400&q=80",
-      "descripcion": "Jean skinny con efecto push up y tela elÃ¡stica premium. Moldea y estiliza tu figura.",
+      "descripcion": "Jean skinny con efecto push up y tela elÃÂ¡stica premium. Moldea y estiliza tu figura.",
       "colores": [
         "azul",
         "negro"
@@ -59,7 +59,7 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-wide-leg.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=400&q=80",
-      "descripcion": "Tendencia wide leg con caÃ­da perfecta y tela suave. El estilo que domina la temporada.",
+      "descripcion": "Tendencia wide leg con caÃÂ­da perfecta y tela suave. El estilo que domina la temporada.",
       "colores": [
         "azul claro",
         "blanco",
@@ -111,7 +111,7 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-mom-vintage.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1582418702059-97ebafb35d09?w=400&q=80",
-      "descripcion": "Estilo mom vintage con lavado desgastado autÃ©ntico. Comodidad y estilo en uno.",
+      "descripcion": "Estilo mom vintage con lavado desgastado autÃÂ©ntico. Comodidad y estilo en uno.",
       "colores": [
         "azul claro",
         "blanco roto"
@@ -129,13 +129,13 @@
     },
     {
       "id": 6,
-      "nombre": "Jean Recto ClÃ¡sico",
+      "nombre": "Jean Recto ClÃÂ¡sico",
       "categoria": "HMMR Jeans",
       "precio": 74900,
       "precioOriginal": null,
       "imagen": "assets/img/productos/jean-recto-clasico.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1604176354204-9268737828e4?w=400&q=80",
-      "descripcion": "Corte recto atemporal, ideal para cualquier ocasiÃ³n. El bÃ¡sico que nunca falla.",
+      "descripcion": "Corte recto atemporal, ideal para cualquier ocasiÃÂ³n. El bÃÂ¡sico que nunca falla.",
       "colores": [
         "azul",
         "gris",
@@ -156,7 +156,7 @@
     },
     {
       "id": 7,
-      "nombre": "Jean Skinny ClÃ¡sico",
+      "nombre": "Jean Skinny ClÃÂ¡sico",
       "categoria": "HMMR Jeans",
       "precio": 82900,
       "precioOriginal": 109900,
@@ -236,7 +236,7 @@
       "precioOriginal": 119900,
       "imagen": "assets/img/productos/df-jean-boyfriend.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1541185933-ef5d8ed016c2?w=400&q=80",
-      "descripcion": "Jean boyfriend oversized con efecto desgastado. Comodidad mÃ¡xima con mucho estilo.",
+      "descripcion": "Jean boyfriend oversized con efecto desgastado. Comodidad mÃÂ¡xima con mucho estilo.",
       "colores": [
         "azul claro",
         "blanco roto",
@@ -262,7 +262,7 @@
       "precioOriginal": null,
       "imagen": "assets/img/productos/df-jogger-denim.jpg",
       "imagenFallback": "https://images.unsplash.com/photo-1519315901367-f34ff9154487?w=400&q=80",
-      "descripcion": "Jogger en denim elÃ¡stico con puÃ±o en el tobillo. La fusiÃ³n perfecta entre comodidad y estilo.",
+      "descripcion": "Jogger en denim elÃÂ¡stico con puÃÂ±o en el tobillo. La fusiÃÂ³n perfecta entre comodidad y estilo.",
       "colores": [
         "negro",
         "gris",
