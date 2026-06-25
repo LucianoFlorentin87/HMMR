@@ -749,8 +749,119 @@ function initHeroSlider() {
   startAuto();
 }
 
+// ---- APPLY SITE CONFIG ----
+async function aplicarConfig() {
+  try {
+    const r = await fetch('assets/data/config.json?v=' + Date.now());
+    if (!r.ok) return;
+    const cfg = await r.json();
+
+    // HERO SLIDES
+    if (cfg.hero && cfg.hero.slides) {
+      const heroEl = document.getElementById('hero');
+      const slides = cfg.hero.slides;
+      // Reemplazar slides existentes
+      const existingSlides = heroEl ? heroEl.querySelectorAll('.slide') : [];
+      existingSlides.forEach(s => s.remove());
+      if (heroEl) {
+        slides.forEach((s, i) => {
+          const div = document.createElement('div');
+          div.className = 'slide' + (i === 0 ? ' active' : '');
+          div.innerHTML = `
+            <img class="slide-img" src="${s.imagen}" alt="${s.titulo}">
+            <div class="slide-overlay"></div>
+            <div class="slide-content">
+              <div class="slide-pretitle">${s.pretitulo || ''}</div>
+              <div class="slide-bigword">${s.titulo}</div>
+              <p class="slide-tagline">${s.subtitulo || ''}</p>
+              <a href="${s.link || '#'}" class="btn-hero">${s.boton || 'VER'}</a>
+            </div>`;
+          heroEl.insertBefore(div, heroEl.querySelector('.hero-arrow'));
+        });
+        // Actualizar dots
+        const dotsWrap = document.getElementById('heroDots');
+        if (dotsWrap) {
+          dotsWrap.innerHTML = slides.map((_, i) =>
+            `<button class="hero-dot${i===0?' active':''}" data-slide="${i}"></button>`
+          ).join('');
+        }
+      }
+    }
+
+    // CATEGORÍAS
+    if (cfg.categorias && cfg.categorias.length) {
+      const catWrap = document.querySelector('#categorias .categories');
+      if (catWrap) {
+        catWrap.innerHTML = cfg.categorias.map(c => `
+          <a href="#coleccion" class="category-card" onclick="document.getElementById('coleccion').style.display='block';filtrarCategoria('${c.filtro}')">
+            <img src="${c.imagen}" alt="${c.nombre}" />
+            <div class="cat-overlay">
+              <span class="cat-name">${c.nombre}</span>
+              <span class="cat-link">VER MÁS →</span>
+            </div>
+          </a>`).join('');
+      }
+    }
+
+    // COLECCION BANNER
+    if (cfg.coleccionBanner) {
+      const cb = cfg.coleccionBanner;
+      const sm = document.querySelector('.cbanner-small');
+      const mn = document.querySelector('.cbanner-main');
+      const yr = document.querySelector('.cbanner-year');
+      const ri = document.querySelector('.cbanner-right img');
+      if (sm) sm.textContent = cb.subtitulo || '';
+      if (mn) mn.textContent = cb.titulo || '';
+      if (yr) yr.textContent = cb.ano || '';
+      if (ri) ri.src = cb.imagen || '';
+    }
+
+    // NOSOTROS
+    if (cfg.nosotros) {
+      const n = cfg.nosotros;
+      const h1 = document.querySelector('.nos-h1');
+      const h2 = document.querySelector('.nos-h2');
+      const p  = document.querySelector('.nos-p');
+      const im = document.querySelector('.nos-img img');
+      if (h1) h1.textContent = n.titulo || '';
+      if (h2) h2.textContent = n.subtitulo || '';
+      if (p)  p.textContent  = n.texto || '';
+      if (im) im.src         = n.imagen || '';
+    }
+
+    // INSTAGRAM
+    if (cfg.instagram) {
+      const ig = cfg.instagram;
+      const handle = document.querySelector('.insta-handle');
+      const grid   = document.querySelector('.insta-grid');
+      if (handle) handle.textContent = ig.handle || '';
+      if (grid && ig.fotos) {
+        grid.innerHTML = ig.fotos.map(url =>
+          `<div class="insta-post"><img src="${url}" alt="Instagram HMMR" /></div>`
+        ).join('');
+      }
+    }
+
+    // CONTACTO
+    if (cfg.contacto) {
+      const c = cfg.contacto;
+      const waFloat = document.getElementById('whatsapp-float');
+      if (waFloat && c.whatsapp) {
+        waFloat.href = `https://wa.me/${c.whatsapp}?text=Hola%20HMMR%20Jeans%2C%20me%20interesan%20sus%20productos`;
+      }
+      const waBtn = document.querySelector('.btn-wa');
+      if (waBtn && c.whatsapp) {
+        waBtn.href = `https://wa.me/${c.whatsapp}?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda`;
+      }
+    }
+  } catch(e) {
+    console.warn('config.json no disponible:', e.message);
+  }
+}
+
 // ---- INIT ----
-function init() {
+async function init() {
+  await aplicarConfig();
   cargarProductos();
   initHeroSlider();
 }
