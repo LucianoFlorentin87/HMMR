@@ -63,6 +63,9 @@ function precioGs(precio) {
 
 // ---- IMAGE WITH FALLBACK ----
 function imgSrc(p) {
+  // Si la imagen es una ruta local (no empieza con http), usar directamente el fallback
+  const local = p.imagen && !p.imagen.startsWith('http');
+  if (local) return p.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
   return p.imagen || p.imagenFallback || 'https://via.placeholder.com/400x530/142438/C9963A?text=HMMR';
 }
 function imgError(el, p) {
@@ -158,7 +161,7 @@ function renderDestacados(lista) {
 }
 
 // ---- GOOGLE SHEETS CONFIG ----
-const SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSmG6SKGKRJ2JxcBcHDXBv_BVBWgleXAkaZ-WYBA6v7hVfjcf-56EK8j3N0HVJsRfRm7mESHaGhgz6U/pub?gid=2097976075&single=true&output=csv';
+const SHEETS_CSV_URL = 'https://docs.google.com/spreadsheets/d/1AXepLPeXzyuAi1l2Z4Pm3jDWLjPDB2SB_S5UktMpnpc/export?format=csv&gid=0';
 
 function parsearCSV(csv) {
   const rows = [];
