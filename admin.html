@@ -9,15 +9,37 @@
 body{font-family:'Inter',system-ui,sans-serif;background:#0a0f1a;color:#e2e8f0;min-height:100vh}
 
 /* LOGIN */
-#login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:20px}
-.login-box{background:#111827;border:1px solid #1e2d3d;border-radius:16px;padding:48px 40px;width:100%;max-width:420px;text-align:center}
-.login-logo{font-size:2rem;font-weight:800;letter-spacing:4px;color:#c58c38;margin-bottom:4px}
-.login-sub{font-size:0.7rem;letter-spacing:6px;color:#64748b;margin-bottom:36px}
-.login-box input{width:100%;padding:14px 16px;background:#0a0f1a;border:1px solid #1e2d3d;border-radius:8px;color:#e2e8f0;font-size:0.95rem;margin-bottom:12px;outline:none}
-.login-box input:focus{border-color:#c58c38}
-.login-box button{width:100%;padding:14px;background:#c58c38;color:#000;font-weight:700;font-size:0.9rem;letter-spacing:2px;border:none;border-radius:8px;cursor:pointer}
-.login-box button:hover{background:#d4a050}
-.login-error{color:#ef4444;font-size:0.82rem;margin-top:10px;display:none}
+#login-screen{display:flex;min-height:100vh}
+.login-left{flex:1;background:linear-gradient(135deg,#03070c 0%,#06111f 50%,#0a1a2e 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px;position:relative;overflow:hidden}
+.login-left::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(197,140,56,0.08) 0%,transparent 70%)}
+.login-left-logo{font-size:3.5rem;font-weight:800;letter-spacing:6px;color:#c58c38;position:relative;z-index:1}
+.login-left-logo span{font-size:1rem;font-weight:300;letter-spacing:10px;color:#94a3b8;display:block;margin-top:2px}
+.login-left-stripe{display:flex;height:3px;width:120px;border-radius:2px;overflow:hidden;margin:20px 0;position:relative;z-index:1}
+.login-left-stripe span:nth-child(1){flex:1;background:#D52B1E}
+.login-left-stripe span:nth-child(2){flex:1;background:#fff}
+.login-left-stripe span:nth-child(3){flex:1;background:#009FCA}
+.login-left-tagline{font-size:0.75rem;letter-spacing:4px;color:#475569;text-transform:uppercase;position:relative;z-index:1}
+.login-left-features{margin-top:60px;display:flex;flex-direction:column;gap:16px;position:relative;z-index:1;width:100%;max-width:280px}
+.login-feat{display:flex;align-items:center;gap:12px;font-size:0.82rem;color:#64748b}
+.login-feat-icon{width:32px;height:32px;border-radius:8px;background:rgba(197,140,56,0.1);border:1px solid rgba(197,140,56,0.2);display:flex;align-items:center;justify-content:center;font-size:0.9rem;flex-shrink:0}
+.login-right{width:480px;display:flex;align-items:center;justify-content:center;padding:60px 48px;background:#0d1420}
+.login-form-wrap{width:100%;max-width:360px}
+.login-form-title{font-size:1.6rem;font-weight:700;margin-bottom:6px}
+.login-form-sub{font-size:0.85rem;color:#64748b;margin-bottom:36px}
+.login-field{margin-bottom:16px}
+.login-field label{display:block;font-size:0.72rem;letter-spacing:1.5px;color:#94a3b8;text-transform:uppercase;margin-bottom:6px}
+.login-field input{width:100%;padding:13px 16px;background:#111827;border:1px solid #1e2d3d;border-radius:10px;color:#e2e8f0;font-size:0.95rem;outline:none;transition:border-color .2s;box-sizing:border-box}
+.login-field input:focus{border-color:#c58c38;background:#131f2e}
+.login-btn{width:100%;padding:14px;background:#c58c38;color:#000;font-weight:700;font-size:0.88rem;letter-spacing:2px;border:none;border-radius:10px;cursor:pointer;margin-top:8px;transition:all .2s}
+.login-btn:hover{background:#d4a050;transform:translateY(-1px);box-shadow:0 4px 20px rgba(197,140,56,0.3)}
+.login-btn:active{transform:translateY(0)}
+.login-error{color:#ef4444;font-size:0.82rem;margin-top:12px;display:none;background:rgba(239,68,68,0.08);border:1px solid rgba(239,68,68,0.2);border-radius:8px;padding:10px 14px}
+@media(max-width:768px){
+  #login-screen{flex-direction:column}
+  .login-left{padding:40px 24px;flex:none;min-height:200px}
+  .login-left-features{display:none}
+  .login-right{width:100%;padding:32px 24px}
+}
 
 /* PANEL */
 #panel{display:none}
@@ -133,16 +155,35 @@ textarea.form-control{resize:vertical;min-height:80px}
 
 <!-- LOGIN -->
 <div id="login-screen">
-  <div class="login-box">
-    <div class="login-logo">HMMR</div>
-    <div class="login-sub">PANEL DE ADMINISTRACIÓN</div>
-    <input type="text" id="login-user" placeholder="Usuario" onkeydown="if(event.key==='Enter')doLogin()" autocomplete="username">
-    <div style="position:relative;margin-bottom:12px">
-      <input type="password" id="login-pass" placeholder="Contraseña" onkeydown="if(event.key==='Enter')doLogin()" autocomplete="current-password" style="width:100%;padding:14px 46px 14px 16px;background:#0a0f1a;border:1px solid #1e2d3d;border-radius:8px;color:#e2e8f0;font-size:0.95rem;outline:none;box-sizing:border-box">
-      <button type="button" onclick="togglePass()" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:#64748b;cursor:pointer;font-size:1rem;padding:0;line-height:1" id="toggle-pass-btn">👁</button>
+  <div class="login-left">
+    <div class="login-left-logo">HMMR<span>JEANS</span></div>
+    <div class="login-left-stripe"><span></span><span></span><span></span></div>
+    <div class="login-left-tagline">Originalmente Nacional</div>
+    <div class="login-left-features">
+      <div class="login-feat"><div class="login-feat-icon">🛍</div><span>Gestión completa de productos y precios</span></div>
+      <div class="login-feat"><div class="login-feat-icon">🖼</div><span>Control de imágenes y contenido visual</span></div>
+      <div class="login-feat"><div class="login-feat-icon">👥</div><span>Múltiples usuarios con roles y permisos</span></div>
+      <div class="login-feat"><div class="login-feat-icon">⚡</div><span>Cambios publicados en tiempo real</span></div>
     </div>
-    <button onclick="doLogin()">INGRESAR</button>
-    <div class="login-error" id="login-error">Usuario o contraseña incorrectos</div>
+  </div>
+  <div class="login-right">
+    <div class="login-form-wrap">
+      <div class="login-form-title">Bienvenido</div>
+      <div class="login-form-sub">Ingresá tus credenciales para acceder al panel</div>
+      <div class="login-field">
+        <label>Usuario</label>
+        <input type="text" id="login-user" placeholder="tu_usuario" onkeydown="if(event.key==='Enter')doLogin()" autocomplete="username">
+      </div>
+      <div class="login-field">
+        <label>Contraseña</label>
+        <div style="position:relative">
+          <input type="password" id="login-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()" autocomplete="current-password" style="padding-right:46px">
+          <button type="button" onclick="togglePass()" id="toggle-pass-btn" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);background:none;border:none;color:#64748b;cursor:pointer;font-size:1rem;padding:0;line-height:1">👁</button>
+        </div>
+      </div>
+      <button class="login-btn" onclick="doLogin()">INGRESAR AL PANEL</button>
+      <div class="login-error" id="login-error">Usuario o contraseña incorrectos</div>
+    </div>
   </div>
 </div>
 
