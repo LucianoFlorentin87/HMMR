@@ -223,12 +223,17 @@
        ============================================================ */
     .sec-heading{
       display:flex;flex-direction:column;align-items:center;justify-content:center;
-      gap:10px;margin-bottom:40px;
+      gap:8px;margin-bottom:48px;
+    }
+    .sec-eyebrow{
+      font-size:0.6rem;letter-spacing:5px;color:var(--gold);
+      text-transform:uppercase;font-weight:600;
     }
     .sec-heading-line{display:none}
     .sec-heading-text{
-      font-size:0.7rem;font-weight:700;letter-spacing:6px;
-      text-transform:uppercase;color:#fff;white-space:nowrap;
+      font-family:'Playfair Display',serif;
+      font-size:2.2rem;font-weight:800;letter-spacing:4px;
+      text-transform:uppercase;color:#fff;white-space:nowrap;line-height:1;
     }
     .sec-heading-stripe{display:flex;height:2px;width:60px;border-radius:1px;overflow:hidden}
     .sec-heading-stripe span:nth-child(1){flex:1;background:#D52B1E}
@@ -240,6 +245,7 @@
        ============================================================ */
     #destacados{padding:70px 6%;background:#fff}
     #destacados .sec-heading-text{color:#111}
+    #destacados .sec-heading-stripe span:nth-child(2){background:#111}
     #destacados .btn-ver-todos{color:#111;border-color:rgba(0,0,0,0.3)}
     #destacados .btn-ver-todos:hover{border-color:#111;background:rgba(0,0,0,0.04)}
 
@@ -997,6 +1003,7 @@
      ============================================================ -->
 <section id="destacados">
   <div class="sec-heading">
+    <div class="sec-eyebrow">★ SELECCIÓN ESPECIAL ★</div>
     <span class="sec-heading-text">DESTACADOS</span>
     <div class="sec-heading-stripe"><span></span><span></span><span></span></div>
   </div>
@@ -1066,6 +1073,7 @@
      ============================================================ -->
 <section id="categorias">
   <div class="sec-heading">
+    <div class="sec-eyebrow">★ EXPLORÁ NUESTRA LÍNEA ★</div>
     <span class="sec-heading-text">CATEGORÍAS</span>
     <div class="sec-heading-stripe"><span></span><span></span><span></span></div>
   </div>
