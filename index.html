@@ -1207,36 +1207,68 @@
 <!-- ============================================================
      CONTACTO
      ============================================================ -->
-<section id="contacto" style="padding:80px 6%;background:#06111f;border-top:1px solid #1e2d3d">
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <div style="font-size:0.75rem;letter-spacing:4px;color:#c58c38;margin-bottom:12px">CONTACTO</div>
-    <h2 style="font-size:2.2rem;font-weight:800;letter-spacing:2px;margin-bottom:40px">¿NECESITÁS AYUDA?</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;margin-bottom:40px">
-      <div style="background:#111827;border:1px solid #1e2d3d;border-radius:12px;padding:24px">
-        <div style="font-size:1.5rem;margin-bottom:10px">📱</div>
-        <div style="font-size:0.7rem;letter-spacing:2px;color:#64748b;margin-bottom:6px">WHATSAPP</div>
-        <a id="ct-wa-link" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" style="color:#c58c38;font-weight:600;text-decoration:none" id="footer-telefono-link">+595 982 372521</a>
+<section id="contacto" style="padding:90px 6%;background:#06111f;border-top:1px solid #1a2940">
+  <style>
+    .ct-wrap{max-width:1100px;margin:0 auto}
+    .ct-header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:60px}
+    .ct-eyebrow{font-size:0.7rem;letter-spacing:5px;color:#c58c38;text-transform:uppercase;margin-bottom:14px}
+    .ct-title{font-size:2.4rem;font-weight:800;letter-spacing:3px;line-height:1}
+    .ct-stripe{display:flex;height:2px;width:60px;border-radius:1px;overflow:hidden;margin:16px auto 0}
+    .ct-stripe span:nth-child(1){flex:1;background:#D52B1E}
+    .ct-stripe span:nth-child(2){flex:1;background:#fff}
+    .ct-stripe span:nth-child(3){flex:1;background:#009FCA}
+    .ct-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a2940;border:1px solid #1a2940;border-radius:16px;overflow:hidden;margin-bottom:48px}
+    .ct-item{background:#0a0f1a;padding:36px 24px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;transition:background .2s}
+    .ct-item:hover{background:#0f1929}
+    .ct-icon{width:48px;height:48px;border-radius:50%;border:1px solid #1e2d3d;display:flex;align-items:center;justify-content:center;color:#c58c38;font-size:1rem;flex-shrink:0}
+    .ct-label{font-size:0.62rem;letter-spacing:3px;color:#475569;text-transform:uppercase}
+    .ct-value{font-size:0.88rem;font-weight:600;color:#e2e8f0;text-decoration:none;transition:color .2s}
+    .ct-value:hover{color:#c58c38}
+    .ct-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .ct-btn-wa{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;background:#c58c38;color:#000;font-weight:800;font-size:0.82rem;letter-spacing:3px;border-radius:8px;text-decoration:none;transition:all .2s}
+    .ct-btn-wa:hover{background:#d4a050;transform:translateY(-2px)}
+    .ct-btn-wa i{font-size:1.1rem}
+    .ct-btn-ig{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;background:transparent;color:#94a3b8;font-weight:700;font-size:0.82rem;letter-spacing:3px;border-radius:8px;text-decoration:none;border:1px solid #1e2d3d;transition:all .2s}
+    .ct-btn-ig:hover{border-color:#c58c38;color:#c58c38}
+    @media(max-width:700px){.ct-grid{grid-template-columns:repeat(2,1fr)}.ct-title{font-size:1.8rem}}
+    @media(max-width:420px){.ct-grid{grid-template-columns:1fr}}
+  </style>
+  <div class="ct-wrap">
+    <div class="ct-header">
+      <div class="ct-eyebrow">Contacto</div>
+      <div class="ct-title">HABLEMOS</div>
+      <div class="ct-stripe"><span></span><span></span><span></span></div>
+    </div>
+    <div class="ct-grid">
+      <div class="ct-item">
+        <div class="ct-icon"><i class="fab fa-whatsapp"></i></div>
+        <div class="ct-label">WhatsApp</div>
+        <a id="ct-wa-link" class="ct-value" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" rel="noopener">+595 982 372521</a>
       </div>
-      <div style="background:#111827;border:1px solid #1e2d3d;border-radius:12px;padding:24px">
-        <div style="font-size:1.5rem;margin-bottom:10px">✉️</div>
-        <div style="font-size:0.7rem;letter-spacing:2px;color:#64748b;margin-bottom:6px">EMAIL</div>
-        <a id="ct-email-link" href="mailto:hola@hmmrjeans.com" style="color:#c58c38;font-weight:600;text-decoration:none">hola@hmmrjeans.com</a>
+      <div class="ct-item">
+        <div class="ct-icon"><i class="fas fa-envelope"></i></div>
+        <div class="ct-label">Email</div>
+        <a id="ct-email-link" class="ct-value" href="mailto:hola@hmmrjeans.com">hola@hmmrjeans.com</a>
       </div>
-      <div style="background:#111827;border:1px solid #1e2d3d;border-radius:12px;padding:24px">
-        <div style="font-size:1.5rem;margin-bottom:10px">📍</div>
-        <div style="font-size:0.7rem;letter-spacing:2px;color:#64748b;margin-bottom:6px">DIRECCIÓN</div>
-        <a id="ct-maps-link" href="https://maps.app.goo.gl/MNeb88Uq6zQ9a6HF8" target="_blank" style="color:#c58c38;font-weight:600;text-decoration:none">Mariano Roque Alonso</a>
+      <div class="ct-item">
+        <div class="ct-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="ct-label">Dirección</div>
+        <a id="ct-maps-link" class="ct-value" href="https://maps.app.goo.gl/MNeb88Uq6zQ9a6HF8" target="_blank" rel="noopener">Mariano Roque Alonso</a>
       </div>
-      <div style="background:#111827;border:1px solid #1e2d3d;border-radius:12px;padding:24px">
-        <div style="font-size:1.5rem;margin-bottom:10px">📸</div>
-        <div style="font-size:0.7rem;letter-spacing:2px;color:#64748b;margin-bottom:6px">INSTAGRAM</div>
-        <a href="https://www.instagram.com/hmmrjeans/" target="_blank" style="color:#c58c38;font-weight:600;text-decoration:none">@hmmrjeans</a>
+      <div class="ct-item">
+        <div class="ct-icon"><i class="fab fa-instagram"></i></div>
+        <div class="ct-label">Instagram</div>
+        <a class="ct-value" href="https://www.instagram.com/hmmrjeans/" target="_blank" rel="noopener">@hmmrjeans</a>
       </div>
     </div>
-    <a id="contacto-wa-btn" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" rel="noopener"
-       class="btn-wa" style="display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:#25D366;color:#fff;font-weight:700;font-size:0.88rem;letter-spacing:2px;border-radius:10px;text-decoration:none">
-      <i class="fab fa-whatsapp" style="font-size:1.2rem"></i> ESCRIBIR POR WHATSAPP
-    </a>
+    <div class="ct-actions">
+      <a id="contacto-wa-btn" class="ct-btn-wa btn-wa" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" rel="noopener">
+        <i class="fab fa-whatsapp"></i> ESCRIBIR POR WHATSAPP
+      </a>
+      <a class="ct-btn-ig" href="https://www.instagram.com/hmmrjeans/" target="_blank" rel="noopener">
+        <i class="fab fa-instagram"></i> SEGUIR EN INSTAGRAM
+      </a>
+    </div>
   </div>
 </section>
 
