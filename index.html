@@ -222,16 +222,18 @@
        SECTION HEADING
        ============================================================ */
     .sec-heading{
-      display:flex;align-items:center;justify-content:center;
-      gap:18px;margin-bottom:40px;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:10px;margin-bottom:40px;
     }
-    .sec-heading-line{
-      display:block;flex:0 0 60px;height:1px;background:rgba(255,255,255,0.3);
-    }
+    .sec-heading-line{display:none}
     .sec-heading-text{
       font-size:0.7rem;font-weight:700;letter-spacing:6px;
       text-transform:uppercase;color:#fff;white-space:nowrap;
     }
+    .sec-heading-stripe{display:flex;height:2px;width:60px;border-radius:1px;overflow:hidden}
+    .sec-heading-stripe span:nth-child(1){flex:1;background:#D52B1E}
+    .sec-heading-stripe span:nth-child(2){flex:1;background:#fff}
+    .sec-heading-stripe span:nth-child(3){flex:1;background:#009FCA}
 
     /* ============================================================
        DESTACADOS
@@ -996,9 +998,8 @@
      ============================================================ -->
 <section id="destacados">
   <div class="sec-heading">
-    <span class="sec-heading-line"></span>
     <span class="sec-heading-text">DESTACADOS</span>
-    <span class="sec-heading-line"></span>
+    <div class="sec-heading-stripe"><span></span><span></span><span></span></div>
   </div>
   <div id="destacados-grid">
     <!-- Cargado por JS -->
@@ -1066,9 +1067,8 @@
      ============================================================ -->
 <section id="categorias">
   <div class="sec-heading">
-    <span class="sec-heading-line"></span>
     <span class="sec-heading-text">CATEGORÍAS</span>
-    <span class="sec-heading-line"></span>
+    <div class="sec-heading-stripe"><span></span><span></span><span></span></div>
   </div>
   <div class="categories">
     <a href="#coleccion" class="category-card" onclick="document.getElementById('coleccion').style.display='block';filtrarCategoria('HMMR Jeans')">
@@ -1110,6 +1110,7 @@
   <div class="nos-text">
     <div class="nos-h1">HMMR JEANS</div>
     <div class="nos-h2">Originalmente Nacional</div>
+    <div class="sec-heading-stripe" style="margin-bottom:20px"><span></span><span></span><span></span></div>
     <p class="nos-p">
       Somos una marca paraguaya que nace con el propósito de ofrecer productos de calidad,
       diseñados para durar y acompañarte siempre. HMMR Jeans es más que ropa: es identidad,
@@ -1130,6 +1131,7 @@
   <div class="insta-outer">
     <div>
       <p class="insta-title">SEGUINOS EN INSTAGRAM</p>
+      <div class="sec-heading-stripe" style="margin-bottom:10px"><span></span><span></span><span></span></div>
       <p class="insta-handle">@hmmrjeans</p>
       <div class="insta-grid">
         <div class="insta-post"><img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&q=70" alt="Instagram HMMR" /></div>
@@ -1163,7 +1165,10 @@
      ============================================================ -->
 <section id="coleccion">
   <div class="coleccion-header">
-    <div class="coleccion-title">Toda la Colección</div>
+    <div>
+      <div class="coleccion-title">Toda la Colección</div>
+      <div class="sec-heading-stripe" style="margin-top:8px"><span></span><span></span><span></span></div>
+    </div>
     <div id="filtros" class="filter-row"></div>
   </div>
   <div id="grid-productos"></div>
@@ -1180,7 +1185,8 @@
 <section id="distribuidores" style="padding:80px 6%;background:#0a0f1a;border-top:1px solid #1e2d3d">
   <div style="max-width:900px;margin:0 auto;text-align:center">
     <div style="font-size:0.75rem;letter-spacing:4px;color:#c58c38;margin-bottom:12px">DISTRIBUIDORES</div>
-    <h2 style="font-size:2.2rem;font-weight:800;letter-spacing:2px;margin-bottom:16px">VENDÉ HMMR JEANS</h2>
+    <h2 style="font-size:2.2rem;font-weight:800;letter-spacing:2px;margin-bottom:12px">VENDÉ HMMR JEANS</h2>
+    <div class="sec-heading-stripe" style="margin:0 auto 20px"><span></span><span></span><span></span></div>
     <p style="color:#94a3b8;font-size:1rem;line-height:1.7;max-width:600px;margin:0 auto 40px">¿Querés vender HMMR Jeans en tu local? Somos una marca paraguaya en crecimiento y buscamos distribuidores en todo el país. Escribinos y te contamos las condiciones.</p>
     <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
       <a id="dist-wa-btn" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20me%20interesa%20ser%20distribuidor" target="_blank" rel="noopener"
