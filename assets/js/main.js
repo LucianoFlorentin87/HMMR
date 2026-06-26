@@ -57,8 +57,7 @@ function formatPrecio(num) {
 }
 
 function precioGs(precio) {
-  // Convertir precio ARS → representación en Gs (visual)
-  return precio * 1000;
+  return precio;
 }
 
 // ---- IMAGE WITH FALLBACK ----
