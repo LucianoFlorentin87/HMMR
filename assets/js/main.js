@@ -235,7 +235,7 @@ async function cargarProductos() {
   // Fallback: JSON local
   if (!productos) {
     try {
-      const resp = await fetch('assets/data/productos.json');
+      const resp = await fetch('assets/data/productos.json?v=' + Date.now());
       const data = await resp.json();
       productos  = data.productos;
       categorias = data.categorias;
