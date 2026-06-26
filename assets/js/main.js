@@ -761,7 +761,7 @@ async function aplicarConfig() {
       document.querySelectorAll('.logo, .footer-logo-top').forEach(el => {
         if (l.imagen) {
           // Logo imagen
-          el.innerHTML = `<img src="${l.imagen}" alt="${l.nombre || 'Logo'}" style="height:54px;object-fit:contain">`;
+          el.innerHTML = `<img src="${l.imagen}" alt="${l.nombre || 'Logo'}" style="height:54px;object-fit:contain;background:#fff;border-radius:8px;padding:4px 8px">`;
         } else {
           // Logo texto
           const svgIcon = `<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:20px;height:20px;fill:#fff;flex-shrink:0"><rect x="9" y="11" width="10" height="6" rx="1" transform="rotate(-45 14 14)"/><rect x="4" y="14" width="12" height="4" rx="1" transform="rotate(-45 10 16)"/></svg>`;
