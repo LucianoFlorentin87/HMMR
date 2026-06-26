@@ -560,8 +560,8 @@
     .sin-resultados{display:none;text-align:center;padding:60px;color:var(--muted);grid-column:1/-1}
 
     /* Product card */
-    .prod-card{background:var(--dark3);cursor:pointer;border:1px solid var(--border);overflow:hidden}
-    .prod-img-wrap{overflow:hidden}
+    .prod-card{background:var(--dark3);cursor:pointer;border:1px solid var(--border);overflow:hidden;border-radius:12px}
+    .prod-img-wrap{overflow:hidden;border-radius:12px 12px 0 0}
     .prod-img{position:relative}
     .prod-img img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;transition:transform 0.5s}
     .prod-card:hover .prod-img img{transform:scale(1.04)}
@@ -593,6 +593,7 @@
     .color-dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(255,255,255,0.2)}
     .prod-price{display:flex;align-items:center;gap:8px}
     .price-now{font-size:0.88rem;font-weight:700;color:#fff}
+    .prod-price:has(.price-was) .price-now{color:#ef4444}
     .price-was{font-size:0.75rem;color:rgba(255,255,255,0.35);text-decoration:line-through}
 
     /* ============================================================
