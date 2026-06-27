@@ -669,143 +669,148 @@ function initHeroSlider() {
 }
 
 // ---- APPLY SITE CONFIG ----
+// Helper: solo asigna si el valor no es vacío
+function setIfVal(el, prop, val) { if (el && val) el[prop] = val; }
+function setTextIfVal(el, val)   { if (el && val) el.textContent = val; }
+
 async function aplicarConfig() {
   try {
     const r = await fetch('assets/data/config.json?v=' + Date.now());
     if (!r.ok) return;
     const cfg = await r.json();
 
-    // LOGO
+    // LOGO — solo si el admin configuró una imagen explícita y no vacía
     if (cfg.logo && cfg.logo.imagen) {
-      // Solo sobreescribir el logo si el admin configuró una imagen explícita
       const l = cfg.logo;
       document.querySelectorAll('.logo-hmmr').forEach(el => {
         el.innerHTML = `<img src="${l.imagen}" alt="${l.nombre || 'HMMR Jeans'}" style="height:64px;width:auto;display:block">`;
       });
     }
 
-    // HERO SLIDES
-    if (cfg.hero && cfg.hero.slides) {
-      const heroEl = document.getElementById('hero');
-      const slides = cfg.hero.slides;
-      // Reemplazar slides existentes
-      const existingSlides = heroEl ? heroEl.querySelectorAll('.slide') : [];
-      existingSlides.forEach(s => s.remove());
-      if (heroEl) {
-        slides.forEach((s, i) => {
-          const div = document.createElement('div');
-          div.className = 'slide' + (i === 0 ? ' active' : '');
-          div.innerHTML = `
-            <img class="slide-img" src="${s.imagen}" alt="${s.titulo}">
-            <div class="slide-overlay"></div>
-            <div class="slide-content">
-              <div class="slide-pretitle">${s.pretitulo || ''}</div>
-              <div class="slide-bigword">${s.titulo}</div>
-              <p class="slide-tagline">${s.subtitulo || ''}</p>
-              <a href="${s.link || '#'}" class="btn-hero">${s.boton || 'VER'}</a>
-            </div>`;
-          heroEl.insertBefore(div, heroEl.querySelector('.hero-arrow'));
-        });
-        // Actualizar dots
-        const dotsWrap = document.getElementById('heroDots');
-        if (dotsWrap) {
-          dotsWrap.innerHTML = slides.map((_, i) =>
-            `<button class="hero-dot${i===0?' active':''}" data-slide="${i}"></button>`
-          ).join('');
+    // HERO SLIDES — solo reemplazar si hay slides con imagen válida
+    if (cfg.hero && Array.isArray(cfg.hero.slides) && cfg.hero.slides.length) {
+      const validSlides = cfg.hero.slides.filter(s => s.imagen && s.imagen.trim());
+      if (validSlides.length) {
+        const heroEl = document.getElementById('hero');
+        if (heroEl) {
+          heroEl.querySelectorAll('.slide').forEach(s => s.remove());
+          validSlides.forEach((s, i) => {
+            const div = document.createElement('div');
+            div.className = 'slide' + (i === 0 ? ' active' : '');
+            div.innerHTML = `
+              <img class="slide-img" src="${s.imagen}" alt="${s.titulo || 'HMMR'}">
+              <div class="slide-overlay"></div>
+              <div class="slide-content">
+                ${s.pretitulo ? `<div class="slide-pretitle">${s.pretitulo}</div>` : ''}
+                <div class="slide-bigword">${s.titulo || ''}</div>
+                ${s.subtitulo ? `<p class="slide-tagline">${s.subtitulo}</p>` : ''}
+                <div class="flag-ribbon"><span></span><span></span><span></span></div>
+                <a href="${s.link || '#coleccion'}" class="btn-hero">${s.boton || 'VER COLECCIÓN'}</a>
+              </div>`;
+            heroEl.insertBefore(div, heroEl.querySelector('.hero-arrow'));
+          });
+          const dotsWrap = document.getElementById('heroDots');
+          if (dotsWrap) {
+            dotsWrap.innerHTML = validSlides.map((_, i) =>
+              `<button class="hero-dot${i===0?' active':''}" data-slide="${i}"></button>`
+            ).join('');
+          }
         }
       }
     }
 
-    // CATEGORÍAS
-    if (cfg.categorias && cfg.categorias.length) {
-      const catWrap = document.querySelector('#categorias .categories');
-      if (catWrap) {
-        catWrap.innerHTML = cfg.categorias.map(c => `
-          <a href="#coleccion" class="category-card" onclick="document.getElementById('coleccion').style.display='block';filtrarCategoria('${c.filtro}')">
-            <img src="${c.imagen}" alt="${c.nombre}" />
-            <div class="cat-overlay">
-              <span class="cat-name">${c.nombre}</span>
-              <span class="cat-link">VER MÁS →</span>
-            </div>
-          </a>`).join('');
+    // CATEGORÍAS — solo reemplazar si hay categorías con nombre e imagen válidos
+    if (Array.isArray(cfg.categorias) && cfg.categorias.length) {
+      const validCats = cfg.categorias.filter(c => c.nombre && c.imagen && c.imagen.trim());
+      if (validCats.length) {
+        const catWrap = document.querySelector('#categorias .categories');
+        if (catWrap) {
+          catWrap.innerHTML = validCats.map(c => `
+            <a href="#coleccion" class="category-card" onclick="filtrarCategoria('${c.filtro || c.nombre}');return false;">
+              <img src="${c.imagen}" alt="${c.nombre}" onerror="this.src='https://via.placeholder.com/400x300/142438/C9963A?text=${encodeURIComponent(c.nombre)}'"/>
+              <div class="cat-overlay">
+                <span class="cat-name">${c.nombre}</span>
+                <span class="cat-link">VER MÁS →</span>
+              </div>
+            </a>`).join('');
+        }
       }
     }
 
     // COLECCION BANNER
     if (cfg.coleccionBanner) {
       const cb = cfg.coleccionBanner;
-      const sm = document.querySelector('.cbanner-small');
-      const mn = document.querySelector('.cbanner-main');
-      const yr = document.querySelector('.cbanner-year');
+      setTextIfVal(document.querySelector('.cbanner-small'), cb.subtitulo);
+      setTextIfVal(document.querySelector('.cbanner-main'),  cb.titulo);
+      setTextIfVal(document.querySelector('.cbanner-year'),  cb.ano);
       const ri = document.querySelector('.cbanner-right img');
-      if (sm) sm.textContent = cb.subtitulo || '';
-      if (mn) mn.textContent = cb.titulo || '';
-      if (yr) yr.textContent = cb.ano || '';
-      if (ri) ri.src = cb.imagen || '';
+      setIfVal(ri, 'src', cb.imagen);
     }
 
     // NOSOTROS
     if (cfg.nosotros) {
       const n = cfg.nosotros;
-      const h1 = document.querySelector('.nos-h1');
-      const h2 = document.querySelector('.nos-h2');
-      const p  = document.querySelector('.nos-p');
+      setTextIfVal(document.querySelector('.nos-h1'), n.titulo);
+      setTextIfVal(document.querySelector('.nos-h2'), n.subtitulo);
+      setTextIfVal(document.querySelector('.nos-p'),  n.texto);
       const im = document.querySelector('.nos-img img');
-      if (h1) h1.textContent = n.titulo || '';
-      if (h2) h2.textContent = n.subtitulo || '';
-      if (p)  p.textContent  = n.texto || '';
-      if (im) im.src         = n.imagen || '';
+      setIfVal(im, 'src', n.imagen);
     }
 
     // INSTAGRAM
     if (cfg.instagram) {
       const ig = cfg.instagram;
-      const handle = document.querySelector('.insta-handle');
-      const grid   = document.querySelector('.insta-grid');
-      if (handle) handle.textContent = ig.handle || '';
-      if (grid && ig.fotos) {
-        grid.innerHTML = ig.fotos.map(url =>
-          `<div class="insta-post"><img src="${url}" alt="Instagram HMMR" /></div>`
-        ).join('');
+      setTextIfVal(document.querySelector('.insta-handle'), ig.handle);
+      if (ig.fotos && ig.fotos.length) {
+        const grid = document.querySelector('.insta-grid');
+        if (grid) {
+          grid.innerHTML = ig.fotos.map(url =>
+            `<div class="insta-post"><img src="${url}" alt="Instagram HMMR" onerror="this.parentElement.style.display='none'"/></div>`
+          ).join('');
+        }
       }
     }
 
     // CONTACTO
     if (cfg.contacto) {
       const c = cfg.contacto;
-      const waMsg = encodeURIComponent('Hola HMMR Jeans, me interesan sus productos');
-      const waFloat = document.getElementById('whatsapp-float');
-      if (waFloat && c.whatsapp) waFloat.href = `https://wa.me/${c.whatsapp}?text=${waMsg}`;
-      document.querySelectorAll('.btn-wa, a[href*="wa.me"]').forEach(el => {
-        if (c.whatsapp) el.href = `https://wa.me/${c.whatsapp}?text=${waMsg}`;
-      });
-      const tel = document.getElementById('footer-telefono');
-      if (tel && c.telefono) tel.textContent = c.telefono;
-      const email = document.getElementById('footer-email');
-      if (email && c.email) email.textContent = c.email;
+      if (c.whatsapp) {
+        const waGeneralMsg = encodeURIComponent('Hola HMMR Jeans, me interesan sus productos');
+        const waDistMsg    = encodeURIComponent('Hola HMMR Jeans, me interesa ser distribuidor');
+        const waHelpMsg    = encodeURIComponent('Hola HMMR Jeans, necesito ayuda');
+        // Float button
+        const waFloat = document.getElementById('whatsapp-float');
+        setIfVal(waFloat, 'href', `https://wa.me/${c.whatsapp}?text=${waGeneralMsg}`);
+        // Botones específicos por ID (no usar selector genérico a[href*=wa.me])
+        setIfVal(document.getElementById('ct-wa-link'),      'href', `https://wa.me/${c.whatsapp}?text=${waHelpMsg}`);
+        setIfVal(document.getElementById('dist-wa-btn'),     'href', `https://wa.me/${c.whatsapp}?text=${waDistMsg}`);
+        setIfVal(document.getElementById('contacto-wa-btn'), 'href', `https://wa.me/${c.whatsapp}?text=${waHelpMsg}`);
+        // Botones de producto (clase .btn-wa)
+        document.querySelectorAll('.btn-wa').forEach(el => {
+          el.href = `https://wa.me/${c.whatsapp}?text=${waGeneralMsg}`;
+        });
+      }
+      // Footer info
+      setTextIfVal(document.getElementById('footer-telefono'),  c.telefono);
+      setTextIfVal(document.getElementById('footer-email'),     c.email);
       const dir = document.getElementById('footer-direccion');
       if (dir) {
-        if (c.direccion) dir.textContent = c.direccion;
-        if (c.maps) dir.href = c.maps;
+        setTextIfVal(dir, c.direccion);
+        setIfVal(dir, 'href', c.maps);
       }
-      const ig = document.getElementById('footer-ig');
-      if (ig && c.instagram) ig.href = c.instagram;
-      const fb = document.getElementById('footer-fb');
-      if (fb && c.facebook) fb.href = c.facebook;
-      const tt = document.getElementById('footer-tiktok');
-      if (tt && c.tiktok && c.tiktok !== '#') tt.href = c.tiktok;
-      // Sección contacto
-      const waLink = (num, msg) => `https://wa.me/${num}?text=${encodeURIComponent(msg)}`;
-      ['ct-wa-link','dist-wa-btn','contacto-wa-btn'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el && c.whatsapp) el.href = waLink(c.whatsapp, el.id.includes('dist') ? 'Hola HMMR Jeans, me interesa ser distribuidor' : 'Hola HMMR Jeans, necesito ayuda');
-      });
-      const ctEmail = document.getElementById('ct-email-link');
-      if (ctEmail && c.email) { ctEmail.href = 'mailto:' + c.email; ctEmail.textContent = c.email; }
-      const distEmail = document.getElementById('dist-email-btn');
-      if (distEmail && c.email) distEmail.href = 'mailto:' + c.email + '?subject=Quiero%20ser%20distribuidor';
-      const ctMaps = document.getElementById('ct-maps-link');
-      if (ctMaps && c.maps) ctMaps.href = c.maps;
+      // Redes sociales footer
+      setIfVal(document.getElementById('footer-ig'),     'href', c.instagram);
+      setIfVal(document.getElementById('footer-fb'),     'href', c.facebook);
+      if (c.tiktok && c.tiktok !== '#')
+        setIfVal(document.getElementById('footer-tiktok'), 'href', c.tiktok);
+      // Email links
+      if (c.email) {
+        const ctEmail = document.getElementById('ct-email-link');
+        if (ctEmail) { ctEmail.href = 'mailto:' + c.email; ctEmail.textContent = c.email; }
+        setIfVal(document.getElementById('dist-email-btn'), 'href', `mailto:${c.email}?subject=Quiero%20ser%20distribuidor`);
+      }
+      // Maps
+      setIfVal(document.getElementById('ct-maps-link'), 'href', c.maps);
     }
   } catch(e) {
     console.warn('config.json no disponible:', e.message);
