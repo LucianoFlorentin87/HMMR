@@ -881,11 +881,6 @@
 
   <div class="nav-icons">
     <button class="nav-icon-btn" id="btn-search" title="Buscar"><i class="fas fa-search"></i></button>
-    <button class="nav-icon-btn" id="btn-user" title="Mi cuenta"><i class="far fa-user"></i></button>
-    <button class="nav-icon-btn" id="btn-cart" title="Carrito">
-      <i class="fas fa-shopping-bag"></i>
-      <span class="nav-cart-count">0</span>
-    </button>
   </div>
 
   <button id="menu-btn" class="hamburger" aria-label="Menú"><i class="fas fa-bars"></i></button>
@@ -1393,63 +1388,6 @@
 <!-- ============================================================
      CART SIDEBAR
      ============================================================ -->
-<div id="cart-sidebar">
-  <div class="cart-sidebar-inner">
-    <div class="cart-header">
-      <h3>Tu Carrito <span class="cart-header-count">(0)</span></h3>
-      <button id="cart-close"><i class="fas fa-times"></i></button>
-    </div>
-    <div id="cart-items-list" class="cart-items-list">
-      <div class="cart-empty">
-        <i class="fas fa-shopping-bag"></i>
-        <p>Tu carrito está vacío</p>
-        <a href="#coleccion" id="cart-go-shop" style="font-size:0.68rem;color:var(--gold);letter-spacing:2px;text-transform:uppercase;margin-top:8px">Ver Colección</a>
-      </div>
-    </div>
-    <div class="cart-footer" id="cart-footer" style="display:none">
-      <div class="cart-total-row">
-        <span>Total</span>
-        <span id="cart-total-price">GS. 0</span>
-      </div>
-      <a href="https://wa.me/595982372521?text=Hola%20HMMR%2C%20quiero%20realizar%20un%20pedido"
-         target="_blank" rel="noopener" class="cart-checkout-btn">
-        <i class="fab fa-whatsapp"></i> Finalizar por WhatsApp
-      </a>
-      <button class="cart-clear-btn" id="cart-clear">Vaciar carrito</button>
-    </div>
-  </div>
-</div>
-<div id="cart-overlay-bg"></div>
-
-
-<!-- ============================================================
-     USER MODAL
-     ============================================================ -->
-<div id="user-modal">
-  <div class="user-modal-box">
-    <button class="user-modal-close" id="user-modal-close"><i class="fas fa-times"></i></button>
-    <div class="user-modal-tabs">
-      <button class="user-tab active" data-tab="login">Iniciar Sesión</button>
-      <button class="user-tab" data-tab="registro">Registrarse</button>
-    </div>
-    <div id="tab-login">
-      <div class="user-field"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
-      <div class="user-field"><label>Contraseña</label><input type="password" placeholder="••••••••"></div>
-      <button class="user-submit-btn">Ingresar</button>
-      <p class="user-social-divider">o continuá con</p>
-      <div class="user-social-btns">
-        <button class="user-social-btn"><i class="fab fa-google"></i> Google</button>
-        <button class="user-social-btn"><i class="fab fa-facebook-f"></i> Facebook</button>
-      </div>
-    </div>
-    <div id="tab-registro" style="display:none">
-      <div class="user-field"><label>Nombre completo</label><input type="text" placeholder="Tu nombre"></div>
-      <div class="user-field"><label>Email</label><input type="email" placeholder="tu@email.com"></div>
-      <div class="user-field"><label>Contraseña</label><input type="password" placeholder="Mínimo 8 caracteres"></div>
-      <button class="user-submit-btn">Crear Cuenta</button>
-    </div>
-  </div>
-</div>
 
 
 <script src="assets/js/main.js?v=19"></script>
