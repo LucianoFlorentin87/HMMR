@@ -7,9 +7,9 @@ const annBar = document.getElementById('announcement-bar');
 const navbar = document.getElementById('navbar');
 
 function syncNavbarOffset() {
+  if (!navbar) return;
   if (annBar && annBar.style.display !== 'none') {
-    const h = annBar.offsetHeight;
-    navbar.style.top = h + 'px';
+    navbar.style.top = annBar.offsetHeight + 'px';
     navbar.classList.add('has-bar');
   } else {
     navbar.style.top = '0';
@@ -20,28 +20,32 @@ syncNavbarOffset();
 
 // ---- NAVBAR SCROLL ----
 window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 60);
-  document.getElementById('backToTop').classList.toggle('visible', window.scrollY > 400);
+  if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 60);
+  const btt = document.getElementById('backToTop');
+  if (btt) btt.classList.toggle('visible', window.scrollY > 400);
 }, { passive: true });
 
 // ---- MOBILE MENU ----
-document.getElementById('menu-btn').addEventListener('click', () => {
-  const m = document.getElementById('mobile-menu');
-  m.classList.toggle('open');
-  const icon = document.querySelector('#menu-btn i');
-  icon.className = m.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
-});
-document.querySelectorAll('#mobile-menu a').forEach(a => {
-  a.addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.remove('open');
-    document.querySelector('#menu-btn i').className = 'fas fa-bars';
+const _menuBtn = document.getElementById('menu-btn');
+const _mobileMenu = document.getElementById('mobile-menu');
+if (_menuBtn && _mobileMenu) {
+  _menuBtn.addEventListener('click', () => {
+    _mobileMenu.classList.toggle('open');
+    const icon = _menuBtn.querySelector('i');
+    if (icon) icon.className = _mobileMenu.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
   });
-});
+  _mobileMenu.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      _mobileMenu.classList.remove('open');
+      const icon = _menuBtn.querySelector('i');
+      if (icon) icon.className = 'fas fa-bars';
+    });
+  });
+}
 
 // ---- BACK TO TOP ----
-document.getElementById('backToTop').addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+const _backToTop = document.getElementById('backToTop');
+if (_backToTop) _backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
 // ---- PRODUCT DATA ----
 let todosProductos = [];
@@ -219,23 +223,27 @@ function cargarTestimonios(lista) {
 const searchOverlay = document.getElementById('search-overlay');
 const searchInput   = document.getElementById('search-input');
 
-document.getElementById('btn-search').addEventListener('click', () => {
-  searchOverlay.classList.add('open');
-  setTimeout(() => searchInput.focus(), 100);
-  document.body.style.overflow = 'hidden';
-});
-
-document.getElementById('search-close').addEventListener('click', cerrarSearch);
-searchOverlay.addEventListener('click', e => { if (e.target === searchOverlay) cerrarSearch(); });
+const _btnSearch = document.getElementById('btn-search');
+if (_btnSearch && searchOverlay) {
+  _btnSearch.addEventListener('click', () => {
+    searchOverlay.classList.add('open');
+    if (searchInput) setTimeout(() => searchInput.focus(), 100);
+    document.body.style.overflow = 'hidden';
+  });
+}
+const _searchClose = document.getElementById('search-close');
+if (_searchClose) _searchClose.addEventListener('click', cerrarSearch);
+if (searchOverlay) searchOverlay.addEventListener('click', e => { if (e.target === searchOverlay) cerrarSearch(); });
 
 function cerrarSearch() {
-  searchOverlay.classList.remove('open');
+  if (searchOverlay) searchOverlay.classList.remove('open');
   document.body.style.overflow = '';
-  searchInput.value = '';
-  document.getElementById('search-results').innerHTML = '';
+  if (searchInput) searchInput.value = '';
+  const sr = document.getElementById('search-results');
+  if (sr) sr.innerHTML = '';
 }
 
-searchInput.addEventListener('input', () => {
+if (searchInput) searchInput.addEventListener('input', () => {
   const q = searchInput.value.trim().toLowerCase();
   const resultsEl = document.getElementById('search-results');
   if (!q) { resultsEl.innerHTML = ''; return; }
@@ -253,7 +261,7 @@ searchInput.addEventListener('input', () => {
   }
   resultsEl.innerHTML = found.slice(0, 6).map(p => `
     <div class="search-result-card" onclick="cerrarSearch();abrirModal(${p.id})">
-      <img src="${p.imagen}" alt="${p.nombre}"
+      <img src="${imgSrc(p)}" alt="${p.nombre}"
         onerror="this.src='https://via.placeholder.com/400x530/142438/C9963A?text=HMMR'">
       <div class="search-result-info">
         <p>${p.categoria}</p>
@@ -262,14 +270,13 @@ searchInput.addEventListener('input', () => {
       </div>
     </div>
   `).join('');
-});
+}); // fin if(searchInput)
 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') {
     cerrarSearch();
     cerrarCartSidebar();
-    document.getElementById('user-modal').classList.remove('open');
-    document.body.style.overflow = '';
+    if (_userModal) { _userModal.classList.remove('open'); document.body.style.overflow = ''; }
   }
 });
 
@@ -287,14 +294,18 @@ if (_cartOverlay) _cartOverlay.addEventListener('click', cerrarCartSidebar);
 if (_cartClear) _cartClear.addEventListener('click', () => { carrito = []; actualizarCartUI(); });
 
 function abrirCartSidebar() {
-  document.getElementById('cart-sidebar').classList.add('open');
-  document.getElementById('cart-overlay-bg').classList.add('open');
+  const cs = document.getElementById('cart-sidebar');
+  const co = document.getElementById('cart-overlay-bg');
+  if (cs) cs.classList.add('open');
+  if (co) co.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
 
 function cerrarCartSidebar() {
-  document.getElementById('cart-sidebar').classList.remove('open');
-  document.getElementById('cart-overlay-bg').classList.remove('open');
+  const cs = document.getElementById('cart-sidebar');
+  const co = document.getElementById('cart-overlay-bg');
+  if (cs) cs.classList.remove('open');
+  if (co) co.classList.remove('open');
   document.body.style.overflow = '';
 }
 
@@ -345,8 +356,8 @@ function actualizarCartUI() {
 
   // Update WhatsApp checkout link with products
   const items = carrito.map(i => `${i.qty}x ${i.nombre}`).join(', ');
-  document.querySelector('.cart-checkout-btn').href =
-    `https://wa.me/595981000001?text=Hola%20HMMR%2C%20quiero%20pedir%3A%20${encodeURIComponent(items)}`;
+  const checkoutBtn = document.querySelector('.cart-checkout-btn');
+  if (checkoutBtn) checkoutBtn.href = `https://wa.me/595982372521?text=Hola%20HMMR%2C%20quiero%20pedir%3A%20${encodeURIComponent(items)}`;
 }
 
 function cambiarQty(idx, delta) {
@@ -382,9 +393,12 @@ function agregarCarrito(nombre) {
   }
 
   const notif = document.getElementById('cart-notification');
-  document.getElementById('cart-item-name').textContent = nombre;
-  notif.classList.add('show');
-  setTimeout(() => notif.classList.remove('show'), 3500);
+  const notifName = document.getElementById('cart-item-name');
+  if (notif && notifName) {
+    notifName.textContent = nombre;
+    notif.classList.add('show');
+    setTimeout(() => notif.classList.remove('show'), 3500);
+  }
 }
 
 // ---- USER MODAL ----
@@ -410,8 +424,7 @@ document.querySelectorAll('.user-submit-btn').forEach(btn => {
     setTimeout(() => {
       btn.textContent = label;
       btn.style.background = '';
-      document.getElementById('user-modal').classList.remove('open');
-      document.body.style.overflow = '';
+      if (_userModal) { _userModal.classList.remove('open'); document.body.style.overflow = ''; }
     }, 2000);
   });
 });
@@ -485,7 +498,7 @@ function abrirModal(id) {
             onmouseout="this.style.background='var(--red)';this.style.color='#fff'">
             <i class="fas fa-shopping-bag"></i> Agregar al Carrito
           </button>
-          <a href="https://wa.me/595981000001?text=Hola%20HMMR%2C%20me%20interesa%20el%20${encodeURIComponent(p.nombre)}"
+          <a href="https://wa.me/595982372521?text=Hola%20HMMR%2C%20me%20interesa%20el%20${encodeURIComponent(p.nombre)}"
             target="_blank" rel="noopener"
             style="background:var(--ink);color:#fff;padding:12px;font-size:0.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;transition:background 0.2s"
             onmouseover="this.style.background='#25D366'"
@@ -628,12 +641,10 @@ function initProductCarousel() {
     d.addEventListener('click', () => { page = +d.dataset.page; renderPage(page); })
   );
 
-  document.getElementById('carouselPrev').addEventListener('click', () => {
-    page = (page - 1 + pages) % pages; renderPage(page);
-  });
-  document.getElementById('carouselNext').addEventListener('click', () => {
-    page = (page + 1) % pages; renderPage(page);
-  });
+  const cPrev = document.getElementById('carouselPrev');
+  const cNext = document.getElementById('carouselNext');
+  if (cPrev) cPrev.addEventListener('click', () => { page = (page - 1 + pages) % pages; renderPage(page); });
+  if (cNext) cNext.addEventListener('click', () => { page = (page + 1) % pages; renderPage(page); });
 
   renderPage(0);
 }
