@@ -159,88 +159,17 @@ function renderDestacados(lista) {
   }).join('');
 }
 
-// ---- GOOGLE SHEETS CONFIG ----
-const SHEETS_CSV_URL = null;
-
-function parsearCSV(csv) {
-  const rows = [];
-  let cur = '', inQ = false, fields = [];
-  for (let i = 0; i < csv.length; i++) {
-    const ch = csv[i];
-    if (ch === '"') {
-      if (inQ && csv[i+1] === '"') { cur += '"'; i++; }
-      else inQ = !inQ;
-    } else if (ch === ',' && !inQ) {
-      fields.push(cur); cur = '';
-    } else if ((ch === '\n' || ch === '\r') && !inQ) {
-      fields.push(cur); cur = '';
-      if (fields.some(f => f.trim())) rows.push(fields);
-      fields = [];
-      if (ch === '\r' && csv[i+1] === '\n') i++;
-    } else {
-      cur += ch;
-    }
-  }
-  if (cur || fields.length) { fields.push(cur); if (fields.some(f => f.trim())) rows.push(fields); }
-  return rows;
-}
-
-function parsearSheets(csv) {
-  const rows = parsearCSV(csv);
-  if (rows.length < 2) return [];
-  const cabeceras = rows[0].map(h => h.trim());
-  return rows.slice(1).map((cols, i) => {
-    const obj = {};
-    cabeceras.forEach((h, idx) => { obj[h] = (cols[idx] || '').trim(); });
-    return {
-      id:             i + 1,
-      nombre:         obj.nombre        || '',
-      categoria:      obj.categoria     || 'HMMR Jeans',
-      precio:         parseFloat(obj.precio)               || 0,
-      precioOriginal: obj.precioOriginal ? parseFloat(obj.precioOriginal) : null,
-      imagen:         obj.imagen        || '',
-      imagenFallback: obj.imagenFallback || '',
-      descripcion:    obj.descripcion   || '',
-      colores:        obj.colores  ? obj.colores.split('|').map(c => c.trim()) : [],
-      tallas:         obj.tallas   ? obj.tallas.split('|').map(t => t.trim())  : [],
-      nuevo:          obj.nuevo  === 'si' || obj.nuevo  === 'true',
-      oferta:         obj.oferta === 'si' || obj.oferta === 'true',
-      etiqueta:       obj.etiqueta || null,
-      estrellas:      parseFloat(obj.estrellas) || 4
-    };
-  }).filter(p => p.nombre);
-}
-
 // ---- LOAD PRODUCTS ----
 async function cargarProductos() {
   let productos, categorias;
 
-  // Intentar Google Sheets primero
-  if (SHEETS_CSV_URL) {
-    try {
-      const resp = await fetch(SHEETS_CSV_URL);
-      if (!resp.ok) throw new Error('HTTP ' + resp.status);
-      const csv = await resp.text();
-      const parsed = parsearSheets(csv);
-      if (parsed.length > 0) {
-        productos  = parsed;
-        categorias = ['Todos', ...new Set(parsed.map(p => p.categoria))];
-      }
-    } catch (e) {
-      console.warn('Google Sheets no disponible, usando JSON local:', e.message);
-    }
-  }
-
-  // Fallback: JSON local
-  if (!productos) {
-    try {
-      const resp = await fetch('assets/data/productos.json?v=' + Date.now());
-      const data = await resp.json();
-      productos  = data.productos;
-      categorias = data.categorias;
-    } catch (e) {
-      console.error('Error cargando productos:', e);
-    }
+  try {
+    const resp = await fetch('assets/data/productos.json?v=' + Date.now());
+    const data = await resp.json();
+    productos  = data.productos;
+    categorias = data.categorias;
+  } catch (e) {
+    console.error('Error cargando productos:', e);
   }
 
   if (!productos || productos.length === 0) {

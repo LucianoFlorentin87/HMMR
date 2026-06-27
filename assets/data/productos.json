@@ -6,7 +6,7 @@
       "categoria": "HMMR Jeans",
       "precio": 300000,
       "precioOriginal": 400000,
-      "imagen": "assets/img/productos/jean-slim-clasico.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192806-1782426551073.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192806-1782426551073.jpeg",
       "descripcion": "Jean de corte slim con tela premium de alta durabilidad. Perfecto para el dÃ­a a dÃ­a.",
       "colores": [
@@ -33,7 +33,7 @@
       "categoria": "HMMR Jeans",
       "precio": 250000,
       "precioOriginal": 300000,
-      "imagen": "assets/img/productos/jean-skinny-pushup.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-1-1782426560029.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-1-1782426560029.jpeg",
       "descripcion": "Jean skinny con efecto push up y tela elÃÂ¡stica premium. Moldea y estiliza tu figura.",
       "colores": [
@@ -58,7 +58,7 @@
       "categoria": "HMMR Jeans",
       "precio": 250000,
       "precioOriginal": 300000,
-      "imagen": "assets/img/productos/jean-wide-leg.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-2-1782426578160.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-2-1782426578160.jpeg",
       "descripcion": "Tendencia wide leg con caÃÂ­da perfecta y tela suave. El estilo que domina la temporada.",
       "colores": [
@@ -86,7 +86,7 @@
       "categoria": "HMMR Jeans",
       "precio": 99900,
       "precioOriginal": 139900,
-      "imagen": "assets/img/productos/jean-cargo-urbano.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-2-1782426587542.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-2-1782426587542.jpeg",
       "descripcion": "Jean cargo con bolsillos funcionales y estilo urbano. Para el hombre que no para.",
       "colores": [
@@ -112,7 +112,7 @@
       "categoria": "HMMR Jeans",
       "precio": 84900,
       "precioOriginal": null,
-      "imagen": "assets/img/productos/jean-mom-vintage.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-3-1782426598993.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-3-1782426598993.jpeg",
       "descripcion": "Estilo mom vintage con lavado desgastado autÃÂ©ntico. Comodidad y estilo en uno.",
       "colores": [
@@ -137,7 +137,7 @@
       "categoria": "HMMR Jeans",
       "precio": 74900,
       "precioOriginal": null,
-      "imagen": "assets/img/productos/jean-recto-clasico.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192808-1-1782426610370.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192808-1-1782426610370.jpeg",
       "descripcion": "Corte recto atemporal, ideal para cualquier ocasiÃÂ³n. El bÃÂ¡sico que nunca falla.",
       "colores": [
@@ -165,7 +165,7 @@
       "categoria": "HMMR Jeans",
       "precio": 82900,
       "precioOriginal": 109900,
-      "imagen": "assets/img/productos/jean-skinny-clasico.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-1782426619923.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-1782426619923.jpeg",
       "descripcion": "Corte skinny ajustado con tela stretch de alta calidad. Estilo y comodidad garantizados.",
       "colores": [
@@ -190,7 +190,7 @@
       "categoria": "HMMR Jeans",
       "precio": 97900,
       "precioOriginal": null,
-      "imagen": "assets/img/productos/jean-flare-retro.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-1782426627945.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-1782426627945.jpeg",
       "descripcion": "Corte flare inspirado en los 70s con tela premium y acabado impecable.",
       "colores": [
@@ -216,7 +216,7 @@
       "categoria": "HMMR Jeans",
       "precio": 91900,
       "precioOriginal": null,
-      "imagen": "assets/img/productos/jean-tapered-fit.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-1-1782426639973.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192809-1-1782426639973.jpeg",
       "descripcion": "Corte tapered moderno, ancho arriba y ajustado en el tobillo. Tendencia urbana.",
       "colores": [
@@ -242,7 +242,7 @@
       "categoria": "Doom Free",
       "precio": 88900,
       "precioOriginal": 119900,
-      "imagen": "assets/img/productos/df-jean-boyfriend.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-1782426655471.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-1782426655471.jpeg",
       "descripcion": "Jean boyfriend oversized con efecto desgastado. Comodidad mÃÂ¡xima con mucho estilo.",
       "colores": [
@@ -269,7 +269,7 @@
       "categoria": "Doom Free",
       "precio": 95900,
       "precioOriginal": null,
-      "imagen": "assets/img/productos/df-jogger-denim.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192808-2-1782426668153.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192808-2-1782426668153.jpeg",
       "descripcion": "Jogger en denim elÃÂ¡stico con puÃÂ±o en el tobillo. La fusiÃÂ³n perfecta entre comodidad y estilo.",
       "colores": [
@@ -295,7 +295,7 @@
       "categoria": "Doom Free",
       "precio": 86900,
       "precioOriginal": 109900,
-      "imagen": "assets/img/productos/df-cintura-alta.jpg",
+      "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-1-1782426687864.jpeg",
       "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-1-1782426687864.jpeg",
       "descripcion": "Jean de cintura alta que estiliza la silueta. Tela con lycra para mayor confort.",
       "colores": [
