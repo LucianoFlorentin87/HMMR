@@ -726,7 +726,7 @@ async function aplicarConfig() {
         const catWrap = document.querySelector('#categorias .categories');
         if (catWrap) {
           catWrap.innerHTML = validCats.map(c => `
-            <a href="#coleccion" class="category-card" onclick="filtrarCategoria('${c.filtro || c.nombre}');return false;">
+            <a href="#coleccion" class="category-card" onclick="filtrarCategoria('${c.filtro || c.nombre}')">
               <img src="${c.imagen}" alt="${c.nombre}" onerror="this.src='https://via.placeholder.com/400x300/142438/C9963A?text=${encodeURIComponent(c.nombre)}'"/>
               <div class="cat-overlay">
                 <span class="cat-name">${c.nombre}</span>
