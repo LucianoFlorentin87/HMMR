@@ -1180,94 +1180,69 @@
     #doom-free-section{
       border-top:1px solid rgba(255,255,255,0.06);
       border-bottom:1px solid rgba(255,255,255,0.06);
-      overflow:hidden;
     }
-    .df-banner{
-      position:relative;
-      display:grid;grid-template-columns:1fr 1fr;
-      min-height:300px;
-    }
-    /* imagen de fondo a la izquierda */
-    .df-banner-img{
-      position:relative;overflow:hidden;background:#111;
-    }
-    .df-banner-img img{
-      width:100%;height:100%;object-fit:cover;object-position:center top;
-      filter:brightness(0.65);
-      transition:transform 0.7s ease;
-    }
-    #doom-free-section:hover .df-banner-img img{transform:scale(1.04)}
-    .df-banner-img::after{
-      content:'';position:absolute;inset:0;
-      background:linear-gradient(to right,transparent 55%,#0c0c0c 100%);
-    }
-    /* contenido derecho */
-    .df-banner-body{
+    .df-strip{
+      position:relative;height:120px;overflow:hidden;
       background:#0c0c0c;
-      padding:48px 6% 48px 5%;
-      display:flex;flex-direction:column;justify-content:center;gap:18px;
     }
-    .df-banner-eyebrow{
-      font-size:0.55rem;letter-spacing:4px;color:rgba(255,255,255,0.3);
-      text-transform:uppercase;
+    .df-strip-bg{
+      position:absolute;inset:0;
+      background-image:url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=1400&q=70');
+      background-size:cover;background-position:center 30%;
+      filter:brightness(0.25);
     }
-    /* logo compuesto */
-    .df-logo-lockup{display:flex;align-items:center;gap:14px}
-    .df-logo-sq{
-      width:48px;height:48px;flex-shrink:0;
-      background:#e8c840;
+    .df-strip-inner{
+      position:relative;z-index:1;
+      height:100%;max-width:1200px;margin:0 auto;padding:0 6%;
+      display:flex;align-items:center;justify-content:space-between;gap:24px;
+    }
+    .df-strip-logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
+    .df-strip-sq{
+      width:38px;height:38px;background:#e8c840;flex-shrink:0;
       display:flex;align-items:center;justify-content:center;
-      font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;
-      color:#000;letter-spacing:1px;
+      font-family:'Playfair Display',serif;font-size:0.85rem;font-weight:900;color:#000;
     }
-    .df-logo-words{line-height:1}
-    .df-logo-words .top{
+    .df-strip-name{
       font-family:'Playfair Display',serif;
-      font-size:1.55rem;font-weight:900;color:#fff;letter-spacing:3px;
-      display:block;
+      font-size:1.1rem;font-weight:900;color:#fff;letter-spacing:2px;line-height:1;
     }
-    .df-logo-words .bot{
-      font-size:0.52rem;letter-spacing:5px;color:#e8c840;
-      text-transform:uppercase;display:block;margin-top:3px;
+    .df-strip-name small{
+      display:block;font-family:'Inter',sans-serif;
+      font-size:0.5rem;letter-spacing:4px;color:#e8c840;font-weight:600;
+      text-transform:uppercase;margin-top:3px;
     }
-    .df-banner-desc{
-      font-size:0.82rem;color:rgba(255,255,255,0.38);
-      line-height:1.7;max-width:340px;
+    .df-strip-desc{
+      font-size:0.78rem;color:rgba(255,255,255,0.35);
+      line-height:1.5;
     }
-    .df-banner-btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:13px 26px;background:#e8c840;color:#000;
-      font-size:0.68rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
-      transition:background 0.2s;width:fit-content;
+    .df-strip-btn{
+      display:inline-flex;align-items:center;gap:8px;flex-shrink:0;
+      padding:11px 22px;background:#e8c840;color:#000;
+      font-size:0.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      transition:background 0.2s;white-space:nowrap;
     }
-    .df-banner-btn:hover{background:#f5d860}
-    @media(max-width:768px){
-      .df-banner{grid-template-columns:1fr}
-      .df-banner-img{min-height:200px}
-      .df-banner-img::after{background:linear-gradient(to top,#0c0c0c 0%,transparent 60%)}
-      .df-banner-body{padding:32px 6%}
-      .df-banner-btn{width:100%;justify-content:center}
+    .df-strip-btn:hover{background:#f5d860}
+    @media(max-width:700px){
+      .df-strip{height:auto;padding:20px 0}
+      .df-strip-inner{flex-wrap:wrap;gap:14px}
+      .df-strip-desc{display:none}
+      .df-strip-btn{width:100%;justify-content:center}
     }
   </style>
 
-  <div class="df-banner">
-    <div class="df-banner-img">
-      <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=900&q=80" alt="Doom Free Design">
-    </div>
-    <div class="df-banner-body">
-      <div class="df-banner-eyebrow">Marca hermana — Urban wear</div>
-      <div class="df-logo-lockup">
-        <div class="df-logo-sq">DF</div>
-        <div class="df-logo-words">
-          <span class="top">DOOM FREE</span>
-          <span class="bot">Design</span>
+  <div class="df-strip">
+    <div class="df-strip-bg"></div>
+    <div class="df-strip-inner">
+      <div class="df-strip-logo">
+        <div class="df-strip-sq">DF</div>
+        <div class="df-strip-name">
+          DOOM FREE
+          <small>Design — Urban wear</small>
         </div>
       </div>
-      <p class="df-banner-desc">
-        Nuestra línea de indumentaria urbana. Cortes únicos, diseños atrevidos y una actitud propia para los que no siguen las reglas.
-      </p>
-      <a href="doomfree.html" class="df-banner-btn">
-        Explorar marca <i class="fas fa-arrow-right"></i>
+      <p class="df-strip-desc">Nuestra línea de indumentaria urbana. Diseños únicos, actitud propia.</p>
+      <a href="doomfree.html" class="df-strip-btn">
+        Ver colección <i class="fas fa-arrow-right"></i>
       </a>
     </div>
   </div>
