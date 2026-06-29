@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Jean Clasico Slim",
-      "categoria": "HMMR Jeans",
+      "categoria": "Jeans",
       "precio": 300000,
       "precioOriginal": 400000,
       "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192806-1782426551073.jpeg",
@@ -345,6 +345,7 @@
   ],
   "categorias": [
     "Todos",
+    "Jeans",
     "HMMR Jeans",
     "Doom Free"
   ],
