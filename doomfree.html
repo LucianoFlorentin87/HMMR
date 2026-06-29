@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doom Free Design — Indumentaria Urbana</title>
+  <meta name="description" content="Doom Free Design: indumentaria urbana premium. Una marca de HMMR Group." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Bebas+Neue&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',Arial,sans-serif;background:#0c0c0c;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    a{text-decoration:none;color:inherit}
+    img{display:block;max-width:100%}
+    button{font-family:inherit;cursor:pointer;border:none;background:none}
+    ::-webkit-scrollbar{width:4px}
+    ::-webkit-scrollbar-track{background:#0c0c0c}
+    ::-webkit-scrollbar-thumb{background:#e8c840;border-radius:2px}
+
+    :root{
+      --accent:#e8c840;
+      --accent2:#f5d860;
+      --dark:#0c0c0c;
+      --dark2:#111;
+      --dark3:#1a1a1a;
+      --dark4:#222;
+      --border:rgba(255,255,255,0.07);
+      --muted:#666;
+    }
+
+    /* ---- NAVBAR ---- */
+    .top-bar{
+      position:fixed;top:0;width:100%;z-index:1000;
+      background:rgba(10,10,10,0.96);backdrop-filter:blur(14px);
+      padding:0 6%;height:72px;
+      display:flex;justify-content:space-between;align-items:center;
+      border-bottom:1px solid var(--border);transition:background 0.3s;
+    }
+    .top-bar.scrolled{background:rgba(10,10,10,0.99)}
+    .df-logo{display:flex;align-items:center;gap:12px}
+    .df-logo-mark{
+      width:36px;height:36px;
+      background:var(--accent);
+      display:flex;align-items:center;justify-content:center;
+      font-family:'Bebas Neue',sans-serif;font-size:1.1rem;color:#000;
+      letter-spacing:1px;flex-shrink:0;
+    }
+    .df-logo-text{
+      display:flex;flex-direction:column;line-height:1;
+    }
+    .df-logo-main{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:3px;color:#fff}
+    .df-logo-sub{font-size:0.45rem;letter-spacing:3px;color:rgba(255,255,255,0.35);text-transform:uppercase;margin-top:2px}
+
+    nav{display:flex;gap:28px;font-size:0.65rem;text-transform:uppercase;letter-spacing:2px}
+    nav a{color:rgba(255,255,255,0.5);transition:color 0.2s;font-weight:600}
+    nav a:hover,nav a.active{color:var(--accent)}
+    .nav-back{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:0.62rem;letter-spacing:2px;text-transform:uppercase;
+      color:rgba(255,255,255,0.4);font-weight:600;transition:color 0.2s;
+    }
+    .nav-back:hover{color:#fff}
+    .nav-icons{display:flex;align-items:center;gap:14px}
+    .nav-icon-btn{color:rgba(255,255,255,0.5);font-size:0.9rem;padding:5px;cursor:pointer;transition:color 0.2s}
+    .nav-icon-btn:hover{color:var(--accent)}
+    .hamburger{display:none;color:#fff;font-size:1.1rem;padding:5px;cursor:pointer}
+
+    #mobile-menu{
+      display:none;position:fixed;top:72px;left:0;right:0;z-index:999;
+      background:rgba(10,10,10,0.99);border-bottom:1px solid var(--border);
+      max-height:0;overflow:hidden;transition:max-height 0.4s ease;
+    }
+    #mobile-menu.open{display:block;max-height:400px}
+    .mob-link{display:block;padding:14px 6%;font-size:0.75rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.5);border-bottom:1px solid var(--border);transition:color 0.2s}
+    .mob-link:hover{color:var(--accent)}
+
+    /* ---- HERO ---- */
+    #df-hero{
+      margin-top:72px;
+      min-height:88vh;
+      background:#0c0c0c;
+      display:grid;grid-template-columns:1fr 1fr;
+      overflow:hidden;position:relative;
+    }
+    .df-hero-left{
+      padding:80px 8% 80px 6%;
+      display:flex;flex-direction:column;justify-content:center;
+      position:relative;z-index:2;
+    }
+    .df-hero-tag{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(232,200,64,0.12);border:1px solid rgba(232,200,64,0.25);
+      padding:6px 14px;font-size:0.58rem;font-weight:700;letter-spacing:3px;
+      text-transform:uppercase;color:var(--accent);margin-bottom:28px;
+      width:fit-content;
+    }
+    .df-hero-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(4rem,8vw,7rem);
+      line-height:0.9;letter-spacing:2px;color:#fff;
+      margin-bottom:6px;
+    }
+    .df-hero-title span{color:var(--accent)}
+    .df-hero-subtitle{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(1.6rem,3vw,2.8rem);
+      letter-spacing:4px;color:rgba(255,255,255,0.25);
+      margin-bottom:30px;
+    }
+    .df-hero-desc{
+      font-size:0.88rem;color:rgba(255,255,255,0.4);
+      line-height:1.8;max-width:420px;margin-bottom:40px;
+    }
+    .df-hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+    .df-btn-primary{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:14px 28px;background:var(--accent);color:#000;
+      font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+      transition:background 0.2s;white-space:nowrap;
+    }
+    .df-btn-primary:hover{background:var(--accent2)}
+    .df-btn-outline{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:14px 28px;background:transparent;color:rgba(255,255,255,0.6);
+      font-size:0.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+      border:1px solid rgba(255,255,255,0.2);transition:all 0.2s;white-space:nowrap;
+    }
+    .df-btn-outline:hover{border-color:#fff;color:#fff}
+
+    .df-hero-right{
+      position:relative;overflow:hidden;
+      background:#111;
+    }
+    .df-hero-right img{
+      width:100%;height:100%;object-fit:cover;object-position:center top;
+      filter:brightness(0.75) contrast(1.1);
+    }
+    .df-hero-right::after{
+      content:'';position:absolute;inset:0;
+      background:linear-gradient(to right, #0c0c0c 0%, transparent 20%);
+    }
+
+    /* decorative lines */
+    .df-hero-line{
+      position:absolute;bottom:0;left:0;right:0;height:3px;
+      background:linear-gradient(to right,var(--accent) 0%,transparent 60%);
+    }
+
+    /* ---- STATS BAR ---- */
+    .df-stats{
+      background:#111;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+      display:grid;grid-template-columns:repeat(3,1fr);
+    }
+    .df-stat{
+      padding:28px 32px;border-right:1px solid var(--border);
+      display:flex;align-items:center;gap:16px;
+    }
+    .df-stat:last-child{border-right:none}
+    .df-stat-num{
+      font-family:'Bebas Neue',sans-serif;font-size:2rem;color:var(--accent);line-height:1;
+    }
+    .df-stat-text strong{display:block;font-size:0.7rem;font-weight:700;color:#fff;letter-spacing:1px;text-transform:uppercase}
+    .df-stat-text span{font-size:0.62rem;color:var(--muted);letter-spacing:1px;text-transform:uppercase}
+
+    /* ---- SECTION HEADING ---- */
+    .df-sec-head{margin-bottom:48px}
+    .df-eyebrow{
+      font-size:0.6rem;letter-spacing:5px;color:var(--accent);
+      text-transform:uppercase;font-weight:700;
+      display:flex;align-items:center;gap:10px;margin-bottom:10px;
+    }
+    .df-eyebrow::before{content:'';width:28px;height:1px;background:var(--accent)}
+    .df-sec-title{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(2rem,4vw,3rem);
+      letter-spacing:3px;color:#fff;line-height:1;
+    }
+
+    /* ---- PRODUCTS ---- */
+    #df-productos{padding:80px 6%;background:#0c0c0c}
+    #df-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);gap:2px;
+    }
+    .df-prod-card{
+      background:#111;cursor:pointer;overflow:hidden;
+      transition:background 0.2s;
+    }
+    .df-prod-card:hover{background:#1a1a1a}
+    .df-prod-img{position:relative;overflow:hidden}
+    .df-prod-img img{
+      width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;
+      transition:transform 0.5s;filter:brightness(0.9);
+    }
+    .df-prod-card:hover .df-prod-img img{transform:scale(1.04);filter:brightness(1)}
+    .df-prod-badge{
+      position:absolute;top:12px;left:12px;z-index:2;
+      padding:4px 10px;font-size:0.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      background:var(--accent);color:#000;
+    }
+    .df-prod-actions{
+      position:absolute;bottom:-50px;left:0;right:0;
+      display:flex;transition:bottom 0.3s;background:rgba(10,10,10,0.9);
+    }
+    .df-prod-card:hover .df-prod-actions{bottom:0}
+    .df-prod-action-btn{
+      flex:1;padding:11px;color:#fff;font-size:0.6rem;
+      letter-spacing:1px;text-transform:uppercase;font-weight:600;
+      border-right:1px solid rgba(255,255,255,0.08);font-family:'Inter',sans-serif;transition:all 0.2s;
+    }
+    .df-prod-action-btn:last-child{border-right:none}
+    .df-prod-action-btn:hover{background:rgba(232,200,64,0.15);color:var(--accent)}
+    .df-prod-info{padding:16px 18px}
+    .df-prod-brand{font-size:0.55rem;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:5px}
+    .df-prod-name{font-size:0.82rem;font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:8px}
+    .df-prod-colors{display:flex;gap:5px;margin-bottom:10px}
+    .df-color-dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(255,255,255,0.15)}
+    .df-prod-price{font-size:0.9rem;font-weight:700;color:#fff}
+    .df-prod-price-was{font-size:0.75rem;color:#444;text-decoration:line-through;margin-left:8px}
+
+    #df-sin-resultados{
+      display:none;flex-direction:column;align-items:center;
+      padding:80px 20px;text-align:center;grid-column:1/-1;gap:16px;
+    }
+    #df-sin-resultados i{font-size:3rem;color:#333}
+    #df-sin-resultados p{color:#555;font-size:0.9rem}
+
+    /* ---- ABOUT ---- */
+    #df-about{
+      background:#111;border-top:1px solid var(--border);
+      display:grid;grid-template-columns:1fr 1fr;
+      overflow:hidden;
+    }
+    .df-about-img{overflow:hidden;min-height:420px}
+    .df-about-img img{width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(0.7) grayscale(0.3)}
+    .df-about-text{
+      padding:80px 8%;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .df-about-text h2{
+      font-family:'Bebas Neue',sans-serif;
+      font-size:clamp(2rem,4vw,3.2rem);letter-spacing:3px;
+      color:#fff;line-height:1;margin-bottom:20px;
+    }
+    .df-about-text h2 span{color:var(--accent)}
+    .df-about-text p{
+      font-size:0.88rem;color:rgba(255,255,255,0.4);
+      line-height:1.9;margin-bottom:32px;
+    }
+
+    /* ---- TALLAS ---- */
+    .tallas-list{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+    .talla-btn{
+      padding:6px 12px;border:1px solid rgba(255,255,255,0.15);
+      color:rgba(255,255,255,0.5);font-size:0.75rem;background:none;cursor:pointer;
+      font-family:'Inter',sans-serif;transition:all 0.2s;
+    }
+    .talla-btn:hover,.talla-btn.selected{background:var(--accent);border-color:var(--accent);color:#000}
+    .tallas-label{display:block;font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:8px}
+
+    /* ---- MODAL ---- */
+    #df-modal{
+      position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.9);
+      display:flex;align-items:center;justify-content:center;padding:20px;
+      opacity:0;visibility:hidden;transition:all 0.3s;
+    }
+    #df-modal.open{opacity:1;visibility:visible}
+    .df-modal-box{
+      background:#111;width:100%;max-width:820px;max-height:90vh;
+      overflow-y:auto;position:relative;border:1px solid #222;
+    }
+    .df-modal-close{
+      position:absolute;top:14px;right:14px;z-index:10;
+      color:rgba(255,255,255,0.4);font-size:1.1rem;padding:6px;
+      background:rgba(0,0,0,0.5);border:none;cursor:pointer;transition:color 0.2s;
+    }
+    .df-modal-close:hover{color:#fff}
+
+    /* ---- SEARCH ---- */
+    #search-overlay{
+      position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.97);
+      display:flex;align-items:flex-start;justify-content:center;
+      padding-top:120px;opacity:0;visibility:hidden;transition:all 0.3s;
+    }
+    #search-overlay.open{opacity:1;visibility:visible}
+    .search-overlay-inner{width:100%;max-width:680px;padding:0 24px}
+    .search-label{font-size:0.7rem;letter-spacing:4px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:16px}
+    .search-input-wrap{display:flex;align-items:center;gap:14px;border-bottom:2px solid rgba(255,255,255,0.15);padding-bottom:12px;margin-bottom:24px}
+    .search-input-wrap i{color:rgba(255,255,255,0.3);font-size:1rem}
+    #search-input{flex:1;background:none;border:none;color:#fff;font-size:1.2rem;font-family:'Inter',sans-serif;outline:none}
+    #search-input::placeholder{color:rgba(255,255,255,0.2)}
+    .search-close-btn{position:absolute;top:24px;right:24px;color:rgba(255,255,255,0.4);font-size:1.2rem;padding:8px;background:none;border:none;cursor:pointer;transition:color 0.2s}
+    .search-close-btn:hover{color:#fff}
+    .search-results{display:flex;flex-direction:column;gap:8px}
+    .search-result-item{display:flex;align-items:center;gap:14px;background:#111;padding:10px 14px;border:1px solid #1a1a1a;transition:background 0.2s;cursor:pointer}
+    .search-result-item:hover{background:#1a1a1a}
+    .search-result-item img{width:50px;height:60px;object-fit:cover;flex-shrink:0}
+    .sr-name{font-size:0.82rem;color:#fff;font-weight:600;margin-bottom:4px}
+    .sr-price{font-size:0.72rem;color:var(--accent)}
+
+    /* ---- FOOTER ---- */
+    #df-footer{
+      background:#0c0c0c;border-top:1px solid var(--border);
+      padding:60px 6% 0;
+    }
+    .df-footer-grid{
+      display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
+      padding-bottom:48px;border-bottom:1px solid var(--border);
+    }
+    .df-footer-brand{}
+    .df-footer-brand .df-logo{margin-bottom:16px}
+    .df-footer-brand p{font-size:0.75rem;color:var(--muted);line-height:1.7;max-width:200px}
+    #df-footer h4{color:rgba(255,255,255,0.5);margin-bottom:16px;text-transform:uppercase;font-size:0.58rem;letter-spacing:3px;font-weight:700}
+    #df-footer ul{list-style:none}
+    #df-footer li{color:#444;margin-bottom:10px;font-size:0.75rem;transition:color 0.2s;cursor:pointer}
+    #df-footer li:hover{color:var(--accent)}
+    #df-footer a{color:#444;font-size:0.75rem;display:block;margin-bottom:10px;transition:color 0.2s}
+    #df-footer a:hover{color:var(--accent)}
+    .df-social-row{display:flex;gap:8px;margin-top:16px}
+    .df-social-btn{
+      width:32px;height:32px;border:1px solid #222;
+      display:flex;align-items:center;justify-content:center;
+      color:#444;font-size:0.8rem;transition:all 0.2s;
+    }
+    .df-social-btn:hover{border-color:var(--accent);color:var(--accent)}
+    .df-copyright{
+      padding:18px 0;color:#333;font-size:0.62rem;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+    }
+    .df-copyright a{color:var(--accent);font-size:0.62rem}
+
+    /* ---- FLOATING ---- */
+    #backToTop{
+      position:fixed;bottom:20px;left:20px;z-index:9999;
+      width:42px;height:42px;background:#111;color:#fff;
+      display:flex;align-items:center;justify-content:center;font-size:0.85rem;
+      opacity:0;visibility:hidden;transition:all 0.2s;cursor:pointer;
+      border:1px solid #222;
+    }
+    #backToTop.visible{opacity:1;visibility:visible}
+    #whatsapp-float{
+      position:fixed;bottom:20px;right:20px;z-index:9998;
+      width:52px;height:52px;background:#25D366;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-size:1.4rem;box-shadow:0 4px 16px rgba(37,211,102,0.4);
+      transition:transform 0.2s;text-decoration:none;
+    }
+    #whatsapp-float:hover{transform:scale(1.08)}
+
+    /* ---- RESPONSIVE ---- */
+    @media(max-width:1100px){#df-grid{grid-template-columns:repeat(3,1fr)}}
+    @media(max-width:1024px){
+      nav{display:none}.hamburger{display:block}
+      #df-hero{grid-template-columns:1fr}
+      .df-hero-right{display:none}
+      .df-about{grid-template-columns:1fr}
+      .df-about-img{display:none}
+    }
+    @media(max-width:768px){
+      #df-grid{grid-template-columns:repeat(2,1fr)}
+      .df-stats{grid-template-columns:1fr}
+      .df-footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+      #df-about{grid-template-columns:1fr}
+      .df-about-img{display:none}
+    }
+    @media(max-width:480px){
+      #df-grid{grid-template-columns:repeat(2,1fr);gap:1px}
+      .df-footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="top-bar" id="navbar">
+  <a href="doomfree.html" class="df-logo">
+    <div class="df-logo-mark">DF</div>
+    <div class="df-logo-text">
+      <span class="df-logo-main">Doom Free</span>
+      <span class="df-logo-sub">Design</span>
+    </div>
+  </a>
+  <nav>
+    <a href="#df-hero" class="active">Inicio</a>
+    <a href="#df-productos">Colección</a>
+    <a href="#df-about">Nosotros</a>
+  </nav>
+  <div class="nav-icons">
+    <button class="nav-icon-btn" id="btn-search" title="Buscar"><i class="fas fa-search"></i></button>
+    <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i> HMMR Jeans</a>
+  </div>
+  <button id="menu-btn" class="hamburger" aria-label="Menú"><i class="fas fa-bars"></i></button>
+</header>
+
+<div id="mobile-menu">
+  <a href="#df-hero"       class="mob-link">Inicio</a>
+  <a href="#df-productos"  class="mob-link">Colección</a>
+  <a href="#df-about"      class="mob-link">Nosotros</a>
+  <a href="index.html"     class="mob-link">← Volver a HMMR Jeans</a>
+</div>
+
+<!-- HERO -->
+<section id="df-hero">
+  <div class="df-hero-left">
+    <div class="df-hero-tag"><i class="fas fa-bolt"></i> Nueva colección disponible</div>
+    <h1 class="df-hero-title">DOOM<br><span>FREE</span></h1>
+    <div class="df-hero-subtitle">DESIGN</div>
+    <p class="df-hero-desc">
+      Indumentaria urbana para los que no siguen reglas. Diseños únicos, materiales de calidad, actitud propia.
+    </p>
+    <div class="df-hero-btns">
+      <a href="#df-productos" class="df-btn-primary"><i class="fas fa-shopping-bag"></i> Ver colección</a>
+      <a href="https://wa.me/595982372521?text=Hola,%20me%20interesa%20Doom%20Free%20Design" target="_blank" rel="noopener" class="df-btn-outline"><i class="fab fa-whatsapp"></i> Consultar</a>
+    </div>
+  </div>
+  <div class="df-hero-right">
+    <img id="df-hero-img" src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=900&q=85" alt="Doom Free Design">
+  </div>
+  <div class="df-hero-line"></div>
+</section>
+
+<!-- STATS -->
+<div class="df-stats">
+  <div class="df-stat">
+    <div class="df-stat-num">100%</div>
+    <div class="df-stat-text"><strong>Diseño propio</strong><span>Cada prenda es única</span></div>
+  </div>
+  <div class="df-stat">
+    <div class="df-stat-num">PY</div>
+    <div class="df-stat-text"><strong>Made in Paraguay</strong><span>Producción local</span></div>
+  </div>
+  <div class="df-stat">
+    <div class="df-stat-num">∞</div>
+    <div class="df-stat-text"><strong>Sin límites</strong><span>Moda sin reglas</span></div>
+  </div>
+</div>
+
+<!-- PRODUCTOS -->
+<section id="df-productos">
+  <div class="df-sec-head">
+    <div class="df-eyebrow">Colección</div>
+    <div class="df-sec-title">TODA LA LÍNEA</div>
+  </div>
+  <div id="df-grid"></div>
+  <div id="df-sin-resultados">
+    <i class="fas fa-box-open"></i>
+    <p>No hay productos disponibles por el momento.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="df-about">
+  <div class="df-about-img">
+    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&q=85" alt="Doom Free Design">
+  </div>
+  <div class="df-about-text">
+    <div class="df-eyebrow">Nuestra historia</div>
+    <h2>Más que<br>ropa.<br><span>Una actitud.</span></h2>
+    <p>
+      Doom Free Design nació como una extensión creativa de HMMR Group, pensada para quienes buscan algo diferente. Cada prenda es un statement: cuts únicos, paletas atrevidas, y detalles que marcan la diferencia.
+    </p>
+    <a href="https://wa.me/595982372521?text=Hola,%20quiero%20saber%20más%20sobre%20Doom%20Free%20Design" target="_blank" rel="noopener" class="df-btn-primary" style="width:fit-content">
+      <i class="fab fa-whatsapp"></i> Hablar con nosotros
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="df-footer">
+  <div class="df-footer-grid">
+    <div class="df-footer-brand">
+      <div class="df-logo" style="margin-bottom:16px">
+        <div class="df-logo-mark">DF</div>
+        <div class="df-logo-text">
+          <span class="df-logo-main">Doom Free</span>
+          <span class="df-logo-sub">Design</span>
+        </div>
+      </div>
+      <p>Indumentaria urbana premium. Una marca de HMMR Group, Paraguay.</p>
+      <div class="df-social-row">
+        <a href="https://www.instagram.com/hmmrjeans/" target="_blank" rel="noopener" class="df-social-btn"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/HMMRJEANS" target="_blank" rel="noopener" class="df-social-btn"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/595982372521" target="_blank" rel="noopener" class="df-social-btn"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div>
+      <h4>Colección</h4>
+      <a href="#df-productos">Ver todo</a>
+      <a href="index.html">HMMR Jeans</a>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <li>Cambios y devoluciones</li>
+      <li>Preguntas frecuentes</li>
+      <li>Términos y condiciones</li>
+    </div>
+    <div>
+      <h4>Contacto</h4>
+      <a href="https://wa.me/595982372521" target="_blank" rel="noopener">+595 982 372521</a>
+      <a href="mailto:hola@hmmrjeans.com">hola@hmmrjeans.com</a>
+    </div>
+  </div>
+  <div class="df-copyright">
+    <span>© 2025 Doom Free Design — <a href="index.html">HMMR Group</a></span>
+    <span>Paraguay 🇵🇾</span>
+  </div>
+</footer>
+
+<!-- FLOATING -->
+<button id="backToTop" title="Volver arriba"><i class="fas fa-chevron-up"></i></button>
+<a id="whatsapp-float"
+   href="https://wa.me/595982372521?text=Hola,%20me%20interesa%20Doom%20Free%20Design"
+   target="_blank" rel="noopener" title="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- MODAL -->
+<div id="df-modal">
+  <div class="df-modal-box">
+    <button class="df-modal-close" onclick="cerrarModal()"><i class="fas fa-times"></i></button>
+    <div id="df-modal-body"></div>
+  </div>
+</div>
+
+<!-- SEARCH -->
+<div id="search-overlay">
+  <div class="search-overlay-inner">
+    <button class="search-close-btn" id="search-close"><i class="fas fa-times"></i></button>
+    <p class="search-label">¿Qué estás buscando?</p>
+    <div class="search-input-wrap">
+      <i class="fas fa-search"></i>
+      <input type="text" id="search-input" placeholder="Ej: jogger, boyfriend…" autocomplete="off">
+    </div>
+    <div id="search-results" class="search-results"></div>
+  </div>
+</div>
+
+<script>
+const PLACEHOLDER = 'https://via.placeholder.com/400x530/111/e8c840?text=DOOM+FREE';
+const coloresMap = {
+  'Negro':'#111','Blanco':'#f5f5f5','Azul':'#1a4a8a','Celeste':'#4a90d9',
+  'Gris':'#888','Beige':'#c9a96e','Verde':'#2d6a4f','Rojo':'#c8102e',
+  'Marrón':'#6b3a2a','Arena':'#d4b896','Marino':'#0d2137','Crudo':'#e8dcc8',
+};
+function fmt(n){ return n ? 'Gs. ' + Math.round(n).toLocaleString('es-PY') : ''; }
+function gs(v){ const s = String(v||0).replace(/[^\d.]/g,''); return parseFloat(s)||0; }
+function imgSrc(p){ return p.imagenFallback || p.imagen || PLACEHOLDER; }
+
+let todos = [];
+let modalEl, modalBody;
+
+document.addEventListener('DOMContentLoaded', async () => {
+  modalEl   = document.getElementById('df-modal');
+  modalBody = document.getElementById('df-modal-body');
+  if(modalEl){
+    modalEl.addEventListener('click', e => { if(e.target===modalEl) cerrarModal(); });
+    document.addEventListener('keydown', e => { if(e.key==='Escape') cerrarModal(); });
+  }
+  await cargar();
+  initNavbar();
+  initSearch();
+});
+
+async function cargar(){
+  try {
+    const r = await fetch('assets/data/productos.json?v=' + Date.now());
+    const d = await r.json();
+    todos = (d.productos||[]).filter(p => p.categoria === 'Doom Free');
+  } catch(e){ console.error(e); }
+  render(todos);
+}
+
+function render(lista){
+  const grid = document.getElementById('df-grid');
+  const sinRes = document.getElementById('df-sin-resultados');
+  if(!grid) return;
+  if(!lista.length){
+    grid.innerHTML = '';
+    if(sinRes) sinRes.style.display = 'flex';
+    return;
+  }
+  if(sinRes) sinRes.style.display = 'none';
+  grid.innerHTML = lista.map(p => {
+    const src = imgSrc(p);
+    const fb  = p.imagenFallback || PLACEHOLDER;
+    const badge = p.etiqueta ? `<span class="df-prod-badge">${p.etiqueta}</span>` : '';
+    const dots  = (p.colores||[]).map(c =>
+      `<span class="df-color-dot" style="background:${coloresMap[c]||'#444'}" title="${c}"></span>`
+    ).join('');
+    const was = p.precioOriginal ? `<span class="df-prod-price-was">${fmt(gs(p.precioOriginal))}</span>` : '';
+    return `
+    <div class="df-prod-card">
+      <div class="df-prod-img">
+        ${badge}
+        <img src="${src}" alt="${p.nombre}" loading="lazy" onerror="this.onerror=null;this.src='${fb}'">
+        <div class="df-prod-actions">
+          <button class="df-prod-action-btn" onclick="abrirModal(${p.id})"><i class="fas fa-eye"></i> Ver</button>
+          <button class="df-prod-action-btn" onclick="abrirModal(${p.id})"><i class="fas fa-shopping-bag"></i> Añadir</button>
+        </div>
+      </div>
+      <div class="df-prod-info">
+        <p class="df-prod-brand">Doom Free Design</p>
+        <h3 class="df-prod-name">${p.nombre}</h3>
+        <div class="df-prod-colors">${dots}</div>
+        <div><span class="df-prod-price">${fmt(gs(p.precio))}</span>${was}</div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function abrirModal(id){
+  const p = todos.find(x => x.id === id);
+  if(!p || !modalEl || !modalBody) return;
+  const src = imgSrc(p);
+  const fb  = p.imagenFallback || PLACEHOLDER;
+  const tallas = (p.tallas||[]).map(t =>
+    `<button class="talla-btn" onclick="this.closest('.tallas-list').querySelectorAll('.talla-btn').forEach(b=>b.classList.remove('selected'));this.classList.add('selected')">${t}</button>`
+  ).join('');
+  const colores = (p.colores||[]).map(c =>
+    `<span class="df-color-dot" style="background:${coloresMap[c]||'#444'};width:22px;height:22px" title="${c}"></span>`
+  ).join('');
+  const waMsg = encodeURIComponent(`Hola, me interesa el producto Doom Free: ${p.nombre} (Ref: ${p.id})`);
+  modalBody.innerHTML = `
+    <div style="display:grid;grid-template-columns:1fr 1fr">
+      <div style="background:#0c0c0c;overflow:hidden;min-height:400px">
+        <img src="${src}" alt="${p.nombre}" style="width:100%;height:100%;object-fit:cover;object-position:top" onerror="this.src='${fb}'">
+      </div>
+      <div style="padding:36px 28px;display:flex;flex-direction:column;gap:12px;background:#111">
+        <p style="font-size:0.6rem;letter-spacing:3px;color:var(--accent);text-transform:uppercase">Doom Free Design</p>
+        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:2rem;color:#fff;letter-spacing:2px;line-height:1">${p.nombre}</h2>
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <span style="font-size:1.3rem;font-weight:700;color:#fff">${fmt(gs(p.precio))}</span>
+          ${p.precioOriginal ? `<span style="font-size:0.9rem;color:#444;text-decoration:line-through">${fmt(gs(p.precioOriginal))}</span>` : ''}
+        </div>
+        ${p.descripcion ? `<p style="font-size:0.82rem;color:#555;line-height:1.7">${p.descripcion}</p>` : ''}
+        ${colores ? `<div><p style="font-size:0.6rem;letter-spacing:2px;color:#444;text-transform:uppercase;margin-bottom:8px">COLORES</p><div style="display:flex;gap:8px;flex-wrap:wrap">${colores}</div></div>` : ''}
+        ${tallas ? `<div><span class="tallas-label">TALLE</span><div class="tallas-list">${tallas}</div></div>` : ''}
+        <a href="https://wa.me/595982372521?text=${waMsg}" target="_blank" rel="noopener"
+           style="display:flex;align-items:center;justify-content:center;gap:10px;padding:15px;background:#25D366;color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;margin-top:auto"
+           onmouseover="this.style.background='#1da854'" onmouseout="this.style.background='#25D366'">
+          <i class="fab fa-whatsapp" style="font-size:1.1rem"></i> CONSULTAR POR WHATSAPP
+        </a>
+      </div>
+    </div>`;
+  modalEl.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function cerrarModal(){
+  if(modalEl) modalEl.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function initNavbar(){
+  const nb  = document.getElementById('navbar');
+  const btt = document.getElementById('backToTop');
+  const menuBtn = document.getElementById('menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  window.addEventListener('scroll', () => {
+    if(nb)  nb.classList.toggle('scrolled', scrollY > 60);
+    if(btt) btt.classList.toggle('visible', scrollY > 400);
+  });
+  if(btt) btt.addEventListener('click', () => window.scrollTo({top:0,behavior:'smooth'}));
+  if(menuBtn && mobileMenu) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+}
+
+function initSearch(){
+  const btnS = document.getElementById('btn-search');
+  const ov   = document.getElementById('search-overlay');
+  const cl   = document.getElementById('search-close');
+  const inp  = document.getElementById('search-input');
+  const res  = document.getElementById('search-results');
+  const open  = () => { if(ov){ov.classList.add('open'); if(inp) inp.focus();} };
+  const close = () => { if(ov){ov.classList.remove('open'); if(inp) inp.value=''; if(res) res.innerHTML='';} };
+  if(btnS) btnS.addEventListener('click', open);
+  if(cl)   cl.addEventListener('click', close);
+  if(ov)   ov.addEventListener('click', e => { if(e.target===ov) close(); });
+  document.addEventListener('keydown', e => { if(e.key==='Escape') close(); });
+  if(inp && res){
+    inp.addEventListener('input', () => {
+      const q = inp.value.trim().toLowerCase();
+      if(!q){ res.innerHTML=''; return; }
+      const found = todos.filter(p => p.nombre.toLowerCase().includes(q)).slice(0,5);
+      if(!found.length){ res.innerHTML='<p style="color:#444;font-size:0.82rem;padding:12px 0">Sin resultados</p>'; return; }
+      res.innerHTML = found.map(p => `
+        <div class="search-result-item" onclick="abrirModal(${p.id});close()">
+          <img src="${imgSrc(p)}" alt="${p.nombre}" onerror="this.src='${PLACEHOLDER}'">
+          <div><p class="sr-name">${p.nombre}</p><p class="sr-price">${fmt(gs(p.precio))}</p></div>
+        </div>`).join('');
+    });
+  }
+}
+</script>
+</body>
+</html>
