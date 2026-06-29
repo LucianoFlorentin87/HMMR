@@ -55,7 +55,7 @@
     {
       "id": 3,
       "nombre": "Jean Wide Leg",
-      "categoria": "HMMR Jeans",
+      "categoria": "Camisas",
       "precio": 250000,
       "precioOriginal": 300000,
       "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-2-1782426578160.jpeg",
@@ -347,6 +347,7 @@
     "Todos",
     "Jeans",
     "Remeras",
+    "Camisas",
     "HMMR Jeans",
     "Doom Free"
   ],
