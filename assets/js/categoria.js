@@ -99,11 +99,8 @@ async function cargarProductos() {
     console.error('Productos error:', e);
   }
 
-  // Filtrar: usar filtro de config si existe, sino el nombre directamente
-  const filtro = (categoriaInfo && categoriaInfo.filtro) ? categoriaInfo.filtro : categoriaActual;
-  const lista = filtro === 'Todos'
-    ? todosProductos
-    : todosProductos.filter(p => p.categoria === filtro || p.categoria === categoriaActual);
+  // Filtrar por nombre de categoría (p.categoria debe coincidir con el nombre elegido en admin)
+  const lista = todosProductos.filter(p => p.categoria === categoriaActual);
 
   const countEl = document.getElementById('cat-count');
   if (countEl) countEl.textContent = lista.length + ' producto' + (lista.length !== 1 ? 's' : '');

@@ -383,7 +383,11 @@ textarea.form-control{resize:vertical;min-height:80px}
     <div class="modal-body">
       <div class="form-grid">
         <div class="form-group full"><label>Nombre</label><input class="form-control" id="f-nombre" placeholder="Jean Clásico Slim"></div>
-        <div class="form-group"><label>Categoría</label><input class="form-control" id="f-categoria" placeholder="HMMR Jeans"></div>
+        <div class="form-group"><label>Categoría</label>
+          <select class="form-control" id="f-categoria">
+            <option value="HMMR Jeans">HMMR Jeans</option>
+          </select>
+        </div>
         <div class="form-group"><label>Etiqueta</label><input class="form-control" id="f-etiqueta" placeholder="NUEVO / 30% OFF"></div>
         <div class="form-group"><label>Precio (Gs.)</label><input class="form-control" id="f-precio" type="number" placeholder="89900"></div>
         <div class="form-group"><label>Precio original (Gs.)</label><input class="form-control" id="f-precio-orig" type="number" placeholder="119900"></div>
@@ -718,7 +722,8 @@ function filtrarTabla(q) {
 function abrirNuevoProducto() {
   editProdIdx = null;
   document.getElementById('modal-prod-titulo').textContent = 'Nuevo Producto';
-  ['f-nombre','f-categoria','f-precio','f-precio-orig','f-imagen','f-descripcion','f-colores','f-tallas','f-etiqueta'].forEach(id => document.getElementById(id).value = '');
+  ['f-nombre','f-precio','f-precio-orig','f-imagen','f-descripcion','f-colores','f-tallas','f-etiqueta'].forEach(id => document.getElementById(id).value = '');
+  actualizarSelectCategorias();
   document.getElementById('f-estrellas').value = '4.5';
   document.getElementById('f-nuevo').checked = false;
   document.getElementById('f-oferta').checked = false;
@@ -730,8 +735,14 @@ function editarProducto(idx) {
   editProdIdx = idx;
   const p = productos[idx];
   document.getElementById('modal-prod-titulo').textContent = 'Editar Producto';
+  actualizarSelectCategorias();
   document.getElementById('f-nombre').value      = p.nombre || '';
-  document.getElementById('f-categoria').value   = p.categoria || '';
+  // agregar la opción si no existe en el select
+  const sel = document.getElementById('f-categoria');
+  if (p.categoria && ![...sel.options].some(o => o.value === p.categoria)) {
+    sel.insertAdjacentHTML('beforeend', `<option value="${p.categoria}">${p.categoria}</option>`);
+  }
+  sel.value = p.categoria || '';
   document.getElementById('f-precio').value      = p.precio || '';
   document.getElementById('f-precio-orig').value = p.precioOriginal || '';
   document.getElementById('f-imagen').value      = p.imagenFallback || p.imagen || '';
@@ -815,6 +826,7 @@ async function cargarConfig() {
     siteConfig = JSON.parse(decodeURIComponent(escape(atob(meta.content.replace(/\n/g,'')))));
     renderSlides();
     renderCats();
+    actualizarSelectCategorias();
     poblarFormContenido();
     poblarFormContacto();
     renderUsuarios();
@@ -908,6 +920,17 @@ function eliminarSlide(i) {
   guardarConfig('Admin: eliminar slide');
 }
 
+// ---- Sincronizar select de categoría en formulario de producto ----
+function actualizarSelectCategorias() {
+  const sel = document.getElementById('f-categoria');
+  if (!sel) return;
+  const cats = (siteConfig.categorias || []).map(c => c.nombre).filter(Boolean);
+  const opciones = cats.length ? cats : ['HMMR Jeans', 'Doom Free'];
+  const actual = sel.value;
+  sel.innerHTML = opciones.map(n => `<option value="${n}">${n}</option>`).join('');
+  if (actual && opciones.includes(actual)) sel.value = actual;
+}
+
 // ---- CATEGORÍAS ----
 function renderCats() {
   const g = document.getElementById('cats-grid');
@@ -948,12 +971,14 @@ async function guardarCat() {
   if (editCatIdx !== null) siteConfig.categorias[editCatIdx] = cat; else siteConfig.categorias.push(cat);
   cerrarModalCat();
   renderCats();
+  actualizarSelectCategorias();
   await guardarConfig('Admin: actualizar categorías');
 }
 function eliminarCat(i) {
   if (!confirm('¿Eliminás esta categoría?')) return;
   siteConfig.categorias.splice(i,1);
   renderCats();
+  actualizarSelectCategorias();
   guardarConfig('Admin: eliminar categoría');
 }
 
