@@ -83,7 +83,7 @@
     {
       "id": 4,
       "nombre": "Jean Cargo Urbano",
-      "categoria": "HMMR Jeans",
+      "categoria": "Abrigos",
       "precio": 99900,
       "precioOriginal": 139900,
       "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192810-2-1782426587542.jpeg",
@@ -348,6 +348,7 @@
     "Jeans",
     "Remeras",
     "Camisas",
+    "Abrigos",
     "HMMR Jeans",
     "Doom Free"
   ],
