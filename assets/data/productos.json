@@ -30,7 +30,7 @@
     {
       "id": 2,
       "nombre": "Jean Skinny Push Up",
-      "categoria": "HMMR Jeans",
+      "categoria": "Remeras",
       "precio": 250000,
       "precioOriginal": 300000,
       "imagen": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192807-1-1782426560029.jpeg",
@@ -346,6 +346,7 @@
   "categorias": [
     "Todos",
     "Jeans",
+    "Remeras",
     "HMMR Jeans",
     "Doom Free"
   ],
