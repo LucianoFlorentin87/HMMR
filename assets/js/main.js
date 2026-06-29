@@ -817,7 +817,11 @@ async function aplicarConfig() {
       // Email links
       if (c.email) {
         const ctEmail = document.getElementById('ct-email-link');
-        if (ctEmail) { ctEmail.href = 'mailto:' + c.email; ctEmail.textContent = c.email; }
+        if (ctEmail) {
+          ctEmail.href = 'mailto:' + c.email;
+          const valEl = ctEmail.querySelector('.ct-info-value');
+          if (valEl) valEl.textContent = c.email; else ctEmail.textContent = c.email;
+        }
         setIfVal(document.getElementById('dist-email-btn'), 'href', `mailto:${c.email}?subject=Quiero%20ser%20distribuidor`);
       }
       // Maps
