@@ -314,6 +314,33 @@
       "oferta": true,
       "etiqueta": "21% OFF",
       "estrellas": 4.5
+    },
+    {
+      "id": 13,
+      "nombre": "Jean Clasico Slim",
+      "categoria": "HMMR Jeans",
+      "precio": 100000,
+      "precioOriginal": 200000,
+      "imagen": "",
+      "imagenFallback": "https://raw.githubusercontent.com/LucianoFlorentin87/HMMR/main/assets/img/uploads/whatsapp-image-2026-06-25-at-192806-1782741161210.jpeg",
+      "descripcion": "",
+      "colores": [
+        "azul",
+        "negro",
+        "gris"
+      ],
+      "tallas": [
+        "28",
+        "30",
+        "32",
+        "34",
+        "36",
+        "38"
+      ],
+      "nuevo": true,
+      "oferta": true,
+      "etiqueta": "30% OFF",
+      "estrellas": 4.5
     }
   ],
   "categorias": [
