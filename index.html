@@ -1176,22 +1176,121 @@
 <!-- ============================================================
      DISTRIBUIDORES
      ============================================================ -->
-<section id="distribuidores" style="padding:80px 6%;background:#0a0f1a;border-top:1px solid #1e2d3d">
-  <div style="max-width:900px;margin:0 auto;text-align:center">
-    <div style="font-size:0.75rem;letter-spacing:4px;color:#c58c38;margin-bottom:12px">DISTRIBUIDORES</div>
-    <h2 style="font-size:2.2rem;font-weight:800;letter-spacing:2px;margin-bottom:12px">VENDÉ HMMR JEANS</h2>
-    <div class="sec-heading-stripe" style="margin:0 auto 20px"><span></span><span></span><span></span></div>
-    <p style="color:#94a3b8;font-size:1rem;line-height:1.7;max-width:600px;margin:0 auto 40px">¿Querés vender HMMR Jeans en tu local? Somos una marca paraguaya en crecimiento y buscamos distribuidores en todo el país. Escribinos y te contamos las condiciones.</p>
-    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
-      <a id="dist-wa-btn" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20me%20interesa%20ser%20distribuidor" target="_blank" rel="noopener"
-         class="ct-btn-wa">
-        <i class="fab fa-whatsapp"></i> ESCRIBIR POR WHATSAPP
-      </a>
-      <a id="dist-email-btn" href="mailto:hola@hmmrjeans.com?subject=Quiero%20ser%20distribuidor"
-         style="display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:transparent;color:#c58c38;font-weight:700;font-size:0.88rem;letter-spacing:2px;border-radius:10px;border:2px solid #c58c38;text-decoration:none;transition:opacity .2s"
-         onmouseover="this.style.opacity='.75'" onmouseout="this.style.opacity='1'">
-        <i class="fas fa-envelope"></i> ENVIAR EMAIL
-      </a>
+<section id="distribuidores">
+  <style>
+    #distribuidores{
+      background:#03070c;
+      border-top:1px solid rgba(255,255,255,0.06);
+      overflow:hidden;
+      position:relative;
+    }
+    .dist-inner{
+      max-width:1200px;margin:0 auto;padding:100px 6%;
+      display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+    }
+    .dist-left .dist-eyebrow{
+      font-size:0.62rem;letter-spacing:5px;color:var(--gold);
+      text-transform:uppercase;font-weight:700;margin-bottom:18px;
+      display:flex;align-items:center;gap:10px;
+    }
+    .dist-left .dist-eyebrow::before{
+      content:'';width:32px;height:1px;background:var(--gold);flex-shrink:0;
+    }
+    .dist-left h2{
+      font-family:'Playfair Display',serif;
+      font-size:clamp(2.2rem,4vw,3.2rem);
+      font-weight:900;color:#fff;line-height:1.05;
+      margin-bottom:22px;
+    }
+    .dist-left h2 em{color:var(--gold);font-style:normal}
+    .dist-left p{
+      font-size:0.92rem;color:rgba(255,255,255,0.5);
+      line-height:1.8;margin-bottom:36px;max-width:420px;
+    }
+    .dist-btns{display:flex;gap:14px;flex-wrap:wrap}
+    .dist-btn-main{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:15px 28px;background:#25D366;color:#fff;
+      font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      text-decoration:none;transition:background 0.2s;white-space:nowrap;
+    }
+    .dist-btn-main:hover{background:#1da854}
+    .dist-btn-sec{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:15px 28px;background:transparent;color:rgba(255,255,255,0.6);
+      font-size:0.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+      text-decoration:none;border:1px solid rgba(255,255,255,0.2);transition:all 0.2s;white-space:nowrap;
+    }
+    .dist-btn-sec:hover{border-color:#fff;color:#fff}
+
+    .dist-right{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,0.06)}
+    .dist-card{
+      background:#03070c;padding:36px 28px;
+      display:flex;flex-direction:column;gap:10px;
+      transition:background 0.2s;
+    }
+    .dist-card:hover{background:#060f1c}
+    .dist-card-icon{
+      width:44px;height:44px;
+      border:1px solid rgba(197,140,56,0.3);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--gold);font-size:0.95rem;margin-bottom:6px;flex-shrink:0;
+    }
+    .dist-card-num{
+      font-family:'Playfair Display',serif;
+      font-size:2rem;font-weight:900;color:#fff;line-height:1;
+    }
+    .dist-card-num span{font-size:1.1rem;color:var(--gold)}
+    .dist-card-label{font-size:0.7rem;color:rgba(255,255,255,0.4);letter-spacing:1.5px;text-transform:uppercase}
+    .dist-card-desc{font-size:0.78rem;color:rgba(255,255,255,0.3);line-height:1.5;margin-top:2px}
+
+    @media(max-width:900px){
+      .dist-inner{grid-template-columns:1fr;gap:48px}
+      .dist-left p{max-width:100%}
+    }
+    @media(max-width:500px){.dist-right{grid-template-columns:1fr}}
+  </style>
+
+  <div class="dist-inner">
+    <div class="dist-left">
+      <div class="dist-eyebrow">Distribuidores</div>
+      <h2>Vendé <em>HMMR</em><br>en tu local</h2>
+      <p>Somos una marca paraguaya en crecimiento y buscamos distribuidores en todo el país. Sin costos de entrada, con soporte y catálogo actualizado.</p>
+      <div class="dist-btns">
+        <a id="dist-wa-btn" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20me%20interesa%20ser%20distribuidor" target="_blank" rel="noopener" class="dist-btn-main">
+          <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+        </a>
+        <a id="dist-email-btn" href="mailto:hola@hmmrjeans.com?subject=Quiero%20ser%20distribuidor" class="dist-btn-sec">
+          <i class="fas fa-envelope"></i> Enviar email
+        </a>
+      </div>
+    </div>
+
+    <div class="dist-right">
+      <div class="dist-card">
+        <div class="dist-card-icon"><i class="fas fa-store"></i></div>
+        <div class="dist-card-num">0<span> costo</span></div>
+        <div class="dist-card-label">De entrada</div>
+        <div class="dist-card-desc">Sin inversión inicial requerida para comenzar.</div>
+      </div>
+      <div class="dist-card">
+        <div class="dist-card-icon"><i class="fas fa-tags"></i></div>
+        <div class="dist-card-num">40<span>%</span></div>
+        <div class="dist-card-label">Margen promedio</div>
+        <div class="dist-card-desc">Precio mayorista competitivo para tu negocio.</div>
+      </div>
+      <div class="dist-card">
+        <div class="dist-card-icon"><i class="fas fa-truck"></i></div>
+        <div class="dist-card-num">48<span>hs</span></div>
+        <div class="dist-card-label">Despacho</div>
+        <div class="dist-card-desc">Entrega rápida en todo el Paraguay.</div>
+      </div>
+      <div class="dist-card">
+        <div class="dist-card-icon"><i class="fas fa-headset"></i></div>
+        <div class="dist-card-num">24<span>/7</span></div>
+        <div class="dist-card-label">Soporte</div>
+        <div class="dist-card-desc">Asesoramiento y materiales de venta incluidos.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -1199,70 +1298,165 @@
 <!-- ============================================================
      CONTACTO
      ============================================================ -->
-<section id="contacto" style="padding:90px 6%;background:#06111f;border-top:1px solid #1a2940">
+<section id="contacto">
   <style>
-    .ct-wrap{max-width:1100px;margin:0 auto}
-    .ct-header{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:60px}
-    .ct-eyebrow{font-size:0.7rem;letter-spacing:5px;color:#c58c38;text-transform:uppercase;margin-bottom:14px}
-    .ct-title{font-size:2.4rem;font-weight:800;letter-spacing:3px;line-height:1}
-    .ct-stripe{display:flex;height:2px;width:60px;border-radius:1px;overflow:hidden;margin:16px auto 0}
-    .ct-stripe span:nth-child(1){flex:1;background:#D52B1E}
-    .ct-stripe span:nth-child(2){flex:1;background:#fff}
-    .ct-stripe span:nth-child(3){flex:1;background:#009FCA}
-    .ct-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#1a2940;border:1px solid #1a2940;border-radius:16px;overflow:hidden;margin-bottom:48px}
-    .ct-item{background:#0a0f1a;padding:36px 24px;display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center;transition:background .2s}
-    .ct-item:hover{background:#0f1929}
-    .ct-icon{width:48px;height:48px;border-radius:50%;border:1px solid #1e2d3d;display:flex;align-items:center;justify-content:center;color:#c58c38;font-size:1rem;flex-shrink:0}
-    .ct-label{font-size:0.62rem;letter-spacing:3px;color:#475569;text-transform:uppercase}
-    .ct-value{font-size:0.88rem;font-weight:600;color:#e2e8f0;text-decoration:none;transition:color .2s}
-    .ct-value:hover{color:#c58c38}
-    .ct-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
-    .ct-btn-wa{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;background:#c58c38;color:#000;font-weight:800;font-size:0.82rem;letter-spacing:3px;border-radius:8px;text-decoration:none;transition:all .2s}
-    .ct-btn-wa:hover{background:#d4a050;transform:translateY(-2px)}
-    .ct-btn-wa i{font-size:1.1rem}
-    .ct-btn-ig{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;background:transparent;color:#94a3b8;font-weight:700;font-size:0.82rem;letter-spacing:3px;border-radius:8px;text-decoration:none;border:1px solid #1e2d3d;transition:all .2s}
-    .ct-btn-ig:hover{border-color:#c58c38;color:#c58c38}
-    @media(max-width:700px){.ct-grid{grid-template-columns:repeat(2,1fr)}.ct-title{font-size:1.8rem}}
-    @media(max-width:420px){.ct-grid{grid-template-columns:1fr}}
+    #contacto{background:#06111f;border-top:1px solid rgba(255,255,255,0.06)}
+    .ct-outer{max-width:1200px;margin:0 auto;padding:100px 6%}
+
+    /* header */
+    .ct-header2{margin-bottom:64px}
+    .ct-eyebrow{font-size:0.62rem;letter-spacing:5px;color:var(--gold);text-transform:uppercase;font-weight:700;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .ct-eyebrow::before{content:'';width:32px;height:1px;background:var(--gold);flex-shrink:0}
+    .ct-header2 h2{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,3.8rem);font-weight:900;color:#fff;line-height:1}
+
+    /* main layout */
+    .ct-layout{display:grid;grid-template-columns:1fr 420px;gap:48px;align-items:start}
+
+    /* left: form */
+    .ct-form-card{background:#03070c;border:1px solid rgba(255,255,255,0.07);padding:48px 40px}
+    .ct-form-title{font-size:0.7rem;letter-spacing:3px;color:rgba(255,255,255,0.4);text-transform:uppercase;margin-bottom:28px}
+    .ct-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+    .ct-form-group{display:flex;flex-direction:column;gap:7px;margin-bottom:16px}
+    .ct-form-group label{font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+    .ct-form-group input,
+    .ct-form-group textarea,
+    .ct-form-group select{
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.1);
+      color:#fff;padding:13px 16px;
+      font-size:0.85rem;font-family:'Inter',sans-serif;
+      outline:none;transition:border-color 0.2s;width:100%;resize:none;
+    }
+    .ct-form-group input:focus,
+    .ct-form-group textarea:focus{border-color:var(--gold)}
+    .ct-form-group textarea{min-height:110px}
+    .ct-submit-btn{
+      width:100%;padding:16px;background:var(--gold);color:#000;
+      font-size:0.72rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+      cursor:pointer;border:none;font-family:'Inter',sans-serif;transition:background 0.2s;
+      display:flex;align-items:center;justify-content:center;gap:8px;margin-top:8px;
+    }
+    .ct-submit-btn:hover{background:var(--gold2)}
+
+    /* right: info panel */
+    .ct-info-panel{display:flex;flex-direction:column;gap:2px}
+    .ct-info-item{
+      background:#03070c;border:1px solid rgba(255,255,255,0.07);
+      padding:24px 28px;display:flex;align-items:flex-start;gap:18px;
+      transition:background 0.2s;text-decoration:none;color:inherit;
+    }
+    .ct-info-item:hover{background:#060f1c}
+    .ct-info-icon{
+      width:42px;height:42px;min-width:42px;
+      border:1px solid rgba(197,140,56,0.3);border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      color:var(--gold);font-size:0.9rem;flex-shrink:0;margin-top:2px;
+    }
+    .ct-info-text{}
+    .ct-info-label{font-size:0.58rem;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:5px}
+    .ct-info-value{font-size:0.88rem;font-weight:600;color:#e2e8f0;line-height:1.4}
+
+    .ct-social-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;margin-top:2px}
+    .ct-soc-btn{
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      padding:16px 8px;background:#03070c;
+      border:1px solid rgba(255,255,255,0.07);
+      color:rgba(255,255,255,0.45);font-size:0.65rem;font-weight:700;
+      letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;
+      transition:all 0.2s;
+    }
+    .ct-soc-btn:hover{background:#060f1c;color:var(--gold);border-color:rgba(197,140,56,0.3)}
+
+    /* redesign old btn classes still used by aplicarConfig */
+    .ct-btn-wa{display:none}
+    .ct-btn-ig{display:none}
+
+    @media(max-width:960px){
+      .ct-layout{grid-template-columns:1fr}
+      .ct-info-panel{grid-template-columns:1fr 1fr;display:grid}
+      .ct-social-row{grid-column:1/-1}
+    }
+    @media(max-width:560px){
+      .ct-form-row{grid-template-columns:1fr}
+      .ct-form-card{padding:28px 20px}
+      .ct-info-panel{grid-template-columns:1fr}
+    }
   </style>
-  <div class="ct-wrap">
-    <div class="ct-header">
+
+  <div class="ct-outer">
+    <div class="ct-header2">
       <div class="ct-eyebrow">Contacto</div>
-      <div class="ct-title">HABLEMOS</div>
-      <div class="ct-stripe"><span></span><span></span><span></span></div>
+      <h2>Hablemos</h2>
     </div>
-    <div class="ct-grid">
-      <div class="ct-item">
-        <div class="ct-icon"><i class="fab fa-whatsapp"></i></div>
-        <div class="ct-label">WhatsApp</div>
-        <a id="ct-wa-link" class="ct-value" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" rel="noopener">+595 982 372521</a>
+
+    <div class="ct-layout">
+
+      <!-- FORMULARIO -->
+      <div class="ct-form-card">
+        <div class="ct-form-title">Envianos un mensaje</div>
+        <form id="form-contacto">
+          <div class="ct-form-row">
+            <div class="ct-form-group"><label>Nombre</label><input type="text" placeholder="Tu nombre" required></div>
+            <div class="ct-form-group"><label>Email</label><input type="email" placeholder="tu@email.com" required></div>
+          </div>
+          <div class="ct-form-group"><label>Asunto</label>
+            <select style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);color:#fff;padding:13px 16px;font-size:0.85rem;font-family:'Inter',sans-serif;outline:none;width:100%">
+              <option value="" style="background:#06111f">Consulta general</option>
+              <option value="distribuidor" style="background:#06111f">Quiero ser distribuidor</option>
+              <option value="producto" style="background:#06111f">Consulta sobre un producto</option>
+              <option value="cambio" style="background:#06111f">Cambio o devolución</option>
+            </select>
+          </div>
+          <div class="ct-form-group"><label>Mensaje</label><textarea placeholder="Escribí tu mensaje…" required></textarea></div>
+          <button type="submit" class="ct-submit-btn"><i class="fas fa-paper-plane"></i> Enviar mensaje</button>
+        </form>
       </div>
-      <div class="ct-item">
-        <div class="ct-icon"><i class="fas fa-envelope"></i></div>
-        <div class="ct-label">Email</div>
-        <a id="ct-email-link" class="ct-value" href="mailto:hola@hmmrjeans.com">hola@hmmrjeans.com</a>
+
+      <!-- INFO + REDES -->
+      <div>
+        <div class="ct-info-panel">
+          <a id="ct-wa-link" class="ct-info-item" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" rel="noopener">
+            <div class="ct-info-icon"><i class="fab fa-whatsapp"></i></div>
+            <div class="ct-info-text">
+              <div class="ct-info-label">WhatsApp</div>
+              <div class="ct-info-value">+595 982 372521</div>
+            </div>
+          </a>
+          <a id="ct-email-link" class="ct-info-item" href="mailto:hola@hmmrjeans.com">
+            <div class="ct-info-icon"><i class="fas fa-envelope"></i></div>
+            <div class="ct-info-text">
+              <div class="ct-info-label">Email</div>
+              <div class="ct-info-value">hola@hmmrjeans.com</div>
+            </div>
+          </a>
+          <a id="ct-maps-link" class="ct-info-item" href="https://maps.app.goo.gl/MNeb88Uq6zQ9a6HF8" target="_blank" rel="noopener">
+            <div class="ct-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="ct-info-text">
+              <div class="ct-info-label">Dirección</div>
+              <div class="ct-info-value">Mariano Roque Alonso,<br>Paraguay</div>
+            </div>
+          </a>
+          <div class="ct-info-item">
+            <div class="ct-info-icon"><i class="fas fa-clock"></i></div>
+            <div class="ct-info-text">
+              <div class="ct-info-label">Horario de atención</div>
+              <div class="ct-info-value">Lun–Vie 8:00–18:00<br>Sáb 9:00–13:00</div>
+            </div>
+          </div>
+        </div>
+        <div class="ct-social-row">
+          <a id="ct-ig-btn" class="ct-soc-btn" href="https://www.instagram.com/hmmrjeans/" target="_blank" rel="noopener">
+            <i class="fab fa-instagram"></i> Instagram
+          </a>
+          <a id="ct-fb-btn" class="ct-soc-btn" href="https://www.facebook.com/HMMRJEANS" target="_blank" rel="noopener">
+            <i class="fab fa-facebook-f"></i> Facebook
+          </a>
+          <a id="contacto-wa-btn" class="ct-soc-btn btn-wa" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+          </a>
+        </div>
       </div>
-      <div class="ct-item">
-        <div class="ct-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <div class="ct-label">Dirección</div>
-        <a id="ct-maps-link" class="ct-value" href="https://maps.app.goo.gl/MNeb88Uq6zQ9a6HF8" target="_blank" rel="noopener">Mariano Roque Alonso</a>
-      </div>
-      <div class="ct-item">
-        <div class="ct-icon"><i class="fab fa-instagram"></i></div>
-        <div class="ct-label">Instagram</div>
-        <a class="ct-value" href="https://www.instagram.com/hmmrjeans/" target="_blank" rel="noopener">@hmmrjeans</a>
-      </div>
-    </div>
-    <div class="ct-actions">
-      <a id="contacto-wa-btn" class="ct-btn-wa btn-wa" href="https://wa.me/595982372521?text=Hola%20HMMR%20Jeans%2C%20necesito%20ayuda" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> WHATSAPP
-      </a>
-      <a id="ct-ig-btn" class="ct-btn-ig" href="https://www.instagram.com/hmmrjeans/" target="_blank" rel="noopener">
-        <i class="fab fa-instagram"></i> INSTAGRAM
-      </a>
-      <a id="ct-fb-btn" class="ct-btn-ig" href="https://www.facebook.com/HMMRJEANS" target="_blank" rel="noopener">
-        <i class="fab fa-facebook-f"></i> FACEBOOK
-      </a>
+
     </div>
   </div>
 </section>
